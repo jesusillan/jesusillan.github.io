@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Página oficial de Jesús Illán, escritor. Descubre Contra Tiempo, Doce Nombres y Entre azules e invencibles.">
+<meta name="author" content="Jesús Illán">
+<meta name="theme-color" content="#f5f2ed">
+<title>Jesús Illán · Escritor</title>
+
+<style>
+  :root{
+    --paper:#f5f2ed;
+    --paper-2:#ebe6df;
+    --ink:#202020;
+    --muted:#68645f;
+    --line:#d8d1c8;
+    --accent:#7a3f36;
+    --accent-dark:#5d2f29;
+    --white:#fffdf9;
+    --shadow:0 18px 45px rgba(32,32,32,.10);
+    --max:1080px;
+  }
+
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    margin:0;
+    background:var(--paper);
+    color:var(--ink);
+    font-family:Arial, Helvetica, sans-serif;
+    line-height:1.6;
+  }
+  a{color:inherit}
+  img{max-width:100%;height:auto}
+
+  .wrap{
+    width:min(calc(100% - 40px), var(--max));
+    margin:0 auto;
+  }
+
+  /* Navigation */
+  header{
+    position:sticky;
+    top:0;
+    z-index:20;
+    background:rgba(245,242,237,.94);
+    backdrop-filter:blur(10px);
+    border-bottom:1px solid rgba(216,209,200,.75);
+  }
+  .nav{
+    min-height:68px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:24px;
+  }
+  .brand{
+    text-decoration:none;
+    font-family:Georgia, "Times New Roman", serif;
+    font-size:20px;
+    letter-spacing:.02em;
+  }
+  nav{
+    display:flex;
+    gap:24px;
+    align-items:center;
+  }
+  nav a{
+    text-decoration:none;
+    font-size:13px;
+    color:var(--muted);
+  }
+  nav a:hover{color:var(--ink)}
+
+  /* Hero */
+  .hero{
+    padding:92px 0 78px;
+    text-align:center;
+  }
+  .eyebrow{
+    margin:0 0 16px;
+    text-transform:uppercase;
+    letter-spacing:.20em;
+    font-size:11px;
+    color:var(--accent);
+    font-weight:bold;
+  }
+  h1{
+    margin:0;
+    font-family:Georgia, "Times New Roman", serif;
+    font-weight:normal;
+    font-size:clamp(48px, 8vw, 88px);
+    line-height:.95;
+    letter-spacing:-.045em;
+  }
+  .hero p{
+    max-width:650px;
+    margin:26px auto 0;
+    font-family:Georgia, "Times New Roman", serif;
+    font-size:clamp(18px, 2.4vw, 23px);
+    line-height:1.55;
+    color:var(--muted);
+  }
+  .hero-rule{
+    width:58px;
+    height:1px;
+    background:var(--accent);
+    margin:36px auto 0;
+  }
+
+  /* Sections */
+  section{padding:76px 0}
+  .section-heading{
+    text-align:center;
+    margin-bottom:46px;
+  }
+  .section-heading h2{
+    margin:0;
+    font-family:Georgia, "Times New Roman", serif;
+    font-weight:normal;
+    font-size:clamp(34px,5vw,52px);
+    line-height:1.05;
+  }
+  .section-heading p{
+    margin:12px auto 0;
+    max-width:650px;
+    color:var(--muted);
+  }
+
+  /* Books */
+  .books{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:28px;
+  }
+  .book{
+    background:var(--white);
+    border:1px solid var(--line);
+    padding:18px 18px 24px;
+    box-shadow:0 8px 24px rgba(32,32,32,.045);
+    display:flex;
+    flex-direction:column;
+  }
+  .cover-link{
+    display:block;
+    overflow:hidden;
+    background:#e7e1d9;
+  }
+  .cover-link img{
+    display:block;
+    width:100%;
+    aspect-ratio:2 / 3;
+    object-fit:cover;
+    transition:transform .45s ease;
+  }
+  .cover-link:hover img{transform:scale(1.025)}
+  .book h3{
+    margin:22px 0 7px;
+    font-family:Georgia, "Times New Roman", serif;
+    font-weight:normal;
+    font-size:25px;
+    line-height:1.15;
+  }
+  .book .intro{
+    margin:0 0 18px;
+    color:var(--muted);
+    font-size:14px;
+    line-height:1.65;
+    flex:1;
+  }
+  .amazon-button{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    min-height:46px;
+    padding:10px 18px;
+    border:1px solid var(--accent);
+    background:var(--accent);
+    color:white;
+    text-decoration:none;
+    font-size:13px;
+    font-weight:bold;
+    letter-spacing:.03em;
+    transition:background .2s ease, transform .2s ease;
+  }
+  .amazon-button:hover{
+    background:var(--accent-dark);
+    transform:translateY(-1px);
+  }
+
+  /* About */
+  .about{
+    background:var(--paper-2);
+    border-top:1px solid var(--line);
+    border-bottom:1px solid var(--line);
+  }
+  .about-grid{
+    display:grid;
+    grid-template-columns:.75fr 1.25fr;
+    gap:70px;
+    align-items:start;
+  }
+  .about-title h2{
+    margin:0;
+    font-family:Georgia, "Times New Roman", serif;
+    font-size:clamp(40px,5vw,60px);
+    font-weight:normal;
+    line-height:1;
+  }
+  .about-title p{
+    margin:18px 0 0;
+    color:var(--accent);
+    font-family:Georgia, "Times New Roman", serif;
+    font-size:19px;
+  }
+  .about-text{
+    font-family:Georgia, "Times New Roman", serif;
+    font-size:18px;
+    line-height:1.75;
+  }
+  .about-text p{margin:0 0 20px}
+  .signature{
+    margin-top:30px;
+    font-size:22px;
+  }
+
+  /* Contact */
+  .contact-box{
+    max-width:760px;
+    margin:0 auto;
+    text-align:center;
+  }
+  .contact-box p{
+    color:var(--muted);
+    margin-bottom:26px;
+  }
+  .contact-form{
+    display:grid;
+    gap:12px;
+    text-align:left;
+  }
+  .contact-form input,
+  .contact-form textarea{
+    width:100%;
+    border:1px solid var(--line);
+    background:var(--white);
+    padding:14px 15px;
+    font:inherit;
+    color:var(--ink);
+    border-radius:0;
+  }
+  .contact-form textarea{min-height:145px;resize:vertical}
+  .contact-form input:focus,
+  .contact-form textarea:focus{
+    outline:2px solid rgba(122,63,54,.18);
+    border-color:var(--accent);
+  }
+  .form-note{
+    font-size:12px;
+    color:var(--muted);
+    margin:2px 0 0;
+  }
+
+  /* Share / socials */
+  .share-area{
+    text-align:center;
+    padding-top:15px;
+  }
+  .share-button,
+  .social-link{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    min-height:44px;
+    padding:9px 18px;
+    margin:5px;
+    border:1px solid var(--ink);
+    text-decoration:none;
+    font-size:13px;
+    background:transparent;
+  }
+  .share-button:hover,
+  .social-link:hover{
+    background:var(--ink);
+    color:var(--white);
+  }
+  #share-status{
+    display:block;
+    min-height:22px;
+    margin-top:8px;
+    color:var(--accent);
+    font-size:13px;
+  }
+
+  /* Signature banner */
+  .signature-banner{
+    padding:30px 0 76px;
+  }
+  .signature-banner a{
+    display:block;
+    max-width:700px;
+    margin:0 auto;
+  }
+  .signature-banner img{
+    display:block;
+    width:100%;
+    border:0;
+  }
+
+  footer{
+    border-top:1px solid var(--line);
+    padding:28px 0 40px;
+    color:var(--muted);
+    font-size:12px;
+    text-align:center;
+  }
+
+  @media (max-width:800px){
+    .books{grid-template-columns:1fr;max-width:520px;margin:0 auto}
+    .book{padding:16px 16px 22px}
+    .about-grid{grid-template-columns:1fr;gap:30px}
+    .about-title{text-align:center}
+  }
+
+  @media (max-width:560px){
+    .wrap{width:min(calc(100% - 28px), var(--max))}
+    .nav{min-height:60px}
+    .brand{font-size:18px}
+    nav{gap:13px}
+    nav a{font-size:11px}
+    .hero{padding:68px 0 58px}
+    section{padding:58px 0}
+    .about-text{font-size:17px}
+    .signature-banner{padding-bottom:55px}
+  }
+</style>
+</head>
+
+<body>
+
+<header>
+  <div class="wrap nav">
+    <a class="brand" href="#inicio">Jesús Illán</a>
+    <nav aria-label="Navegación principal">
+      <a href="#libros">Libros</a>
+      <a href="#autor">Sobre mí</a>
+      <a href="#contacto">Contacto</a>
+    </nav>
+  </div>
+</header>
+
+<main id="inicio">
+
+  <section class="hero">
+    <div class="wrap">
+      <p class="eyebrow">Escritor</p>
+      <h1>Jesús Illán</h1>
+      <p>
+        Historias que empiezan con una pregunta, avanzan entre páginas
+        y esperan al lector al otro lado de la última.
+      </p>
+      <div class="hero-rule"></div>
+      <div class="share-area">
+        <button class="share-button" type="button" onclick="sharePage()">↗ Compartir esta página</button>
+        <span id="share-status" aria-live="polite"></span>
+      </div>
+    </div>
+  </section>
+
+  <section id="libros">
+    <div class="wrap">
+      <div class="section-heading">
+        <p class="eyebrow">Novelas</p>
+        <h2>Mis libros</h2>
+        <p>Tres historias independientes, tres formas distintas de perderse entre las páginas.</p>
+      </div>
+
+      <div class="books">
+
+        <article class="book">
+          <a class="cover-link" href="https://amzn.to/4pFfrOK" target="_blank" rel="noopener noreferrer" aria-label="Comprar Contra Tiempo en Amazon">
+            <img src="images/contra-tiempo.jpg" alt="Portada de Contra Tiempo">
+          </a>
+          <h3>Contra Tiempo</h3>
+          <p class="intro">Una novela para entrar sin saber exactamente qué te espera y seguir leyendo para averiguarlo.</p>
+          <a class="amazon-button" href="https://amzn.to/4pFfrOK" target="_blank" rel="noopener noreferrer">Comprar en Amazon →</a>
+        </article>
+
+        <article class="book">
+          <a class="cover-link" href="https://amzn.to/4gOemBG" target="_blank" rel="noopener noreferrer" aria-label="Comprar Doce Nombres en Amazon">
+            <img src="images/doce-nombres.jpg" alt="Portada de Doce Nombres">
+          </a>
+          <h3>Doce Nombres</h3>
+          <p class="intro">Una historia construida alrededor de preguntas, secretos y nombres que quizá no deberían aparecer.</p>
+          <a class="amazon-button" href="https://amzn.to/4gOemBG" target="_blank" rel="noopener noreferrer">Comprar en Amazon →</a>
+        </article>
+
+        <article class="book">
+          <a class="cover-link" href="https://amzn.to/44KKSNO" target="_blank" rel="noopener noreferrer" aria-label="Comprar Entre azules e invencibles en Amazon">
+            <img src="images/entre-azules.jpg" alt="Portada de Entre azules e invencibles">
+          </a>
+          <h3>Entre azules e invencibles</h3>
+          <p class="intro">Una novela independiente, escrita para dejar algo de la historia contigo cuando la última página termina.</p>
+          <a class="amazon-button" href="https://amzn.to/44KKSNO" target="_blank" rel="noopener noreferrer">Comprar en Amazon →</a>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <section id="autor" class="about">
+    <div class="wrap about-grid">
+      <div class="about-title">
+        <p class="eyebrow">El autor</p>
+        <h2>Sobre mí</h2>
+        <p>Nos vemos entre las páginas.</p>
+      </div>
+
+      <div class="about-text">
+        <p>No sabría decirte cuándo empecé a escribir. Lo que sí sé es que desde hace muchos años llevo una libreta y un bolígrafo en el bolsillo. No por nostalgia de la tinta y el papel, sino porque las historias tienen la mala costumbre de aparecer cuando menos las esperas y la memoria no siempre es la mejor confidente.</p>
+
+        <p>Durante mucho tiempo escribí para mí. Pequeños relatos, ideas sueltas, personajes que acababan escondidos entre las páginas de una libreta. Siendo honesto, fueron los ojos más maravillosos del mundo los que vieron varias libretas acumulándose por los cajones y los que me animaron a dedicar tiempo a ordenar esas historias.</p>
+
+        <p>Aunque mi profesión está ligada al mundo científico, la escritura siempre ha ocupado un lugar importante en mi vida. Quizá porque ambas comparten algo esencial: la curiosidad y las ganas de entender lo que hay detrás de cada pregunta.</p>
+
+        <p>Hasta ahora he publicado <em>Entre azules e invencibles</em>, <em>Doce Nombres</em> y <em>Contra Tiempo</em>. Son novelas independientes, distintas entre sí, pero escritas con la misma intención: contar historias capaces de atrapar al lector desde las primeras páginas y acompañarlo hasta mucho después de la última.</p>
+
+        <p>Sobre mis historias, prefiero que hablen quienes las hayan leído. Así me evito el rubor de hablar demasiado sobre mí.</p>
+
+        <p>Gracias por dedicarme tu tiempo.</p>
+
+        <p class="signature">Jesús Illán</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="contacto">
+    <div class="wrap contact-box">
+      <div class="section-heading">
+        <p class="eyebrow">Contacto</p>
+        <h2>Hablemos</h2>
+        <p>Si quieres escribirme, puedes hacerlo desde aquí. Prepararemos el formulario para que el mensaje llegue a mi correo sin publicar mi dirección personal.</p>
+      </div>
+
+      <!-- FORMULARIO: lo activaremos en el siguiente paso con un servicio de formularios.
+           No pongas aquí todavía tu dirección de Gmail. -->
+      <form class="contact-form" onsubmit="return contactNotReady(event)">
+        <input type="text" name="nombre" placeholder="Tu nombre" autocomplete="name" required>
+        <input type="email" name="email" placeholder="Tu email" autocomplete="email" required>
+        <textarea name="mensaje" placeholder="Escribe tu mensaje..." required></textarea>
+        <button class="amazon-button" type="submit">Enviar mensaje →</button>
+        <p class="form-note">El formulario se activará cuando configuremos el sistema de recepción de mensajes.</p>
+      </form>
+    </div>
+  </section>
+
+  <section class="signature-banner">
+    <div class="wrap">
+      <a href="https://amzn.to/4pFfrOK" target="_blank" rel="noopener noreferrer" aria-label="Descubrir Contra Tiempo en Amazon">
+        <img src="banners/banner-firma-gmail.jpg" alt="Jesús Illán — libros y enlaces">
+      </a>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <p>© 2026 Jesús Illán · Todos los derechos reservados</p>
+    <p>
+      <a class="social-link" href="https://www.instagram.com/docenombres/" target="_blank" rel="noopener noreferrer">Instagram</a>
+    </p>
+  </div>
+</footer>
+
+<script>
+  async function sharePage() {
+    const shareData = {
+      title: 'Jesús Illán · Escritor',
+      text: 'Descubre los libros de Jesús Illán.',
+      url: window.location.href
+    };
+
+    const status = document.getElementById('share-status');
+
+    if (navigator.share) {
+      try {
+        await navigator.share(shareData);
+        status.textContent = '';
+      } catch (error) {
+        if (error.name !== 'AbortError') {
+          status.textContent = 'No se ha podido compartir. Puedes copiar el enlace de la página.';
+        }
+      }
+    } else if (navigator.clipboard) {
+      try {
+        await navigator.clipboard.writeText(window.location.href);
+        status.textContent = '✓ Enlace copiado. Ya puedes compartirlo.';
+      } catch (error) {
+        status.textContent = 'Copia el enlace de la barra del navegador para compartirlo.';
+      }
+    } else {
+      status.textContent = 'Copia el enlace de la barra del navegador para compartirlo.';
+    }
+  }
+
+  function contactNotReady(event) {
+    event.preventDefault();
+    alert('El formulario todavía no está conectado. Lo configuraremos en el siguiente paso sin publicar tu dirección de correo.');
+    return false;
+  }
+</script>
+
+</body>
+</html>
