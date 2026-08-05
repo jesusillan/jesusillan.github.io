@@ -392,3 +392,48 @@
     }
 
 }
+/* ==========================================================
+   TOAST
+========================================================== */
+
+#site-toast{
+
+    position:fixed;
+
+    left:50%;
+
+    bottom:30px;
+
+    transform:translateX(-50%) translateY(20px);
+
+    background:rgba(20,20,20,.95);
+
+    color:var(--color-text);
+
+    border:1px solid rgba(199,166,90,.30);
+
+    border-radius:999px;
+
+    padding:14px 22px;
+
+    font-size:.90rem;
+
+    opacity:0;
+
+    pointer-events:none;
+
+    transition:var(--transition);
+
+    z-index:9999;
+
+    backdrop-filter:blur(10px);
+
+}
+
+#site-toast.show{
+
+    opacity:1;
+
+    transform:translateX(-50%) translateY(0);
+
+}
