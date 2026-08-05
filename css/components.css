@@ -1,0 +1,394 @@
+/* ==========================================================
+   JESUSILLAN.COM
+   COMPONENTS.CSS
+   v4.0
+========================================================== */
+
+
+/* ==========================================================
+   BOTONES
+========================================================== */
+
+.btn{
+
+    display:inline-flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    gap:16px;
+
+    padding:16px 34px;
+
+    border-radius:999px;
+
+    text-decoration:none;
+
+    transition:var(--transition);
+
+    cursor:pointer;
+
+    font-family:var(--font-body);
+
+    font-weight:600;
+
+    letter-spacing:.10em;
+
+    text-transform:uppercase;
+
+    font-size:.90rem;
+
+}
+
+
+/* ==========================================================
+   BOTÓN AMAZON
+========================================================== */
+
+.btn-amazon{
+
+    background:rgba(255,255,255,.03);
+
+    border:1px solid rgba(199,166,90,.25);
+
+    color:var(--color-text);
+
+    min-height:76px;
+
+    padding:18px 36px;
+
+}
+
+.btn-amazon:hover{
+
+    transform:translateY(-3px);
+
+    border-color:var(--color-gold);
+
+    box-shadow:var(--shadow-glow);
+
+}
+
+
+.btn-amazon img{
+
+    width:138px;
+
+    height:auto;
+
+    display:block;
+
+}
+
+.btn-amazon span{
+
+    font-size:1rem;
+
+}
+
+
+/* ==========================================================
+   BOTÓN COMPARTIR
+========================================================== */
+
+.btn-share{
+
+    background:transparent;
+
+    border:1px solid rgba(199,166,90,.20);
+
+    color:var(--color-text-soft);
+
+}
+
+.btn-share:hover{
+
+    color:var(--color-gold);
+
+    border-color:var(--color-gold);
+
+}
+
+.btn-share svg{
+
+    width:22px;
+
+    height:22px;
+
+}
+
+
+/* ==========================================================
+   BOTÓN OUTLINE
+========================================================== */
+
+.btn-outline{
+
+    border:1px solid var(--color-gold);
+
+    color:var(--color-gold);
+
+    background:none;
+
+}
+
+.btn-outline:hover{
+
+    background:var(--color-gold);
+
+    color:#111;
+
+}
+
+
+/* ==========================================================
+   TARJETAS
+========================================================== */
+
+.card{
+
+    background:rgba(255,255,255,.02);
+
+    border:1px solid rgba(255,255,255,.05);
+
+    border-radius:var(--radius-l);
+
+    padding:2rem;
+
+    transition:var(--transition);
+
+}
+
+.card:hover{
+
+    transform:translateY(-6px);
+
+    border-color:rgba(199,166,90,.25);
+
+}
+
+
+/* ==========================================================
+   RESEÑAS
+========================================================== */
+
+.review{
+
+    position:relative;
+
+}
+
+.review::before{
+
+    content:"“";
+
+    position:absolute;
+
+    top:-18px;
+
+    left:-6px;
+
+    font-size:5rem;
+
+    color:rgba(199,166,90,.10);
+
+    font-family:var(--font-title);
+
+}
+
+.review-author{
+
+    margin-top:1.5rem;
+
+    color:var(--color-gold);
+
+    font-weight:600;
+
+}
+
+
+/* ==========================================================
+   MOCKUPS
+========================================================== */
+
+.book-mockup{
+
+    position:relative;
+
+    transition:var(--transition);
+
+    filter:drop-shadow(0 30px 60px rgba(0,0,0,.55));
+
+}
+
+.book-mockup:hover{
+
+    transform:translateY(-8px) scale(1.02);
+
+}
+
+
+/* ==========================================================
+   HALO
+========================================================== */
+
+.book-glow{
+
+    position:absolute;
+
+    inset:50% auto auto 50%;
+
+    width:460px;
+
+    height:460px;
+
+    transform:translate(-50%,-50%);
+
+    border-radius:50%;
+
+    background:radial-gradient(circle,
+            rgba(199,166,90,.16),
+            transparent 72%);
+
+    filter:blur(18px);
+
+    pointer-events:none;
+
+}
+
+
+/* ==========================================================
+   CTA
+========================================================== */
+
+.cta{
+
+    text-align:center;
+
+    padding:4rem 0;
+
+}
+
+.cta h2{
+
+    margin-bottom:1.5rem;
+
+}
+
+.cta-buttons{
+
+    display:flex;
+
+    justify-content:center;
+
+    gap:20px;
+
+    flex-wrap:wrap;
+
+}
+
+
+/* ==========================================================
+   SEPARADOR DECORATIVO
+========================================================== */
+
+.decorative-line{
+
+    width:160px;
+
+    height:1px;
+
+    background:linear-gradient(
+        90deg,
+        transparent,
+        var(--color-gold),
+        transparent
+    );
+
+    margin:2rem auto;
+
+}
+
+
+/* ==========================================================
+   BADGES
+========================================================== */
+
+.badge{
+
+    display:inline-block;
+
+    padding:.45rem 1rem;
+
+    border-radius:999px;
+
+    background:rgba(199,166,90,.10);
+
+    color:var(--color-gold);
+
+    font-size:.80rem;
+
+    letter-spacing:.10em;
+
+    text-transform:uppercase;
+
+}
+
+
+/* ==========================================================
+   EFECTOS
+========================================================== */
+
+.fade-up{
+
+    opacity:0;
+
+    transform:translateY(40px);
+
+    transition:.8s ease;
+
+}
+
+.fade-up.visible{
+
+    opacity:1;
+
+    transform:none;
+
+}
+
+
+/* ==========================================================
+   RESPONSIVE
+========================================================== */
+
+@media(max-width:768px){
+
+    .btn{
+
+        width:100%;
+
+    }
+
+    .btn-amazon{
+
+        min-height:68px;
+
+        justify-content:center;
+
+    }
+
+    .btn-amazon img{
+
+        width:110px;
+
+    }
+
+    .cta-buttons{
+
+        flex-direction:column;
+
+    }
+
+}
