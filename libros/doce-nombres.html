@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Doce Nombres | Novela histórica de Jesús Illán</title>
+<meta name="description" content="Doce Nombres, novela de Jesús Illán ambientada en la Alemania de la República de Weimar y el ascenso del Tercer Reich. Una historia de supervivencia, familia, poder, dolor y venganza.">
+<meta name="author" content="Jesús Illán">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<link rel="canonical" href="https://jesusillan.github.io/libros/doce-nombres.html">
+
+<meta property="og:type" content="book">
+<meta property="og:title" content="Doce Nombres | Jesús Illán">
+<meta property="og:description" content="Estos son tus doce nombres. Cuídalos como tuyos.">
+<meta property="og:url" content="https://jesusillan.github.io/libros/doce-nombres.html">
+<meta property="og:image" content="https://jesusillan.github.io/images/doce-nombres.jpg">
+<meta property="og:locale" content="es_ES">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Doce Nombres | Jesús Illán">
+<meta name="twitter:description" content="Una historia de supervivencia, familia, poder, dolor y venganza.">
+<meta name="twitter:image" content="https://jesusillan.github.io/images/doce-nombres.jpg">
+
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"Book",
+  "name":"Doce Nombres",
+  "author":{"@type":"Person","name":"Jesús Illán"},
+  "inLanguage":"es",
+  "isbn":"979-8462850998",
+  "datePublished":"2021-09-10",
+  "numberOfPages":329,
+  "genre":["Novela histórica","Ficción histórica"],
+  "description":"Doce nombres cuenta la historia de Kileck, un niño obligado a crecer en la Alemania durante la República de Weimar y el asentamiento del Tercer Reich.",
+  "image":"https://jesusillan.github.io/images/doce-nombres.jpg",
+  "url":"https://jesusillan.github.io/libros/doce-nombres.html",
+  "publisher":{"@type":"Organization","name":"Independently published"}
+}
+</script>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Montserrat:wght@400;500;600;700&display=swap');
+
+:root{
+  --bg:#090909;
+  --bg2:#0d0c0b;
+  --text:#eeeae2;
+  --muted:#aaa49b;
+  --gold:#c7a65a;
+  --gold2:#9e7e3c;
+  --line:rgba(199,166,90,.28);
+  --sepia:rgba(104,76,39,.18);
+}
+
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;
+  background:
+    radial-gradient(circle at 18% 35%, var(--sepia), transparent 32%),
+    radial-gradient(circle at 80% 75%, rgba(80,65,40,.08), transparent 28%),
+    var(--bg);
+  color:var(--text);
+  font-family:Montserrat,Arial,sans-serif;
+  line-height:1.7;
+}
+a{color:inherit;text-decoration:none}
+img{max-width:100%;display:block}
+
+header{
+  height:68px;
+  border-bottom:1px solid rgba(255,255,255,.08);
+  display:flex;
+  align-items:center;
+}
+.nav{
+  width:min(1350px,92%);
+  margin:auto;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+}
+.logo{width:45px;height:45px;object-fit:contain}
+nav{display:flex;gap:34px;align-items:center}
+nav a{
+  font-size:12px;
+  letter-spacing:1.5px;
+  color:#b8b3ab;
+  transition:.25s;
+}
+nav a:hover{color:var(--gold)}
+.menu{
+  font-size:25px;
+  color:var(--gold);
+  margin-left:5px;
+}
+
+.hero{
+  width:min(1290px,92%);
+  min-height:650px;
+  margin:auto;
+  display:grid;
+  grid-template-columns:46% 54%;
+  align-items:center;
+  gap:2%;
+  padding:65px 0 75px;
+}
+.cover-wrap{
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  position:relative;
+}
+.cover-wrap:before{
+  content:"";
+  position:absolute;
+  width:72%;
+  height:70%;
+  background:radial-gradient(ellipse,rgba(164,126,58,.25),transparent 68%);
+  filter:blur(24px);
+}
+.cover{
+  position:relative;
+  width:min(410px,90%);
+  border-radius:2px;
+  box-shadow:18px 24px 45px rgba(0,0,0,.65),0 0 55px rgba(133,98,43,.12);
+  transition:transform .5s ease;
+}
+.cover:hover{transform:translateY(-5px)}
+
+.eyebrow{
+  color:var(--gold);
+  font-size:11px;
+  letter-spacing:3px;
+  text-transform:uppercase;
+  margin-bottom:12px;
+}
+h1{
+  font-family:"Cormorant Garamond",Georgia,serif;
+  font-size:clamp(64px,6vw,94px);
+  line-height:.9;
+  font-weight:500;
+  margin:0 0 28px;
+}
+.tagline{
+  font-size:18px;
+  color:#c6c1b9;
+  max-width:650px;
+  margin-bottom:30px;
+}
+.description{
+  color:#aaa59e;
+  font-size:15px;
+  max-width:650px;
+  line-height:1.9;
+}
+
+.actions{
+  display:flex;
+  align-items:center;
+  gap:30px;
+  margin-top:34px;
+}
+.buy{
+  display:flex;
+  align-items:center;
+  gap:22px;
+  min-height:72px;
+  padding:10px 28px;
+  border:1px solid var(--gold2);
+  border-radius:15px;
+  background:rgba(20,17,12,.65);
+  box-shadow:0 8px 30px rgba(0,0,0,.22);
+  transition:.25s;
+}
+.buy:hover{
+  background:rgba(49,39,22,.55);
+  border-color:var(--gold);
+  transform:translateY(-2px);
+}
+.amazon-logo{
+  width:82px;
+  height:auto;
+  object-fit:contain;
+}
+.buy-text{
+  color:#d8c18a;
+  font-size:13px;
+  font-weight:700;
+  letter-spacing:1.4px;
+  white-space:nowrap;
+}
+.share{
+  display:flex;
+  align-items:center;
+  gap:12px;
+  color:#aaa49b;
+  font-size:12px;
+  letter-spacing:1.5px;
+  text-transform:uppercase;
+  padding-bottom:8px;
+  border-bottom:1px solid rgba(199,166,90,.35);
+}
+.share svg{width:22px;height:22px;stroke:var(--gold);fill:none;stroke-width:1.8}
+
+.section{
+  width:min(1160px,88%);
+  margin:auto;
+  padding:80px 0;
+  border-top:1px solid var(--line);
+}
+.section-title{
+  display:flex;
+  align-items:center;
+  gap:20px;
+  justify-content:center;
+  margin-bottom:55px;
+}
+.section-title:before,.section-title:after{
+  content:"";
+  height:1px;
+  background:var(--line);
+  flex:1;
+}
+h2{
+  font-family:"Cormorant Garamond",Georgia,serif;
+  font-size:34px;
+  font-weight:500;
+  letter-spacing:3px;
+  text-transform:uppercase;
+  color:#d8c9a7;
+  white-space:nowrap;
+}
+.story{
+  max-width:850px;
+  margin:auto;
+  text-align:center;
+  color:#b4aea5;
+  font-size:16px;
+  line-height:2;
+}
+.story strong{color:#ddd5c8;font-weight:500}
+
+.details{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:1px;
+  background:var(--line);
+}
+.detail{
+  background:#0b0b0a;
+  padding:28px 20px;
+  text-align:center;
+}
+.detail span{
+  display:block;
+  color:#77736d;
+  font-size:10px;
+  letter-spacing:2px;
+  text-transform:uppercase;
+  margin-bottom:8px;
+}
+.detail b{font-size:14px;font-weight:500;color:#d7d0c5}
+
+.reviews{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:22px;
+}
+.review{
+  border:1px solid rgba(199,166,90,.2);
+  background:linear-gradient(145deg,rgba(54,43,28,.18),rgba(255,255,255,.015));
+  padding:30px;
+}
+.stars{color:#d5ad57;letter-spacing:3px;margin-bottom:12px}
+.review p{
+  font-family:"Cormorant Garamond",Georgia,serif;
+  font-size:21px;
+  line-height:1.55;
+  color:#d8d1c6;
+  margin:0 0 20px;
+}
+.review cite{font-style:normal;font-size:11px;letter-spacing:1.2px;color:#8f8980;text-transform:uppercase}
+
+.fragment{display:none}
+.final-cta{text-align:center;padding-bottom:110px}
+.final-cta p{color:#9f9a92;margin:0 0 25px}
+.final-cta .actions{justify-content:center}
+
+footer{
+  border-top:1px solid rgba(255,255,255,.08);
+  padding:35px 4%;
+  color:#77736d;
+  font-size:10px;
+  letter-spacing:1.3px;
+  display:flex;
+  justify-content:space-between;
+}
+footer a:hover{color:var(--gold)}
+
+@media(max-width:850px){
+  nav{gap:15px}
+  nav a{font-size:10px}
+  .hero{
+    grid-template-columns:1fr;
+    padding-top:45px;
+    text-align:center;
+  }
+  .cover{width:min(390px,82%)}
+  .hero-copy{display:flex;flex-direction:column;align-items:center}
+  .description,.tagline{max-width:620px}
+  .actions{flex-wrap:wrap;justify-content:center}
+  .details{grid-template-columns:repeat(2,1fr)}
+}
+@media(max-width:560px){
+  header{height:62px}
+  .logo{width:39px;height:39px}
+  nav a:nth-child(3),nav a:nth-child(4){display:none}
+  h1{font-size:58px}
+  .tagline{font-size:16px}
+  .description{font-size:14px}
+  .buy{min-height:64px;padding:8px 18px;gap:15px}
+  .amazon-logo{width:70px}
+  .buy-text{font-size:11px}
+  .share{font-size:10px}
+  .reviews{grid-template-columns:1fr}
+  .section{padding:65px 0}
+  h2{font-size:28px}
+  .details{grid-template-columns:1fr 1fr}
+  footer{flex-direction:column;gap:12px}
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <div class="nav">
+    <a href="../index.html" aria-label="Jesús Illán - Inicio">
+      <img class="logo" src="../images/logo-header-v3.png" alt="Jesús Illán">
+    </a>
+    <nav aria-label="Navegación principal">
+      <a href="../index.html">INICIO</a>
+      <a href="../index.html#libros">MIS LIBROS</a>
+      <a href="../sobre-mi.html">SOBRE MÍ</a>
+      <a href="../contacto.html">CONTACTO</a>
+      <span class="menu" aria-hidden="true">☰</span>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+<section class="hero">
+  <div class="cover-wrap">
+    <a href="https://link.amazon/B0579UTMZ" target="_blank" rel="sponsored noopener">
+      <img class="cover"
+           src="../images/mockup-v3-doce-nombres.png"
+           alt="Doce Nombres, novela histórica de Jesús Illán — portada y mockup">
+    </a>
+  </div>
+
+  <div class="hero-copy">
+    <div class="eyebrow">Jesús Illán</div>
+    <h1>Doce Nombres</h1>
+
+    <p class="tagline">Estos son tus doce nombres. Cuídalos como tuyos.</p>
+
+    <p class="description">
+      Doce Nombres cuenta la historia de Kileck. Un niño obligado a crecer en la Alemania
+      durante la República de Weimar y el asentamiento del Tercer Reich. Sus hazañas para
+      sobrevivir en ese mundo darán lugar a una búsqueda personal y familiar hasta convertirse
+      en un hombre rodeado de mentiras, miserias y dolor.
+    </p>
+
+    <div class="actions">
+      <a class="buy" href="https://link.amazon/B0579UTMZ" target="_blank" rel="sponsored noopener" aria-label="Comprar Doce Nombres en Amazon">
+        <img class="amazon-logo" src="../images/logo-amazon.png" alt="Disponible en Amazon">
+        <span class="buy-text">COMPRA AQUÍ&nbsp; →</span>
+      </a>
+
+      <a class="share" href="#" onclick="shareBook(event)" aria-label="Compartir Doce Nombres">
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <circle cx="18" cy="5" r="2.2"></circle>
+          <circle cx="6" cy="12" r="2.2"></circle>
+          <circle cx="18" cy="19" r="2.2"></circle>
+          <path d="M8 11l7.8-4.4M8 13l7.8 4.4"></path>
+        </svg>
+        <span>COMPARTIR</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="section-title"><h2>La historia</h2></div>
+  <div class="story">
+    <p>
+      <strong>Doce Nombres</strong> es una historia de supervivencia y búsqueda personal
+      ambientada en uno de los periodos más convulsos de la Europa del siglo XX.
+    </p>
+    <p>
+      Amor, familias, ambición, poder y adicción se unirán para terminar la venganza
+      que un día comenzó en el pequeño pueblo de Essen.
+    </p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="section-title"><h2>El libro</h2></div>
+  <div class="details">
+    <div class="detail"><span>Autor</span><b>Jesús Illán</b></div>
+    <div class="detail"><span>Publicación</span><b>10 septiembre 2021</b></div>
+    <div class="detail"><span>Páginas</span><b>329</b></div>
+    <div class="detail"><span>Idioma</span><b>Español</b></div>
+    <div class="detail"><span>ISBN-13</span><b>979-8462850998</b></div>
+    <div class="detail"><span>ASIN</span><b>B09FS589KW</b></div>
+    <div class="detail"><span>Editorial</span><b>Independently published</b></div>
+    <div class="detail"><span>Formato</span><b>Tapa blanda · Kindle</b></div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="section-title"><h2>Reseñas</h2></div>
+  <div class="reviews">
+
+    <article class="review">
+      <div class="stars" aria-label="5 de 5 estrellas">★★★★★</div>
+      <p>«Al principio cuando llegó a mis manos el libro pensé que no era para mí. Historia, política, pero empecé a leer y a engancharme en la historia del personaje y me lo he leído muy rápido. La historia de Minka merece un libro aparte. Lo recomiendo 100%.»</p>
+      <cite>Angel · Amazon · Compra verificada</cite>
+    </article>
+
+    <article class="review">
+      <div class="stars" aria-label="5 de 5 estrellas">★★★★★</div>
+      <p>«Este libro te traslada a un escenario novedoso de la época previa a la Segunda Guerra Mundial de la mano de sus personajes principales en los que te acabarás transformando... Muy recomendable.»</p>
+      <cite>Blanca · Amazon</cite>
+    </article>
+
+    <article class="review">
+      <div class="stars" aria-label="5 de 5 estrellas">★★★★★</div>
+      <p>«Lo primero es felicitarte por el libro. Crear una trama y desarrollarla es complicado. Tú lo has hecho muy bien..., mantiene la atención y el lector se engancha fácilmente. Al menos es lo que me ha pasado a mí... O sea, que la trama y su desarrollo me han gustado.»</p>
+      <cite>Manuel Casal · Catedrático de filosofía</cite>
+    </article>
+
+  </div>
+</section>
+
+<!-- BLOQUE PREPARADO PARA EL CAPÍTULO 1. Se activará cuando estén disponibles los archivos. -->
+<section class="section fragment" id="fragmento">
+  <div class="section-title"><h2>Lee las primeras páginas</h2></div>
+  <div class="story">
+    <p>Descubre las primeras páginas de <strong>Doce Nombres</strong>.</p>
+    <a class="buy" href="../images/doce-nombres-capitulo-1.pdf" target="_blank">
+      <span class="buy-text">LEER EL CAPÍTULO 1 →</span>
+    </a>
+  </div>
+</section>
+
+<section class="section final-cta">
+  <div class="section-title"><h2>Doce Nombres</h2></div>
+  <p>Una historia de supervivencia, familia, poder y venganza.</p>
+  <div class="actions">
+    <a class="buy" href="https://link.amazon/B0579UTMZ" target="_blank" rel="sponsored noopener" aria-label="Comprar Doce Nombres en Amazon">
+      <img class="amazon-logo" src="../images/logo-amazon.png" alt="Disponible en Amazon">
+      <span class="buy-text">COMPRA AQUÍ&nbsp; →</span>
+    </a>
+    <a class="share" href="#" onclick="shareBook(event)" aria-label="Compartir Doce Nombres">
+      <svg viewBox="0 0 24 24" aria-hidden="true">
+        <circle cx="18" cy="5" r="2.2"></circle>
+        <circle cx="6" cy="12" r="2.2"></circle>
+        <circle cx="18" cy="19" r="2.2"></circle>
+        <path d="M8 11l7.8-4.4M8 13l7.8 4.4"></path>
+      </svg>
+      <span>COMPARTIR</span>
+    </a>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <span>© Jesús Illán</span>
+  <span>
+    <a href="../index.html">INICIO</a> ·
+    <a href="../index.html#libros">MIS LIBROS</a> ·
+    <a href="../sobre-mi.html">SOBRE MÍ</a> ·
+    <a href="../contacto.html">CONTACTO</a>
+  </span>
+</footer>
+
+<script>
+function shareBook(event){
+  event.preventDefault();
+  const data={
+    title:"Doce Nombres — Jesús Illán",
+    text:"Doce Nombres, novela de Jesús Illán",
+    url:window.location.href
+  };
+  if(navigator.share){
+    navigator.share(data).catch(()=>{});
+  }else{
+    navigator.clipboard?.writeText(window.location.href);
+    alert("Enlace copiado al portapapeles.");
+  }
+}
+</script>
+
+</body>
+</html>
