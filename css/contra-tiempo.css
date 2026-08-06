@@ -2,23 +2,24 @@
    JESUSILLAN.COM
    CONTRA-TIEMPO.CSS
    v3.0
-   Estilos exclusivos de la novela Contra Tiempo
-========================================================== */
-
+   ========================================================== */
 
 
 /* ==========================================================
-   IDENTIDAD VISUAL
+   VARIABLES
 ========================================================== */
 
 :root{
 
     --contra-primary:#c7a65a;
-    --contra-secondary:#f0d28c;
-    --contra-glow:rgba(199,166,90,.42);
+    --contra-secondary:#efd18d;
+    --contra-bg:#090909;
+    --contra-panel:#111111;
+    --contra-border:rgba(199,166,90,.22);
+    --contra-text:rgba(255,255,255,.82);
+    --contra-soft:rgba(255,255,255,.62);
 
 }
-
 
 
 /* ==========================================================
@@ -28,60 +29,25 @@
 .book-page{
 
     position:relative;
+
     overflow-x:hidden;
 
     background:
 
         radial-gradient(
             circle at top,
-            rgba(199,166,90,.08),
+            rgba(199,166,90,.05),
             transparent 40%
         ),
 
         linear-gradient(
             180deg,
-            #070707 0%,
-            #0d0d0e 42%,
+            #080808 0%,
+            #0c0c0c 45%,
             #090909 100%
         );
 
 }
-
-
-
-.book-page::before{
-
-    content:"";
-
-    position:fixed;
-    inset:0;
-
-    pointer-events:none;
-
-    background:
-
-        radial-gradient(
-            circle at 12% 22%,
-            rgba(199,166,90,.03),
-            transparent 28%
-        ),
-
-        radial-gradient(
-            circle at 85% 15%,
-            rgba(199,166,90,.025),
-            transparent 24%
-        ),
-
-        radial-gradient(
-            circle at 72% 82%,
-            rgba(199,166,90,.03),
-            transparent 28%
-        );
-
-    z-index:-2;
-
-}
-
 
 
 /* ==========================================================
@@ -93,36 +59,86 @@
     position:relative;
 
     display:flex;
+
     align-items:center;
 
     min-height:100vh;
 
+    padding-top:70px;
+
+    padding-bottom:70px;
+
     overflow:hidden;
 
-    padding:70px 0 70px;
-
 }
-
-
-
-.hero-grid{
-
-    display:grid;
-
-    grid-template-columns:52% 48%;
-
-    gap:40px;
-
-    align-items:center;
-
-    width:100%;
-
-}
-
 
 
 /* ==========================================================
-   LIBRO
+   HALO GENERAL
+========================================================== */
+
+.hero.hero-book::after{
+
+    content:"";
+
+    position:absolute;
+
+    right:-260px;
+
+    top:50%;
+
+    width:900px;
+
+    height:900px;
+
+    transform:translateY(-50%);
+
+    border-radius:50%;
+
+    background:
+
+        radial-gradient(
+
+            circle,
+
+            rgba(199,166,90,.06),
+
+            rgba(199,166,90,.025),
+
+            transparent 72%
+
+        );
+
+    filter:blur(65px);
+
+    pointer-events:none;
+
+}
+
+
+/* ==========================================================
+   GRID
+========================================================== */
+
+.hero-grid{
+
+    position:relative;
+
+    z-index:5;
+
+    display:grid;
+
+    grid-template-columns:48% 52%;
+
+    align-items:center;
+
+    gap:60px;
+
+}
+
+
+/* ==========================================================
+   COLUMNA LIBRO
 ========================================================== */
 
 .hero-book-image{
@@ -135,14 +151,15 @@
 
     align-items:center;
 
-    min-height:720px;
+    min-height:620px;
 
     isolation:isolate;
 
 }
+
+
 /* ==========================================================
-   HERO
-   FONDO DEL RELOJ
+   RELOJ
 ========================================================== */
 
 .hero-book-image::before{
@@ -152,30 +169,32 @@
     position:absolute;
 
     left:50%;
+
     top:50%;
 
     width:760px;
+
     height:760px;
 
     transform:translate(-50%,-50%);
 
-    background:url("../images/clock-bg-contra-tiempo.png")
-        center center / contain no-repeat;
+    background:
 
-    opacity:.10;
+        url("../images/clock-bg-contra-tiempo.png")
+        center
+        center
+        / contain
+        no-repeat;
 
-    filter:blur(.4px);
-
-    pointer-events:none;
+    opacity:.09;
 
     z-index:0;
 
 }
 
 
-
 /* ==========================================================
-   HALO PRINCIPAL
+   HALO DORADO
 ========================================================== */
 
 .hero-book-image::after{
@@ -185,39 +204,38 @@
     position:absolute;
 
     left:50%;
+
     top:50%;
 
-    width:620px;
-    height:620px;
+    width:560px;
+
+    height:560px;
 
     transform:translate(-50%,-50%);
 
     border-radius:50%;
 
-    background:radial-gradient(
+    background:
 
-        circle,
+        radial-gradient(
 
-        rgba(199,166,90,.22) 0%,
+            circle,
 
-        rgba(199,166,90,.10) 34%,
+            rgba(199,166,90,.18),
 
-        rgba(199,166,90,.04) 55%,
+            rgba(199,166,90,.06),
 
-        transparent 74%
+            transparent 70%
 
-    );
+        );
 
-    filter:blur(55px);
+    filter:blur(60px);
 
     z-index:1;
 
 }
-
-
-
 /* ==========================================================
-   GLOW ADICIONAL
+   MOCKUP
 ========================================================== */
 
 .book-glow{
@@ -225,12 +243,14 @@
     position:absolute;
 
     left:50%;
+
     top:50%;
 
-    transform:translate(-50%,-50%);
+    width:430px;
 
-    width:500px;
-    height:500px;
+    height:430px;
+
+    transform:translate(-50%,-50%);
 
     border-radius:50%;
 
@@ -244,17 +264,12 @@
 
     );
 
-    filter:blur(42px);
+    filter:blur(40px);
 
     z-index:2;
 
 }
 
-
-
-/* ==========================================================
-   MOCKUP
-========================================================== */
 
 .book-mockup{
 
@@ -262,97 +277,35 @@
 
     z-index:3;
 
-    width:min(560px,100%);
+    width:min(500px,92%);
+
+    height:auto;
 
     filter:
 
-        drop-shadow(0 28px 60px rgba(0,0,0,.55))
-
-        drop-shadow(0 0 35px rgba(199,166,90,.18));
-
-    animation:heroFloat 8s ease-in-out infinite;
+        drop-shadow(0 40px 55px rgba(0,0,0,.55));
 
     transition:
 
-        transform .45s ease,
+        transform .6s ease,
 
-        filter .45s ease;
+        filter .6s ease;
 
 }
-
 
 
 .book-mockup:hover{
 
     transform:
 
-        translateY(-10px)
+        translateY(-8px)
 
-        scale(1.02);
-
-}
-
-
-
-/* ==========================================================
-   SOMBRA DEL LIBRO
-========================================================== */
-
-.hero-book-image .shadow{
-
-    position:absolute;
-
-    bottom:70px;
-
-    width:330px;
-
-    height:44px;
-
-    border-radius:50%;
-
-    background:rgba(0,0,0,.45);
-
-    filter:blur(28px);
-
-    z-index:0;
+        scale(1.015);
 
 }
 
 
-
 /* ==========================================================
-   ANIMACIÓN
-========================================================== */
-
-@keyframes heroFloat{
-
-    0%{
-
-        transform:
-            translateY(0)
-            rotate(-1deg);
-
-    }
-
-    50%{
-
-        transform:
-            translateY(-12px)
-            rotate(1deg);
-
-    }
-
-    100%{
-
-        transform:
-            translateY(0)
-            rotate(-1deg);
-
-    }
-
-}
-/* ==========================================================
-   HERO
    CONTENIDO
 ========================================================== */
 
@@ -362,10 +315,9 @@
 
     z-index:10;
 
-    max-width:590px;
+    max-width:620px;
 
 }
-
 
 
 /* ==========================================================
@@ -374,38 +326,36 @@
 
 .book-category{
 
-    display:inline-flex;
+    display:flex;
 
     align-items:center;
 
-    gap:14px;
+    gap:18px;
 
-    margin-bottom:26px;
+    margin-bottom:28px;
 
     color:var(--contra-primary);
 
     font-size:.82rem;
 
-    font-weight:600;
-
-    letter-spacing:.30em;
-
     text-transform:uppercase;
 
+    letter-spacing:.28em;
+
 }
+
 
 .book-category::before{
 
     content:"";
 
-    width:48px;
+    width:60px;
 
     height:1px;
 
     background:rgba(199,166,90,.55);
 
 }
-
 
 
 /* ==========================================================
@@ -418,13 +368,11 @@
 
     font-family:var(--font-title);
 
-    font-size:clamp(4.8rem,8vw,7rem);
+    font-size:clamp(4rem,6vw,6.2rem);
 
-    font-weight:700;
+    line-height:.95;
 
-    line-height:.86;
-
-    letter-spacing:-.06em;
+    letter-spacing:-.05em;
 
     color:#fff;
 
@@ -432,10 +380,9 @@
 
     text-shadow:
 
-        0 10px 28px rgba(0,0,0,.45);
+        0 12px 24px rgba(0,0,0,.45);
 
 }
-
 
 
 /* ==========================================================
@@ -458,12 +405,11 @@
 
         var(--contra-primary),
 
-        rgba(199,166,90,.10)
+        transparent
 
     );
 
 }
-
 
 
 /* ==========================================================
@@ -482,10 +428,7 @@
 
     color:#fff;
 
-    max-width:520px;
-
 }
-
 
 
 /* ==========================================================
@@ -496,20 +439,17 @@
 
     margin-top:34px;
 
-    max-width:540px;
+    max-width:560px;
 
-    color:rgba(255,255,255,.78);
+    color:var(--contra-text);
 
-    font-size:1.05rem;
+    font-size:1.08rem;
 
-    line-height:1.95;
+    line-height:2;
 
 }
-
-
-
 /* ==========================================================
-   BOTONERA
+   BOTONES HERO
 ========================================================== */
 
 .hero-buttons{
@@ -525,12 +465,32 @@
     flex-wrap:wrap;
 
 }
+
+
+
 /* ==========================================================
-   HERO
-   BOTÓN AMAZON
+   AMAZON
 ========================================================== */
 
 .hero-buttons .btn-amazon{
+
+    min-width:295px;
+
+    height:68px;
+
+    padding:0 28px;
+
+    border-radius:16px;
+
+    background:
+
+        linear-gradient(
+            180deg,
+            rgba(255,255,255,.07),
+            rgba(255,255,255,.025)
+        );
+
+    border:1px solid rgba(199,166,90,.28);
 
     display:flex;
 
@@ -538,28 +498,11 @@
 
     justify-content:space-between;
 
-    gap:22px;
-
-    min-width:320px;
-
-    height:70px;
-
-    padding:0 28px;
-
-    border-radius:18px;
-
-    background:linear-gradient(
-        180deg,
-        rgba(255,255,255,.08),
-        rgba(255,255,255,.03)
-    );
-
-    border:1px solid rgba(199,166,90,.28);
+    gap:18px;
 
     box-shadow:
-        0 12px 32px rgba(0,0,0,.35);
 
-    transition:all .35s ease;
+        0 14px 34px rgba(0,0,0,.35);
 
 }
 
@@ -571,49 +514,29 @@
 
     border-color:var(--contra-primary);
 
-    box-shadow:
-
-        0 18px 40px rgba(0,0,0,.45),
-
-        0 0 30px rgba(199,166,90,.18);
-
 }
 
 
-
-/* ==========================================================
-   LOGO AMAZON
-========================================================== */
 
 .hero-buttons .btn-amazon img{
 
-    width:120px;
+    width:108px;
 
     height:auto;
-
-    flex-shrink:0;
 
 }
 
 
-
-/* ==========================================================
-   TEXTO AMAZON
-========================================================== */
 
 .hero-buttons .btn-amazon span{
 
     position:relative;
 
-    padding-left:22px;
+    padding-left:20px;
 
-    font-size:.84rem;
-
-    font-weight:600;
+    font-size:.82rem;
 
     letter-spacing:.18em;
-
-    color:#fff;
 
 }
 
@@ -631,43 +554,39 @@
 
     width:1px;
 
-    height:24px;
+    height:22px;
 
     transform:translateY(-50%);
 
-    background:rgba(199,166,90,.35);
+    background:rgba(199,166,90,.30);
 
 }
 
 
 
 /* ==========================================================
-   BOTÓN COMPARTIR
+   COMPARTIR
 ========================================================== */
 
 .hero-buttons .btn-share{
+
+    height:68px;
+
+    padding:0 24px;
+
+    border-radius:16px;
 
     display:flex;
 
     align-items:center;
 
-    justify-content:center;
-
     gap:12px;
-
-    height:70px;
-
-    padding:0 24px;
-
-    border-radius:18px;
 
     background:rgba(255,255,255,.02);
 
     border:1px solid rgba(255,255,255,.10);
 
-    color:rgba(255,255,255,.75);
-
-    transition:all .3s ease;
+    color:rgba(255,255,255,.72);
 
 }
 
@@ -681,33 +600,30 @@
 
     background:rgba(255,255,255,.04);
 
-    transform:translateY(-3px);
-
 }
 
 
 
 .hero-buttons .btn-share svg{
 
-    width:20px;
+    width:19px;
 
-    height:20px;
+    height:19px;
 
 }
 /* ==========================================================
-   HERO
-   ANIMACIONES DE ENTRADA
+   ANIMACIONES
 ========================================================== */
 
 .hero-content{
 
-    animation:heroFade .9s ease forwards;
+    animation:heroFade .8s ease forwards;
 
 }
 
 .hero-book-image{
 
-    animation:heroBook 1.1s ease forwards;
+    animation:heroBook 1s ease forwards;
 
 }
 
@@ -716,7 +632,7 @@
     from{
 
         opacity:0;
-        transform:translateY(30px);
+        transform:translateY(28px);
 
     }
 
@@ -734,7 +650,7 @@
     from{
 
         opacity:0;
-        transform:translateY(40px) scale(.97);
+        transform:translateY(40px) scale(.96);
 
     }
 
@@ -750,33 +666,26 @@
 
 
 /* ==========================================================
-   HERO RESPONSIVE
+   RESPONSIVE
 ========================================================== */
 
 @media (max-width:1200px){
 
     .hero-grid{
 
-        gap:55px;
+        gap:45px;
+
+    }
+
+    .book-mockup{
+
+        width:min(450px,90%);
 
     }
 
     .hero-content h1{
 
-        font-size:5.2rem;
-
-    }
-
-    .hero-book-image{
-
-        min-height:620px;
-
-    }
-
-    .hero-book-image::before{
-
-        width:620px;
-        height:620px;
+        font-size:5rem;
 
     }
 
@@ -790,7 +699,7 @@
 
         min-height:auto;
 
-        padding:70px 0 80px;
+        padding:40px 0 70px;
 
     }
 
@@ -798,17 +707,17 @@
 
         grid-template-columns:1fr;
 
-        gap:50px;
-
         text-align:center;
+
+        gap:50px;
 
     }
 
     .hero-book-image{
 
-        order:1;
+        min-height:480px;
 
-        min-height:500px;
+        order:1;
 
     }
 
@@ -817,8 +726,6 @@
         order:2;
 
         margin:auto;
-
-        max-width:720px;
 
     }
 
@@ -862,13 +769,13 @@
 
     .hero.hero-book{
 
-        padding:50px 0 70px;
+        padding:30px 0 60px;
 
     }
 
     .hero-content h1{
 
-        font-size:3.6rem;
+        font-size:3.5rem;
 
     }
 
@@ -888,14 +795,15 @@
 
     .hero-book-image{
 
-        min-height:380px;
+        min-height:360px;
 
     }
 
     .hero-book-image::before{
 
-        width:420px;
-        height:420px;
+        width:430px;
+
+        height:430px;
 
         opacity:.05;
 
@@ -906,8 +814,6 @@
         flex-direction:column;
 
         align-items:stretch;
-
-        gap:16px;
 
     }
 
@@ -929,13 +835,13 @@
 
     .hero-content h1{
 
-        font-size:3rem;
+        font-size:2.8rem;
 
     }
 
     .hero-claim{
 
-        font-size:1.2rem;
+        font-size:1.15rem;
 
     }
 
@@ -947,23 +853,789 @@
 
     .hero-buttons .btn-amazon{
 
-        height:64px;
-
-        padding:0 20px;
+        height:62px;
 
     }
 
     .hero-buttons .btn-amazon img{
 
-        width:100px;
+        width:96px;
 
     }
 
-    .hero-buttons .btn-amazon span{
+}
+/* ==========================================================
+   SINOPSIS
+========================================================== */
 
-        font-size:.78rem;
+.synopsis{
 
-        padding-left:16px;
+    position:relative;
+
+}
+
+
+.synopsis-grid{
+
+    display:grid;
+
+    grid-template-columns:1.45fr .85fr;
+
+    gap:90px;
+
+    align-items:start;
+
+    margin-top:2rem;
+
+}
+
+
+
+/* ==========================================================
+   TEXTO
+========================================================== */
+
+.synopsis-content{
+
+    max-width:760px;
+
+}
+
+
+.synopsis-content p{
+
+    margin:0 0 2rem;
+
+    color:var(--contra-text);
+
+    font-size:1.08rem;
+
+    line-height:2;
+
+}
+
+
+.synopsis-content p:first-of-type{
+
+    font-size:1.18rem;
+
+    color:#ffffff;
+
+}
+
+
+
+/* ==========================================================
+   FRASE DESTACADA
+========================================================== */
+
+.highlight-text{
+
+    position:relative;
+
+    margin-top:3rem;
+
+    padding-left:28px;
+
+    font-family:var(--font-title);
+
+    font-size:1.45rem;
+
+    line-height:1.6;
+
+    color:var(--contra-primary);
+
+}
+
+
+.highlight-text::before{
+
+    content:"";
+
+    position:absolute;
+
+    left:0;
+
+    top:6px;
+
+    bottom:6px;
+
+    width:3px;
+
+    border-radius:2px;
+
+    background:var(--contra-primary);
+
+}
+
+
+
+/* ==========================================================
+   FICHA DEL LIBRO
+========================================================== */
+
+.book-data{
+
+    border-radius:22px;
+
+    overflow:hidden;
+
+    background:rgba(255,255,255,.025);
+
+    border:1px solid rgba(255,255,255,.06);
+
+    backdrop-filter:blur(10px);
+
+}
+
+
+.book-data div{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    padding:1.35rem 2rem;
+
+    border-bottom:1px solid rgba(255,255,255,.05);
+
+}
+
+
+.book-data div:last-child{
+
+    border-bottom:none;
+
+}
+
+
+.book-data strong{
+
+    color:var(--contra-primary);
+
+    font-weight:600;
+
+}
+
+
+.book-data span{
+
+    color:#fff;
+
+}
+
+
+
+/* ==========================================================
+   RESPONSIVE
+========================================================== */
+
+@media (max-width:992px){
+
+    .synopsis-grid{
+
+        grid-template-columns:1fr;
+
+        gap:55px;
+
+    }
+
+}
+
+
+@media (max-width:768px){
+
+    .book-data div{
+
+        flex-direction:column;
+
+        align-items:flex-start;
+
+        gap:.45rem;
+
+    }
+
+}
+/* ==========================================================
+   POR QUÉ LEER CONTRA TIEMPO
+========================================================== */
+
+.features{
+
+    position:relative;
+
+}
+
+
+.features-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(3,1fr);
+
+    gap:32px;
+
+    margin-top:2rem;
+
+}
+
+
+
+/* ==========================================================
+   TARJETAS
+========================================================== */
+
+.feature-card{
+
+    position:relative;
+
+    overflow:hidden;
+
+    padding:2.6rem;
+
+    border-radius:24px;
+
+    background:rgba(255,255,255,.025);
+
+    border:1px solid rgba(255,255,255,.06);
+
+    backdrop-filter:blur(12px);
+
+    transition:
+
+        transform .35s ease,
+
+        border-color .35s ease,
+
+        box-shadow .35s ease;
+
+}
+
+
+
+.feature-card::before{
+
+    content:"";
+
+    position:absolute;
+
+    inset:0;
+
+    background:linear-gradient(
+
+        180deg,
+
+        rgba(255,255,255,.05),
+
+        transparent 45%
+
+    );
+
+    opacity:0;
+
+    transition:.35s;
+
+}
+
+
+
+.feature-card:hover{
+
+    transform:translateY(-8px);
+
+    border-color:rgba(199,166,90,.28);
+
+    box-shadow:
+
+        0 22px 48px rgba(0,0,0,.35);
+
+}
+
+
+
+.feature-card:hover::before{
+
+    opacity:1;
+
+}
+
+
+
+/* ==========================================================
+   ICONO
+========================================================== */
+
+.feature-icon{
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    width:62px;
+
+    height:62px;
+
+    margin-bottom:1.6rem;
+
+    border-radius:18px;
+
+    background:rgba(199,166,90,.10);
+
+    border:1px solid rgba(199,166,90,.20);
+
+    color:var(--contra-primary);
+
+    font-size:1.4rem;
+
+}
+
+
+
+/* ==========================================================
+   TÍTULO
+========================================================== */
+
+.feature-card h3{
+
+    margin:0 0 1rem;
+
+    color:#fff;
+
+    font-size:1.35rem;
+
+    line-height:1.3;
+
+}
+
+
+
+/* ==========================================================
+   TEXTO
+========================================================== */
+
+.feature-card p{
+
+    margin:0;
+
+    color:var(--contra-soft);
+
+    line-height:1.9;
+
+}
+
+
+
+/* ==========================================================
+   RESPONSIVE
+========================================================== */
+
+@media (max-width:992px){
+
+    .features-grid{
+
+        grid-template-columns:1fr;
+
+    }
+
+}
+/* ==========================================================
+   RESEÑAS
+========================================================== */
+
+.reviews{
+
+    position:relative;
+
+}
+
+
+.reviews-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(3,1fr);
+
+    gap:32px;
+
+    margin-top:2rem;
+
+}
+
+
+
+/* ==========================================================
+   TARJETA
+========================================================== */
+
+.review-card{
+
+    position:relative;
+
+    overflow:hidden;
+
+    padding:2.8rem;
+
+    border-radius:24px;
+
+    background:rgba(255,255,255,.025);
+
+    border:1px solid rgba(255,255,255,.06);
+
+    backdrop-filter:blur(10px);
+
+    transition:
+
+        transform .35s ease,
+
+        border-color .35s ease,
+
+        box-shadow .35s ease;
+
+}
+
+
+
+.review-card::before{
+
+    content:"“";
+
+    position:absolute;
+
+    left:24px;
+
+    top:8px;
+
+    font-family:var(--font-title);
+
+    font-size:6rem;
+
+    line-height:1;
+
+    color:rgba(199,166,90,.08);
+
+}
+
+
+
+.review-card:hover{
+
+    transform:translateY(-8px);
+
+    border-color:rgba(199,166,90,.28);
+
+    box-shadow:
+
+        0 24px 50px rgba(0,0,0,.35);
+
+}
+
+
+
+/* ==========================================================
+   ESTRELLAS
+========================================================== */
+
+.review-card .stars{
+
+    margin-bottom:1.4rem;
+
+    color:var(--contra-primary);
+
+    font-size:1rem;
+
+    letter-spacing:.35rem;
+
+}
+
+
+
+/* ==========================================================
+   TEXTO
+========================================================== */
+
+.review-card p{
+
+    position:relative;
+
+    z-index:2;
+
+    margin:0;
+
+    color:var(--contra-text);
+
+    line-height:1.95;
+
+}
+
+
+
+/* ==========================================================
+   AUTOR
+========================================================== */
+
+.review-author{
+
+    margin-top:2rem;
+
+    color:var(--contra-primary);
+
+    font-weight:600;
+
+    letter-spacing:.05em;
+
+}
+
+
+
+/* ==========================================================
+   RESPONSIVE
+========================================================== */
+
+@media (max-width:992px){
+
+    .reviews-grid{
+
+        grid-template-columns:1fr;
+
+    }
+
+}
+/* ==========================================================
+   PRIMERAS PÁGINAS
+========================================================== */
+
+.preview-section{
+
+    position:relative;
+
+    text-align:center;
+
+}
+
+
+.preview-box{
+
+    max-width:920px;
+
+    margin:0 auto;
+
+    padding:4rem;
+
+    border-radius:28px;
+
+    background:rgba(255,255,255,.025);
+
+    border:1px solid rgba(199,166,90,.18);
+
+    backdrop-filter:blur(12px);
+
+}
+
+
+.preview-box h3{
+
+    margin-top:0;
+
+    margin-bottom:1rem;
+
+}
+
+
+.preview-box p{
+
+    max-width:680px;
+
+    margin:auto;
+
+    color:var(--contra-soft);
+
+    line-height:1.9;
+
+}
+
+
+
+/* ==========================================================
+   CTA FINAL
+========================================================== */
+
+.cta-final{
+
+    position:relative;
+
+    text-align:center;
+
+    padding:130px 0;
+
+}
+
+
+.cta-final::before{
+
+    content:"";
+
+    position:absolute;
+
+    left:50%;
+
+    top:50%;
+
+    width:900px;
+
+    height:900px;
+
+    transform:translate(-50%,-50%);
+
+    border-radius:50%;
+
+    background:radial-gradient(
+
+        circle,
+
+        rgba(199,166,90,.08),
+
+        transparent 70%
+
+    );
+
+    pointer-events:none;
+
+}
+
+
+.cta-final h2{
+
+    margin-bottom:1.5rem;
+
+    font-size:clamp(2.8rem,5vw,4.2rem);
+
+}
+
+
+.cta-final p{
+
+    max-width:720px;
+
+    margin:0 auto 3rem;
+
+    color:var(--contra-soft);
+
+    line-height:1.9;
+
+}
+
+
+
+/* ==========================================================
+   ANIMACIONES GENERALES
+========================================================== */
+
+.book-page img{
+
+    display:block;
+
+    max-width:100%;
+
+}
+
+
+.book-page a{
+
+    transition:.3s ease;
+
+}
+
+
+.book-page a:hover{
+
+    text-decoration:none;
+
+}
+
+
+
+/* ==========================================================
+   FONDO GLOBAL
+========================================================== */
+
+.book-page::before{
+
+    content:"";
+
+    position:fixed;
+
+    inset:0;
+
+    pointer-events:none;
+
+    z-index:-1;
+
+    background:
+
+        radial-gradient(
+
+            circle at 15% 20%,
+
+            rgba(199,166,90,.03),
+
+            transparent 28%
+
+        ),
+
+        radial-gradient(
+
+            circle at 82% 18%,
+
+            rgba(199,166,90,.025),
+
+            transparent 24%
+
+        ),
+
+        radial-gradient(
+
+            circle at 70% 78%,
+
+            rgba(199,166,90,.03),
+
+            transparent 26%
+
+        );
+
+}
+
+
+
+/* ==========================================================
+   RESPONSIVE GENERAL
+========================================================== */
+
+@media (max-width:768px){
+
+    .preview-box{
+
+        padding:2.2rem;
+
+    }
+
+}
+
+
+@media (max-width:480px){
+
+    .cta-final{
+
+        padding:90px 0;
+
+    }
+
+    .cta-final h2{
+
+        font-size:2.2rem;
 
     }
 
