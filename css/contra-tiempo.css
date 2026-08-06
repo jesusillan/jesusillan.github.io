@@ -48,62 +48,58 @@
 
 }
 /* ==========================================================
-   HERO V3
+   HERO V4
+   ESTRUCTURA GENERAL
 ========================================================== */
 
 .hero.hero-book{
 
     position:relative;
-
     display:flex;
-
     align-items:center;
 
-    min-height:100vh;
+    min-height:calc(100vh - 60px);
 
-    padding-top:90px;
-
-    padding-bottom:70px;
+    padding:130px 0 80px;
 
     overflow:hidden;
 
 }
 
 
-
 /* ==========================================================
-   FONDO CINEMATOGRÁFICO
+   FONDO GENERAL
 ========================================================== */
 
-.hero-book-image::before{
+.hero.hero-book::before{
 
     content:"";
 
     position:absolute;
 
-    inset:50% auto auto 50%;
+    inset:0;
 
-    width:760px;
+    background:
 
-    height:760px;
+        radial-gradient(
+            circle at 72% 45%,
+            rgba(199,166,90,.07),
+            transparent 42%
+        ),
 
-    transform:translate(-50%,-50%);
-
-    background:url("../images/clock-bg-contra-tiempo.png") center center / contain no-repeat;
-
-    opacity:.08;
-
-    filter:blur(.3px);
+        radial-gradient(
+            circle at 20% 20%,
+            rgba(255,255,255,.02),
+            transparent 35%
+        );
 
     pointer-events:none;
-
-    z-index:0;
 
 }
 
 
 /* ==========================================================
-   HALO GENERAL
+   HALO DERECHO
 ========================================================== */
 
 .hero.hero-book::after{
@@ -112,7 +108,7 @@
 
     position:absolute;
 
-    right:-220px;
+    right:-260px;
 
     top:50%;
 
@@ -124,24 +120,25 @@
 
     border-radius:50%;
 
-    background:radial-gradient(
+    background:
 
-        circle,
+        radial-gradient(
 
-        rgba(199,166,90,.08),
+            circle,
 
-        rgba(199,166,90,.03),
+            rgba(199,166,90,.10),
 
-        transparent 72%
+            rgba(199,166,90,.04),
 
-    );
+            transparent 72%
 
-    filter:blur(55px);
+        );
+
+    filter:blur(70px);
 
     pointer-events:none;
 
 }
-
 
 
 /* ==========================================================
@@ -152,20 +149,17 @@
 
     position:relative;
 
-    z-index:2;
+    z-index:5;
 
     display:grid;
 
-    grid-template-columns:52% 48%;
+    grid-template-columns:48% 52%;
+
+    gap:80px;
 
     align-items:center;
 
-    gap:40px;
-
-    width:100%;
-
 }
-
 
 
 /* ==========================================================
@@ -182,10 +176,9 @@
 
     align-items:center;
 
-    min-height:760px;
+    isolation:isolate;
 
 }
-
 
 
 /* ==========================================================
@@ -196,165 +189,13 @@
 
     position:relative;
 
-    max-width:640px;
+    z-index:20;
 
-}
-
-
-
-/* ==========================================================
-   CATEGORÍA
-========================================================== */
-
-.book-category{
-
-    display:inline-block;
-
-    margin-bottom:28px;
-
-    color:var(--contra-primary);
-
-    font-size:.82rem;
-
-    letter-spacing:.28em;
-
-    text-transform:uppercase;
-
-}
-
-
-
-/* ==========================================================
-   TÍTULO
-========================================================== */
-
-.hero-content h1{
-
-    margin:0;
-
-    font-size:clamp(4.6rem,7vw,7rem);
-
-    line-height:.88;
-
-    letter-spacing:-.06em;
-
-    font-weight:700;
-
-    text-wrap:balance;
-
-}
-
-
-
-/* ==========================================================
-   DIVISOR
-========================================================== */
-
-.hero-divider{
-
-    margin:34px 0;
-
-    width:130px;
-
-    height:2px;
-
-    border-radius:2px;
-
-    background:linear-gradient(
-
-        90deg,
-
-        var(--contra-primary),
-
-        rgba(199,166,90,.15)
-
-    );
-
-}
-
-
-
-/* ==========================================================
-   CLAIM
-========================================================== */
-
-.hero-claim{
-
-    margin:0;
-
-    font-family:var(--font-title);
-
-    font-size:1.8rem;
-
-    line-height:1.45;
-
-    color:white;
-
-}
-
-
-
-/* ==========================================================
-   DESCRIPCIÓN
-========================================================== */
-
-.hero-description{
-
-    margin-top:34px;
-
-    max-width:560px;
-
-    color:var(--color-text-soft);
-
-    font-size:1.08rem;
-
-    line-height:2;
-
-}
-
-
-
-/* ==========================================================
-   BOTONES
-========================================================== */
-
-.hero-buttons{
-
-    display:flex;
-
-    align-items:center;
-
-    gap:22px;
-
-    margin-top:48px;
-
-    flex-wrap:wrap;
+    max-width:620px;
 
 }
 /* ==========================================================
-   HERO V3
-   LIBRO · GLOW · PROFUNDIDAD
-========================================================== */
-
-.hero-book-image{
-
-    position:relative;
-
-    display:flex;
-
-    justify-content:center;
-
-    align-items:center;
-
-    min-height:760px;
-
-    isolation:isolate;
-
-}
-
-
-
-/* ==========================================================
+   HERO V4
    RELOJ DE FONDO
 ========================================================== */
 
@@ -364,34 +205,29 @@
 
     position:absolute;
 
-    width:760px;
-
-    height:760px;
-
     left:50%;
-
     top:50%;
+
+    width:760px;
+    height:760px;
 
     transform:translate(-50%,-50%);
 
-    border-radius:50%;
+    background:
+        url("../images/clock-bg-contra-tiempo.png")
+        center center / contain no-repeat;
 
-    opacity:.07;
+    opacity:.13;
 
-    background-image:url("../images/reloj-fondo.png");
+    filter:
 
-    background-repeat:no-repeat;
-
-    background-position:center;
-
-    background-size:contain;
-
-    filter:blur(1px);
+        drop-shadow(0 0 35px rgba(199,166,90,.12));
 
     z-index:0;
 
-}
+    pointer-events:none;
 
+}
 
 
 /* ==========================================================
@@ -405,41 +241,40 @@
     position:absolute;
 
     left:50%;
-
     top:50%;
 
-    width:620px;
-
-    height:620px;
+    width:560px;
+    height:560px;
 
     transform:translate(-50%,-50%);
 
     border-radius:50%;
 
-    background:radial-gradient(
+    background:
 
-        circle,
+        radial-gradient(
 
-        rgba(199,166,90,.26) 0%,
+            circle,
 
-        rgba(199,166,90,.12) 28%,
+            rgba(199,166,90,.30) 0%,
 
-        rgba(199,166,90,.05) 48%,
+            rgba(199,166,90,.14) 30%,
 
-        transparent 72%
+            rgba(199,166,90,.05) 55%,
 
-    );
+            transparent 78%
 
-    filter:blur(55px);
+        );
+
+    filter:blur(60px);
 
     z-index:1;
 
 }
 
 
-
 /* ==========================================================
-   GLOW EXTRA
+   HALO BLANCO CENTRAL
 ========================================================== */
 
 .book-glow{
@@ -447,33 +282,32 @@
     position:absolute;
 
     left:50%;
-
     top:50%;
 
     transform:translate(-50%,-50%);
 
-    width:520px;
-
-    height:520px;
+    width:380px;
+    height:380px;
 
     border-radius:50%;
 
-    background:radial-gradient(
+    background:
 
-        circle,
+        radial-gradient(
 
-        rgba(255,255,255,.05),
+            circle,
 
-        transparent 70%
+            rgba(255,255,255,.06),
 
-    );
+            transparent 72%
 
-    filter:blur(40px);
+        );
+
+    filter:blur(45px);
 
     z-index:2;
 
 }
-
 
 
 /* ==========================================================
@@ -484,7 +318,21 @@
 
     position:relative;
 
-    z-index:2;
+    z-index:5;
+
+    width:min(470px,100%);
+
+    filter:
+
+        drop-shadow(0 35px 65px rgba(0,0,0,.60));
+
+    animation:heroFloat 9s ease-in-out infinite;
+
+    transition:
+
+        transform .45s ease,
+
+        filter .45s ease;
 
 }
 
@@ -493,12 +341,44 @@
 
     transform:
 
-        translateY(-8px)
+        translateY(-10px)
 
-        scale(1.02);
+        scale(1.025);
+
+    filter:
+
+        drop-shadow(0 50px 90px rgba(0,0,0,.70));
 
 }
 
+
+/* ==========================================================
+   SOMBRA INFERIOR
+========================================================== */
+
+.hero-book-image .shadow{
+
+    position:absolute;
+
+    bottom:18px;
+
+    left:50%;
+
+    transform:translateX(-50%);
+
+    width:280px;
+
+    height:42px;
+
+    border-radius:50%;
+
+    background:rgba(0,0,0,.42);
+
+    filter:blur(24px);
+
+    z-index:0;
+
+}
 
 
 /* ==========================================================
@@ -510,92 +390,32 @@
     0%{
 
         transform:
-
             translateY(0px)
-
-            rotate(-1deg);
+            rotate(-.5deg);
 
     }
 
     50%{
 
         transform:
-
-            translateY(-14px)
-
-            rotate(1deg);
+            translateY(-12px)
+            rotate(.5deg);
 
     }
 
     100%{
 
         transform:
-
             translateY(0px)
-
-            rotate(-1deg);
+            rotate(-.5deg);
 
     }
 
 }
-
-
-
 /* ==========================================================
-   SOMBRA INFERIOR
+   HERO V4
+   TEXTO
 ========================================================== */
-
-.hero-book-image .shadow{
-
-    position:absolute;
-
-    bottom:55px;
-
-    width:340px;
-
-    height:45px;
-
-    border-radius:50%;
-
-    background:rgba(0,0,0,.35);
-
-    filter:blur(30px);
-
-}
-
-
-
-/* ==========================================================
-   DESTELLOS
-========================================================== */
-
-.hero-book-image .spark{
-
-    position:absolute;
-
-    z-index:6;
-
-}
-/* ==========================================================
-   HERO V3
-   TEXTO · BOTONES
-========================================================== */
-
-/* ==========================================================
-   CONTENIDO
-========================================================== */
-
-.hero-content{
-
-    position:relative;
-
-    z-index:10;
-
-    max-width:610px;
-
-}
-
-
 
 /* ==========================================================
    CATEGORÍA
@@ -607,17 +427,19 @@
 
     align-items:center;
 
-    gap:12px;
+    gap:16px;
 
-    margin-bottom:24px;
+    margin-bottom:26px;
 
     color:var(--contra-primary);
 
     font-size:.82rem;
 
-    letter-spacing:.30em;
+    letter-spacing:.28em;
 
     text-transform:uppercase;
+
+    font-weight:600;
 
 }
 
@@ -625,14 +447,13 @@
 
     content:"";
 
-    width:46px;
+    width:52px;
 
     height:1px;
 
     background:rgba(199,166,90,.55);
 
 }
-
 
 
 /* ==========================================================
@@ -645,22 +466,23 @@
 
     font-family:var(--font-title);
 
-    font-size:clamp(4.8rem,8vw,7rem);
+    font-size:clamp(4.4rem,7vw,6.8rem);
 
     font-weight:700;
 
-    line-height:.86;
+    line-height:.88;
 
-    letter-spacing:-.07em;
+    letter-spacing:-.06em;
 
     color:#fff;
 
+    text-wrap:balance;
+
     text-shadow:
 
-        0 8px 24px rgba(0,0,0,.45);
+        0 10px 35px rgba(0,0,0,.45);
 
 }
-
 
 
 /* ==========================================================
@@ -673,16 +495,23 @@
 
     height:2px;
 
-    margin:36px 0;
+    margin:34px 0;
 
-    background:linear-gradient(
-        90deg,
-        var(--contra-primary),
-        rgba(199,166,90,.15)
-    );
+    border-radius:2px;
+
+    background:
+
+        linear-gradient(
+
+            90deg,
+
+            var(--contra-primary),
+
+            rgba(199,166,90,.18)
+
+        );
 
 }
-
 
 
 /* ==========================================================
@@ -693,18 +522,21 @@
 
     margin:0;
 
+    max-width:560px;
+
     font-family:var(--font-title);
 
-    font-size:2rem;
+    font-size:1.9rem;
 
     line-height:1.45;
 
-    color:#fff;
+    color:#ffffff;
 
-    max-width:560px;
+    text-shadow:
+
+        0 6px 20px rgba(0,0,0,.35);
 
 }
-
 
 
 /* ==========================================================
@@ -717,18 +549,17 @@
 
     max-width:560px;
 
-    color:rgba(255,255,255,.78);
+    color:rgba(255,255,255,.74);
 
-    font-size:1.08rem;
+    font-size:1.06rem;
 
-    line-height:2;
+    line-height:1.95;
 
 }
 
 
-
 /* ==========================================================
-   BOTONES
+   BOTONERA
 ========================================================== */
 
 .hero-buttons{
@@ -737,27 +568,23 @@
 
     align-items:center;
 
-    gap:24px;
-
-    margin-top:52px;
+    gap:20px;
 
     flex-wrap:wrap;
 
+    margin-top:46px;
+
 }
-
-
+/* ==========================================================
+   HERO V4
+   BOTONES
+========================================================== */
 
 /* ==========================================================
    AMAZON
 ========================================================== */
 
 .btn-amazon{
-
-    min-width:355px;
-
-    min-height:84px;
-
-    padding:18px 34px;
 
     display:flex;
 
@@ -767,52 +594,75 @@
 
     gap:24px;
 
-    border-radius:18px;
+    min-width:310px;
+
+    height:72px;
+
+    padding:0 28px;
+
+    border-radius:16px;
 
     background:
-
         linear-gradient(
-
             180deg,
-
             rgba(255,255,255,.08),
-
             rgba(255,255,255,.03)
-
         );
 
-    border:1px solid rgba(199,166,90,.35);
+    border:1px solid rgba(199,166,90,.28);
 
     box-shadow:
+        0 14px 35px rgba(0,0,0,.35);
 
-        0 18px 45px rgba(0,0,0,.35);
+    transition:
+        transform .35s ease,
+        box-shadow .35s ease,
+        border-color .35s ease;
 
 }
 
+
+.btn-amazon:hover{
+
+    transform:translateY(-4px);
+
+    border-color:var(--contra-primary);
+
+    box-shadow:
+
+        0 22px 50px rgba(0,0,0,.45),
+
+        0 0 24px rgba(199,166,90,.18);
+
+}
 
 
 .btn-amazon img{
 
-    width:140px;
+    width:118px;
 
     height:auto;
 
-}
+    flex-shrink:0;
 
+}
 
 
 .btn-amazon span{
 
     position:relative;
 
-    padding-left:28px;
+    padding-left:24px;
 
-    font-size:.92rem;
+    font-size:.82rem;
 
-    letter-spacing:.16em;
+    font-weight:600;
+
+    letter-spacing:.18em;
+
+    white-space:nowrap;
 
 }
-
 
 
 .btn-amazon span::before{
@@ -827,19 +677,11 @@
 
     width:1px;
 
-    height:28px;
+    height:26px;
 
     transform:translateY(-50%);
 
-    background:rgba(199,166,90,.35);
-
-}
-
-
-
-.btn-amazon:hover{
-
-    transform:translateY(-5px);
+    background:rgba(199,166,90,.28);
 
 }
 
@@ -851,74 +693,284 @@
 
 .btn-share{
 
-    min-height:62px;
+    display:flex;
 
-    padding:16px 24px;
+    align-items:center;
+
+    justify-content:center;
+
+    gap:12px;
+
+    height:60px;
+
+    padding:0 24px;
 
     border-radius:16px;
 
     background:transparent;
 
-    border:1px solid rgba(255,255,255,.12);
+    border:1px solid rgba(255,255,255,.10);
 
-    color:rgba(255,255,255,.72);
+    color:rgba(255,255,255,.70);
+
+    transition:all .3s ease;
 
 }
-
 
 
 .btn-share:hover{
 
     color:var(--contra-primary);
 
-    border-color:rgba(199,166,90,.45);
+    border-color:rgba(199,166,90,.35);
+
+    background:rgba(255,255,255,.02);
 
 }
 
 
+.btn-share svg{
 
+    width:20px;
+
+    height:20px;
+
+}
 /* ==========================================================
-   SCROLL
+   HERO V4
+   RESPONSIVE
 ========================================================== */
 
-.hero-scroll{
+@media (max-width:1200px){
 
-    position:absolute;
+    .hero-grid{
 
-    left:50%;
+        grid-template-columns:1fr 1fr;
 
-    bottom:28px;
-
-    transform:translateX(-50%);
-
-    opacity:.55;
-
-    animation:scrollMove 2s infinite;
-
-}
-
-@keyframes scrollMove{
-
-    0%{
-
-        transform:translate(-50%,0);
+        gap:60px;
 
     }
 
-    50%{
+    .hero-content h1{
 
-        transform:translate(-50%,8px);
+        font-size:5.2rem;
 
     }
 
-    100%{
+    .hero-book-image::before{
 
-        transform:translate(-50%,0);
+        width:620px;
+
+        height:620px;
 
     }
 
 }
 
+
+@media (max-width:992px){
+
+    .hero.hero-book{
+
+        min-height:auto;
+
+        padding:110px 0 80px;
+
+    }
+
+    .hero-grid{
+
+        grid-template-columns:1fr;
+
+        gap:60px;
+
+        text-align:center;
+
+    }
+
+    .hero-book-image{
+
+        order:1;
+
+        min-height:520px;
+
+    }
+
+    .hero-content{
+
+        order:2;
+
+        margin:auto;
+
+        max-width:720px;
+
+    }
+
+    .book-category{
+
+        justify-content:center;
+
+    }
+
+    .book-category::before{
+
+        display:none;
+
+    }
+
+    .hero-divider{
+
+        margin-left:auto;
+
+        margin-right:auto;
+
+    }
+
+    .hero-description{
+
+        margin-left:auto;
+
+        margin-right:auto;
+
+    }
+
+    .hero-buttons{
+
+        justify-content:center;
+
+    }
+
+    .hero-book-image::before{
+
+        width:560px;
+
+        height:560px;
+
+        opacity:.05;
+
+    }
+
+}
+
+
+@media (max-width:768px){
+
+    .hero.hero-book{
+
+        padding-top:95px;
+
+        padding-bottom:70px;
+
+    }
+
+    .hero-content h1{
+
+        font-size:3.6rem;
+
+        line-height:.92;
+
+    }
+
+    .hero-claim{
+
+        font-size:1.45rem;
+
+    }
+
+    .hero-description{
+
+        font-size:1rem;
+
+        line-height:1.8;
+
+    }
+
+    .hero-buttons{
+
+        flex-direction:column;
+
+        align-items:stretch;
+
+        gap:18px;
+
+    }
+
+    .btn-amazon,
+
+    .btn-share{
+
+        width:100%;
+
+        min-width:0;
+
+    }
+
+    .btn-amazon{
+
+        justify-content:center;
+
+    }
+
+    .hero-book-image{
+
+        min-height:380px;
+
+    }
+
+    .hero-book-image::before{
+
+        width:420px;
+
+        height:420px;
+
+    }
+
+}
+
+
+@media (max-width:480px){
+
+    .hero-content h1{
+
+        font-size:3rem;
+
+    }
+
+    .hero-claim{
+
+        font-size:1.25rem;
+
+    }
+
+    .hero-description{
+
+        font-size:.95rem;
+
+    }
+
+    .btn-amazon{
+
+        height:66px;
+
+        padding:0 20px;
+
+    }
+
+    .btn-amazon img{
+
+        width:100px;
+
+    }
+
+    .btn-amazon span{
+
+        font-size:.78rem;
+
+        padding-left:18px;
+
+    }
+
+}
 /* ==========================================================
    SINOPSIS
 ========================================================== */
