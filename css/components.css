@@ -1,142 +1,14 @@
 /* ==========================================================
    JESUSILLAN.COM
    COMPONENTS.CSS
-   Versión 5.0
-   Componentes reutilizables para todo el sitio
+   v6.0
+   Componentes reutilizables
 ========================================================== */
 
 
 
 /* ==========================================================
-   HEADER
-========================================================== */
-
-.site-header{
-
-    position:fixed;
-
-    top:0;
-
-    left:0;
-
-    width:100%;
-
-    z-index:1000;
-
-    transition:all .35s ease;
-
-    background:transparent;
-
-}
-
-.site-header.scrolled{
-
-    background:rgba(8,8,8,.82);
-
-    backdrop-filter:blur(16px);
-
-    border-bottom:1px solid rgba(255,255,255,.05);
-
-}
-
-.header-container{
-
-    display:flex;
-
-    align-items:center;
-
-    justify-content:space-between;
-
-    min-height:92px;
-
-}
-
-.site-logo{
-
-    display:flex;
-
-    align-items:center;
-
-}
-
-.site-logo img{
-
-    width:210px;
-
-    height:auto;
-
-    display:block;
-
-}
-
-.main-nav ul{
-
-    display:flex;
-
-    align-items:center;
-
-    gap:42px;
-
-    list-style:none;
-
-    margin:0;
-
-    padding:0;
-
-}
-
-.main-nav a{
-
-    color:var(--color-text-soft);
-
-    text-decoration:none;
-
-    font-size:.95rem;
-
-    letter-spacing:.08em;
-
-    transition:var(--transition);
-
-    position:relative;
-
-}
-
-.main-nav a:hover{
-
-    color:var(--color-gold);
-
-}
-
-.main-nav a::after{
-
-    content:"";
-
-    position:absolute;
-
-    left:0;
-
-    bottom:-8px;
-
-    width:0;
-
-    height:1px;
-
-    background:var(--color-gold);
-
-    transition:.3s;
-
-}
-
-.main-nav a:hover::after{
-
-    width:100%;
-
-}
-
-
-
-/* ==========================================================
-   BOTONES
+   BOTONES BASE
 ========================================================== */
 
 .btn{
@@ -151,15 +23,19 @@
 
     padding:18px 38px;
 
+    border:none;
+
     border-radius:999px;
 
-    text-decoration:none;
-
     cursor:pointer;
+
+    text-decoration:none;
 
     transition:var(--transition);
 
     font-family:var(--font-body);
+
+    font-size:.92rem;
 
     font-weight:600;
 
@@ -167,7 +43,7 @@
 
     text-transform:uppercase;
 
-    font-size:.92rem;
+    white-space:nowrap;
 
 }
 
@@ -191,29 +67,31 @@
 
     padding:20px 44px;
 
-    background:linear-gradient(
-
-        180deg,
-
-        rgba(255,255,255,.05),
-
-        rgba(255,255,255,.02)
-
-    );
-
-    color:var(--color-text);
-
-    border:1px solid rgba(199,166,90,.35);
-
     border-radius:999px;
 
     text-decoration:none;
 
-    transition:all .35s ease;
+    color:var(--color-text);
+
+    background:
+
+        linear-gradient(
+
+            180deg,
+
+            rgba(255,255,255,.05),
+
+            rgba(255,255,255,.02)
+
+        );
+
+    border:1px solid rgba(199,166,90,.35);
 
     box-shadow:
 
-        0 10px 30px rgba(0,0,0,.35);
+        0 12px 30px rgba(0,0,0,.35);
+
+    transition:all .35s ease;
 
 }
 
@@ -225,7 +103,7 @@
 
     box-shadow:
 
-        0 18px 40px rgba(0,0,0,.45),
+        0 18px 42px rgba(0,0,0,.45),
 
         var(--shadow-glow);
 
@@ -233,7 +111,7 @@
 
 .btn-amazon img{
 
-    width:170px;
+    width:185px;
 
     height:auto;
 
@@ -267,19 +145,15 @@
 
     gap:14px;
 
-    margin-left:36px;
-
     padding:18px 30px;
+
+    border-radius:999px;
 
     background:transparent;
 
     border:1px solid rgba(199,166,90,.25);
 
-    border-radius:999px;
-
     color:var(--color-text-soft);
-
-    cursor:pointer;
 
     transition:var(--transition);
 
@@ -311,11 +185,11 @@
 
 .btn-outline{
 
-    border:1px solid var(--color-gold);
-
     background:none;
 
     color:var(--color-gold);
+
+    border:1px solid var(--color-gold);
 
 }
 
@@ -337,8 +211,6 @@
 
     text-align:center;
 
-    padding:5rem 0;
-
 }
 
 .cta h2{
@@ -355,7 +227,7 @@
 
     align-items:center;
 
-    gap:34px;
+    gap:32px;
 
     flex-wrap:wrap;
 
@@ -364,7 +236,7 @@
 
 
 /* ==========================================================
-   MOCKUPS
+   MOCKUP LIBRO
 ========================================================== */
 
 .book-mockup{
@@ -377,9 +249,13 @@
 
     margin:auto;
 
-    filter:drop-shadow(0 35px 70px rgba(0,0,0,.55));
+    filter:drop-shadow(
 
-    transition:transform .5s ease;
+        0 35px 70px rgba(0,0,0,.55)
+
+    );
+
+    transition:transform .45s ease;
 
     animation:bookFloat 8s ease-in-out infinite;
 
@@ -416,7 +292,7 @@
 
 
 /* ==========================================================
-   HALO
+   HALO DEL LIBRO
 ========================================================== */
 
 .book-glow{
@@ -435,17 +311,19 @@
 
     border-radius:50%;
 
-    background:radial-gradient(
+    background:
 
-        circle,
+        radial-gradient(
 
-        rgba(199,166,90,.18),
+            circle,
 
-        rgba(199,166,90,.08),
+            rgba(199,166,90,.18),
 
-        transparent 72%
+            rgba(199,166,90,.08),
 
-    );
+            transparent 72%
+
+        );
 
     filter:blur(55px);
 
@@ -462,15 +340,15 @@
 
     position:relative;
 
-    background:rgba(255,255,255,.03);
-
-    border:1px solid rgba(255,255,255,.06);
-
-    border-radius:var(--radius-l);
+    overflow:hidden;
 
     padding:2rem;
 
-    overflow:hidden;
+    border-radius:var(--radius-l);
+
+    background:rgba(255,255,255,.03);
+
+    border:1px solid rgba(255,255,255,.06);
 
     backdrop-filter:blur(12px);
 
@@ -494,7 +372,7 @@
 
     opacity:0;
 
-    transition:.35s;
+    transition:opacity .35s ease;
 
 }
 
@@ -537,11 +415,11 @@
 
     top:-18px;
 
+    font-family:var(--font-title);
+
     font-size:5rem;
 
     line-height:1;
-
-    font-family:var(--font-title);
 
     color:rgba(199,166,90,.10);
 
@@ -549,21 +427,21 @@
 
 .review-stars{
 
+    margin-bottom:1rem;
+
     color:var(--color-gold);
 
     letter-spacing:.18rem;
-
-    margin-bottom:1rem;
 
 }
 
 .review-author{
 
-    margin-top:1.6rem;
-
-    font-weight:600;
+    margin-top:1.5rem;
 
     color:var(--color-gold);
+
+    font-weight:600;
 
 }
 
@@ -621,124 +499,19 @@
 
     border:1px solid rgba(255,255,255,.05);
 
-    transition:var(--transition);
+    color:var(--color-text-soft);
+
+    transition:all .3s ease;
 
 }
 
 .tag:hover{
 
+    color:var(--color-gold);
+
     border-color:rgba(199,166,90,.35);
 
     transform:translateY(-2px);
-
-}
-
-
-
-/* ==========================================================
-   BOOK DATA
-========================================================== */
-
-.book-data{
-
-    display:grid;
-
-    gap:1rem;
-
-}
-
-.book-data div{
-
-    display:flex;
-
-    justify-content:space-between;
-
-    gap:2rem;
-
-    padding:1rem 0;
-
-    border-bottom:1px solid rgba(255,255,255,.05);
-
-}
-
-.book-data strong{
-
-    color:var(--color-gold);
-
-    font-weight:600;
-
-}
-
-
-
-/* ==========================================================
-   FOOTER
-========================================================== */
-
-.site-footer{
-
-    margin-top:6rem;
-
-    padding:3rem 0;
-
-    border-top:1px solid rgba(255,255,255,.05);
-
-    background:rgba(0,0,0,.35);
-
-}
-
-.site-footer .container{
-
-    display:flex;
-
-    flex-direction:column;
-
-    align-items:center;
-
-    gap:1rem;
-
-    text-align:center;
-
-}
-
-.footer-logo{
-
-    width:170px;
-
-    height:auto;
-
-    opacity:.95;
-
-}
-
-.site-footer p{
-
-    color:var(--color-text-soft);
-
-    font-size:.9rem;
-
-}
-
-
-
-/* ==========================================================
-   SEPARADOR
-========================================================== */
-
-.decorative-line{
-
-    width:180px;
-
-    height:1px;
-
-    margin:2.5rem auto;
-
-    background:linear-gradient(
-        90deg,
-        transparent,
-        var(--color-gold),
-        transparent
-    );
 
 }
 
@@ -754,7 +527,9 @@
 
     transform:translateY(35px);
 
-    transition:.8s ease;
+    transition:
+        opacity .8s ease,
+        transform .8s ease;
 
 }
 
@@ -778,9 +553,9 @@
 
     left:50%;
 
-    bottom:32px;
+    bottom:30px;
 
-    transform:translateX(-50%) translateY(18px);
+    transform:translateX(-50%) translateY(20px);
 
     padding:14px 24px;
 
@@ -792,13 +567,13 @@
 
     border:1px solid rgba(199,166,90,.30);
 
-    backdrop-filter:blur(10px);
+    backdrop-filter:blur(12px);
 
     opacity:0;
 
     pointer-events:none;
 
-    transition:.35s;
+    transition:all .35s ease;
 
     z-index:9999;
 
@@ -811,11 +586,8 @@
     transform:translateX(-50%) translateY(0);
 
 }
-
-
-
 /* ==========================================================
-   PARTICLES
+   PARTÍCULAS
 ========================================================== */
 
 .spark{
@@ -835,11 +607,8 @@
     background:var(--contra-primary);
 
     box-shadow:
-
         0 0 6px var(--contra-primary),
-
         0 0 14px var(--contra-primary),
-
         0 0 26px var(--contra-glow);
 
     animation:sparkAnimation 7s ease-in-out infinite;
@@ -872,7 +641,9 @@
 
         opacity:0;
 
-        transform:scale(.3);
+        transform:
+            translateY(12px)
+            scale(.30);
 
     }
 
@@ -880,7 +651,9 @@
 
         opacity:1;
 
-        transform:scale(1);
+        transform:
+            translateY(0)
+            scale(1);
 
     }
 
@@ -894,7 +667,9 @@
 
         opacity:0;
 
-        transform:scale(.2);
+        transform:
+            translateY(-18px)
+            scale(.20);
 
     }
 
@@ -908,21 +683,11 @@
 
 @media (max-width:900px){
 
-    .header-container{
+    .cta-buttons{
 
-        min-height:82px;
+        flex-direction:column;
 
-    }
-
-    .site-logo img{
-
-        width:170px;
-
-    }
-
-    .main-nav ul{
-
-        gap:22px;
+        gap:20px;
 
     }
 
@@ -930,39 +695,23 @@
 
         width:100%;
 
+        justify-content:center;
+
     }
 
     .btn-share{
 
-        margin-left:0;
-
         width:100%;
 
-    }
-
-    .cta-buttons{
-
-        flex-direction:column;
-
-    }
-
-    .book-data div{
-
-        flex-direction:column;
-
-        gap:.5rem;
+        justify-content:center;
 
     }
 
 }
 
+
+
 @media (max-width:768px){
-
-    .main-nav{
-
-        display:none;
-
-    }
 
     .btn{
 
@@ -982,7 +731,7 @@
 
     .btn-amazon img{
 
-        width:120px;
+        width:145px;
 
     }
 
@@ -997,12 +746,6 @@
         width:420px;
 
         height:420px;
-
-    }
-
-    .site-footer{
-
-        margin-top:4rem;
 
     }
 
