@@ -75,40 +75,31 @@
    FONDO CINEMATOGRÁFICO
 ========================================================== */
 
-.hero.hero-book::before{
+.hero-book-image::before{
 
     content:"";
 
     position:absolute;
 
-    inset:0;
+    inset:50% auto auto 50%;
 
-    background:
+    width:760px;
 
-        radial-gradient(
-            circle at 70% 45%,
-            rgba(199,166,90,.10),
-            transparent 32%
-        ),
+    height:760px;
 
-        radial-gradient(
-            circle at 18% 18%,
-            rgba(255,255,255,.025),
-            transparent 22%
-        ),
+    transform:translate(-50%,-50%);
 
-        linear-gradient(
-            180deg,
-            rgba(8,8,8,.15),
-            rgba(8,8,8,.55)
-        );
+    background:url("../images/clock-bg-contra-tiempo.png") center center / contain no-repeat;
+
+    opacity:.08;
+
+    filter:blur(.3px);
 
     pointer-events:none;
 
     z-index:0;
 
 }
-
 
 
 /* ==========================================================
@@ -493,26 +484,9 @@
 
     position:relative;
 
-    z-index:5;
-
-    width:min(620px,100%);
-
-    filter:
-
-        drop-shadow(0 22px 35px rgba(0,0,0,.45))
-
-        drop-shadow(0 45px 90px rgba(0,0,0,.55));
-
-    animation:heroFloat 8s ease-in-out infinite;
-
-    transition:
-
-        transform .45s ease,
-
-        filter .45s ease;
+    z-index:2;
 
 }
-
 
 
 .book-mockup:hover{
