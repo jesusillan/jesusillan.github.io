@@ -1,25 +1,28 @@
 /* ==========================================================
    JESUSILLAN.COM
    CONTRA-TIEMPO.CSS
-   Versión 1.0
+   v2.0
 ========================================================== */
 
 
 /* ==========================================================
-   VARIABLES PROPIAS DEL LIBRO
+   IDENTIDAD VISUAL
 ========================================================== */
 
 :root{
 
     --contra-primary:#c7a65a;
-    --contra-secondary:#f4d28a;
-    --contra-glow:rgba(199,166,90,.45);
+
+    --contra-secondary:#f0d28c;
+
+    --contra-glow:rgba(199,166,90,.42);
 
 }
 
 
+
 /* ==========================================================
-   FONDO
+   PÁGINA
 ========================================================== */
 
 .book-page{
@@ -29,13 +32,17 @@
     overflow-x:hidden;
 
     background:
-        radial-gradient(circle at top,
-            rgba(199,166,90,.06),
-            transparent 45%),
+
+        radial-gradient(
+            circle at top,
+            rgba(199,166,90,.08),
+            transparent 40%
+        ),
+
         linear-gradient(
             180deg,
-            #090909 0%,
-            #0f0f10 45%,
+            #070707 0%,
+            #0d0d0e 40%,
             #090909 100%
         );
 
@@ -49,25 +56,27 @@
 
 .hero{
 
+    position:relative;
+
     min-height:100vh;
 
     display:flex;
 
     align-items:center;
 
-    padding-top:110px;
-
-    padding-bottom:90px;
-
 }
 
 
+
+/* ==========================================================
+   GRID HERO
+========================================================== */
 
 .hero-grid{
 
     display:grid;
 
-    grid-template-columns:1fr 1fr;
+    grid-template-columns:1.05fr .95fr;
 
     gap:90px;
 
@@ -78,7 +87,102 @@
 
 
 /* ==========================================================
-   MOCKUP
+   COLUMNA IZQUIERDA
+========================================================== */
+
+.hero-content{
+
+    max-width:640px;
+
+    z-index:2;
+
+}
+
+
+
+.book-category{
+
+    display:inline-block;
+
+    margin-bottom:22px;
+
+    color:var(--contra-primary);
+
+    font-size:.82rem;
+
+    letter-spacing:.22em;
+
+    text-transform:uppercase;
+
+}
+
+
+
+.hero-content h1{
+
+    margin:0;
+
+    font-size:clamp(4rem,7vw,6.2rem);
+
+    line-height:.92;
+
+    letter-spacing:-.05em;
+
+}
+
+
+
+.hero-claim{
+
+    margin-top:34px;
+
+    font-family:var(--font-title);
+
+    font-size:1.65rem;
+
+    line-height:1.55;
+
+    color:white;
+
+}
+
+
+
+.hero-description{
+
+    margin-top:36px;
+
+    max-width:580px;
+
+    font-size:1.08rem;
+
+    line-height:2;
+
+    color:var(--color-text-soft);
+
+}
+
+
+
+/* ==========================================================
+   BOTONES
+========================================================== */
+
+.hero-buttons{
+
+    display:flex;
+
+    align-items:center;
+
+    flex-wrap:wrap;
+
+    gap:30px;
+
+    margin-top:52px;
+
+}
+/* ==========================================================
+   MOCKUP PRINCIPAL
 ========================================================== */
 
 .hero-book-image{
@@ -91,113 +195,87 @@
 
     align-items:center;
 
+    min-height:700px;
+
 }
 
 
 
-.hero-book-image img{
+/* ==========================================================
+   HALO LUMINOSO
+========================================================== */
+
+.hero-book-image::before{
+
+    content:"";
+
+    position:absolute;
+
+    left:50%;
+
+    top:50%;
+
+    width:700px;
+
+    height:700px;
+
+    transform:translate(-50%,-50%);
+
+    border-radius:50%;
+
+    background:radial-gradient(
+        circle,
+        rgba(199,166,90,.16) 0%,
+        rgba(199,166,90,.08) 35%,
+        transparent 72%
+    );
+
+    filter:blur(45px);
+
+    pointer-events:none;
+
+}
+
+
+
+/* ==========================================================
+   MOCKUP
+========================================================== */
+
+.hero-book-image .book-mockup{
 
     position:relative;
 
     z-index:2;
 
-}
-
-
-
-/* ==========================================================
-   TEXTO HERO
-========================================================== */
-
-.hero-content{
-
-    max-width:620px;
-
-}
-
-
-
-.book-category{
-
-    display:inline-block;
-
-    margin-bottom:18px;
-
-    color:var(--contra-primary);
-
-    text-transform:uppercase;
-
-    letter-spacing:.18em;
-
-    font-size:.82rem;
-
-}
-
-
-
-.hero-content h1{
-
-    margin:0;
-
-    font-size:clamp(3.6rem,7vw,5.8rem);
-
-    line-height:.95;
-
-    font-weight:700;
-
-    letter-spacing:-.04em;
-
-}
-
-
-
-.hero-claim{
-
-    margin-top:30px;
-
-    font-size:1.55rem;
-
-    line-height:1.45;
-
-    font-family:var(--font-title);
-
-    color:white;
-
-}
-
-
-
-.hero-description{
-
-    margin-top:34px;
-
-    max-width:560px;
-
-    color:var(--color-text-soft);
-
-    font-size:1.08rem;
-
-    line-height:1.9;
+    width:min(540px,100%);
 
 }
 
 
 
 /* ==========================================================
-   BOTONES HERO
+   PORTADA SECUNDARIA
 ========================================================== */
 
-.hero-buttons{
+.book-cover-panel{
 
     display:flex;
 
-    align-items:center;
+    justify-content:center;
 
-    gap:26px;
+    align-items:flex-start;
 
-    margin-top:48px;
+}
 
-    flex-wrap:wrap;
+.book-cover-panel img{
+
+    width:300px;
+
+    border-radius:16px;
+
+    box-shadow:
+        0 30px 70px rgba(0,0,0,.45);
 
 }
 
@@ -209,33 +287,29 @@
 
 .quote-section{
 
-    padding:20px 0 90px;
+    padding:40px 0 100px;
 
 }
 
-
-
 .book-quote{
 
-    max-width:850px;
+    max-width:900px;
 
     margin:auto;
 
     text-align:center;
 
-    font-size:2rem;
+    font-family:var(--font-title);
+
+    font-size:2.2rem;
 
     line-height:1.6;
 
-    font-family:var(--font-title);
-
-    color:rgba(255,255,255,.92);
+    color:rgba(255,255,255,.95);
 
     position:relative;
 
 }
-
-
 
 .book-quote::before{
 
@@ -243,17 +317,17 @@
 
     position:absolute;
 
-    left:-30px;
+    left:-35px;
 
-    top:-40px;
+    top:-45px;
 
-    font-size:7rem;
+    font-size:8rem;
 
-    color:rgba(199,166,90,.12);
+    line-height:1;
+
+    color:rgba(199,166,90,.10);
 
 }
-
-
 
 .book-quote::after{
 
@@ -261,13 +335,15 @@
 
     position:absolute;
 
-    right:-20px;
+    right:-25px;
 
-    bottom:-60px;
+    bottom:-65px;
 
-    font-size:7rem;
+    font-size:8rem;
 
-    color:rgba(199,166,90,.12);
+    line-height:1;
+
+    color:rgba(199,166,90,.10);
 
 }
 
@@ -283,13 +359,11 @@
 
     grid-template-columns:1.5fr .9fr;
 
-    gap:70px;
+    gap:80px;
 
     align-items:start;
 
 }
-
-
 
 .synopsis-content{
 
@@ -297,11 +371,11 @@
 
 }
 
-
-
 .synopsis-content p{
 
-    margin-bottom:1.6rem;
+    margin-bottom:1.8rem;
+
+    color:var(--color-text-soft);
 
     font-size:1.08rem;
 
@@ -309,107 +383,33 @@
 
 }
 
+.synopsis-content p:first-of-type{
 
+    font-size:1.16rem;
+
+    color:var(--color-text);
+
+}
 
 .highlight-text{
 
-    margin-top:2rem;
-
-    font-size:1.45rem;
-
-    color:var(--contra-primary);
+    margin-top:2.5rem;
 
     font-family:var(--font-title);
 
-}
+    font-size:1.45rem;
 
-
-
-.book-cover-panel{
-
-    display:flex;
-
-    justify-content:center;
-
-}
-
-
-
-.book-cover-panel img{
-
-    width:320px;
-
-    border-radius:18px;
-
-    box-shadow:
-
-        0 25px 60px rgba(0,0,0,.45);
-
-}
-/* ==========================================================
-   CABECERAS DE SECCIÓN
-========================================================== */
-
-.section{
-
-    position:relative;
-
-    padding:110px 0;
-
-}
-
-.section-header{
-
-    margin-bottom:3.5rem;
-
-}
-
-.section-header.center{
-
-    text-align:center;
-
-}
-
-.section-kicker{
-
-    display:inline-block;
-
-    margin-bottom:16px;
+    line-height:1.6;
 
     color:var(--contra-primary);
 
-    text-transform:uppercase;
+    border-left:3px solid var(--contra-primary);
 
-    letter-spacing:.18em;
-
-    font-size:.82rem;
+    padding-left:24px;
 
 }
-
-.section-header h2{
-
-    margin:0;
-
-    font-size:clamp(2.2rem,4vw,3.4rem);
-
-    line-height:1.15;
-
-}
-
-.section-header p{
-
-    margin-top:20px;
-
-    max-width:760px;
-
-    color:var(--color-text-soft);
-
-}
-
-
-
 /* ==========================================================
-   POR QUÉ LEERLO
+   POR QUÉ LEER CONTRA TIEMPO
 ========================================================== */
 
 .features-grid{
@@ -420,21 +420,27 @@
 
     gap:34px;
 
+    margin-top:2rem;
+
 }
 
 .feature-card{
 
-    padding:2.4rem;
+    position:relative;
 
-    border-radius:24px;
+    overflow:hidden;
 
-    background:rgba(255,255,255,.03);
+    padding:2.6rem;
 
-    border:1px solid rgba(255,255,255,.06);
+    border-radius:22px;
 
-    backdrop-filter:blur(12px);
+    background:rgba(255,255,255,.025);
 
-    transition:.35s;
+    border:1px solid rgba(255,255,255,.05);
+
+    backdrop-filter:blur(10px);
+
+    transition:all .35s ease;
 
 }
 
@@ -446,19 +452,17 @@
 
     box-shadow:
 
-        0 18px 40px rgba(0,0,0,.30);
+        0 25px 50px rgba(0,0,0,.30);
 
 }
 
 .feature-card h3{
 
-    margin-top:0;
-
-    margin-bottom:1rem;
+    margin:0 0 1.2rem;
 
     color:var(--contra-primary);
 
-    font-size:1.25rem;
+    font-size:1.35rem;
 
 }
 
@@ -468,25 +472,25 @@
 
     line-height:1.9;
 
+    color:var(--color-text-soft);
+
 }
 
 
 
 /* ==========================================================
-   FICHA DEL LIBRO
+   FICHA TÉCNICA
 ========================================================== */
 
 .book-data{
 
-    display:grid;
-
-    gap:0;
+    margin-top:2rem;
 
     border-radius:22px;
 
     overflow:hidden;
 
-    border:1px solid rgba(255,255,255,.06);
+    border:1px solid rgba(255,255,255,.05);
 
     background:rgba(255,255,255,.02);
 
@@ -500,7 +504,7 @@
 
     align-items:center;
 
-    padding:1.4rem 2rem;
+    padding:1.35rem 2rem;
 
     border-bottom:1px solid rgba(255,255,255,.05);
 
@@ -529,52 +533,6 @@
 
 
 /* ==========================================================
-   TAGS
-========================================================== */
-
-.tags-cloud{
-
-    display:flex;
-
-    justify-content:center;
-
-    flex-wrap:wrap;
-
-    gap:16px;
-
-    max-width:950px;
-
-    margin:auto;
-
-}
-
-.tags-cloud span{
-
-    padding:14px 22px;
-
-    border-radius:999px;
-
-    background:rgba(255,255,255,.03);
-
-    border:1px solid rgba(255,255,255,.06);
-
-    transition:.3s;
-
-}
-
-.tags-cloud span:hover{
-
-    border-color:rgba(199,166,90,.35);
-
-    color:var(--contra-primary);
-
-    transform:translateY(-3px);
-
-}
-
-
-
-/* ==========================================================
    RESEÑAS
 ========================================================== */
 
@@ -586,19 +544,21 @@
 
     gap:30px;
 
+    margin-top:2rem;
+
 }
 
 .review-card{
 
-    padding:2.3rem;
+    padding:2.4rem;
 
-    border-radius:24px;
+    border-radius:22px;
 
-    background:rgba(255,255,255,.03);
+    background:rgba(255,255,255,.025);
 
     border:1px solid rgba(255,255,255,.05);
 
-    transition:.35s;
+    transition:.35s ease;
 
 }
 
@@ -614,17 +574,19 @@
 
     color:var(--contra-primary);
 
-    font-size:1.15rem;
+    letter-spacing:.28rem;
 
-    letter-spacing:.25rem;
+    margin-bottom:1rem;
 
-    margin-bottom:1.2rem;
+    font-size:1.1rem;
 
 }
 
 .review-card p{
 
     line-height:1.9;
+
+    color:var(--color-text-soft);
 
 }
 
@@ -640,25 +602,31 @@
 
 }
 
-.coming-soon{
+.preview-box{
 
-    max-width:760px;
+    max-width:900px;
 
     margin:auto;
 
-    padding:3rem;
+    padding:4rem;
 
     border-radius:24px;
 
-    background:rgba(255,255,255,.025);
+    background:rgba(255,255,255,.02);
 
     border:1px dashed rgba(199,166,90,.25);
 
 }
 
-.coming-soon p{
+.preview-box h3{
 
-    margin:0;
+    margin-top:0;
+
+    margin-bottom:1rem;
+
+}
+
+.preview-box p{
 
     color:var(--color-text-soft);
 
@@ -674,9 +642,11 @@
 
 .cta-final{
 
+    position:relative;
+
     text-align:center;
 
-    position:relative;
+    padding:120px 0;
 
 }
 
@@ -688,17 +658,25 @@
 
     left:50%;
 
-    top:0;
+    top:50%;
 
-    transform:translateX(-50%);
+    transform:translate(-50%,-50%);
 
-    width:700px;
+    width:900px;
 
-    height:700px;
+    height:900px;
 
-    background:radial-gradient(circle,
+    border-radius:50%;
+
+    background:radial-gradient(
+
+        circle,
+
         rgba(199,166,90,.08),
-        transparent 70%);
+
+        transparent 70%
+
+    );
 
     pointer-events:none;
 
@@ -706,18 +684,349 @@
 
 .cta-final h2{
 
-    font-size:clamp(2.3rem,5vw,3.8rem);
+    margin-bottom:1.5rem;
 
-    margin-bottom:1.4rem;
+    font-size:clamp(2.6rem,5vw,4rem);
 
 }
 
 .cta-final p{
 
-    max-width:720px;
+    max-width:760px;
 
     margin:0 auto 3rem;
 
+    color:var(--color-text-soft);
+
     line-height:1.9;
+
+}
+/* ==========================================================
+   ANIMACIONES
+========================================================== */
+
+.hero-content{
+
+    animation:heroFade .9s ease forwards;
+
+}
+
+.hero-book-image{
+
+    animation:heroBook 1.2s ease forwards;
+
+}
+
+@keyframes heroFade{
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(30px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:none;
+
+    }
+
+}
+
+@keyframes heroBook{
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(40px) scale(.96);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:none;
+
+    }
+
+}
+
+
+
+/* ==========================================================
+   ENLACES
+========================================================== */
+
+.book-page a{
+
+    transition:all .3s ease;
+
+}
+
+.book-page a:hover{
+
+    text-decoration:none;
+
+}
+
+
+
+/* ==========================================================
+   IMÁGENES
+========================================================== */
+
+.book-page img{
+
+    max-width:100%;
+
+    display:block;
+
+}
+
+
+
+/* ==========================================================
+   SECCIONES
+========================================================== */
+
+.book-page section{
+
+    position:relative;
+
+    padding:120px 0;
+
+}
+
+.book-page section:first-of-type{
+
+    padding-top:0;
+
+}
+
+
+
+/* ==========================================================
+   FONDO DECORATIVO
+========================================================== */
+
+.book-page::before{
+
+    content:"";
+
+    position:fixed;
+
+    inset:0;
+
+    pointer-events:none;
+
+    background:
+
+        radial-gradient(
+
+            circle at 15% 25%,
+
+            rgba(199,166,90,.03),
+
+            transparent 28%
+
+        ),
+
+        radial-gradient(
+
+            circle at 80% 15%,
+
+            rgba(199,166,90,.025),
+
+            transparent 24%
+
+        ),
+
+        radial-gradient(
+
+            circle at 70% 80%,
+
+            rgba(199,166,90,.03),
+
+            transparent 26%
+
+        );
+
+    z-index:-2;
+
+}
+
+
+
+/* ==========================================================
+   RESPONSIVE
+========================================================== */
+
+@media (max-width:1200px){
+
+    .hero-grid{
+
+        gap:60px;
+
+    }
+
+    .synopsis-grid{
+
+        gap:60px;
+
+    }
+
+}
+
+
+
+@media (max-width:992px){
+
+    .hero{
+
+        min-height:auto;
+
+        padding:170px 0 80px;
+
+    }
+
+    .hero-grid{
+
+        grid-template-columns:1fr;
+
+        text-align:center;
+
+    }
+
+    .hero-content{
+
+        max-width:none;
+
+    }
+
+    .hero-description{
+
+        margin-left:auto;
+
+        margin-right:auto;
+
+    }
+
+    .hero-buttons{
+
+        justify-content:center;
+
+    }
+
+    .hero-book-image{
+
+        min-height:auto;
+
+        order:-1;
+
+        margin-bottom:40px;
+
+    }
+
+    .synopsis-grid{
+
+        grid-template-columns:1fr;
+
+    }
+
+    .book-cover-panel{
+
+        justify-content:center;
+
+    }
+
+    .features-grid{
+
+        grid-template-columns:1fr;
+
+    }
+
+    .reviews-grid{
+
+        grid-template-columns:1fr;
+
+    }
+
+}
+
+
+
+@media (max-width:768px){
+
+    .hero-content h1{
+
+        font-size:3rem;
+
+    }
+
+    .hero-claim{
+
+        font-size:1.3rem;
+
+    }
+
+    .book-quote{
+
+        font-size:1.5rem;
+
+    }
+
+    .book-quote::before,
+
+    .book-quote::after{
+
+        display:none;
+
+    }
+
+    .preview-box{
+
+        padding:2rem;
+
+    }
+
+    .book-data div{
+
+        flex-direction:column;
+
+        align-items:flex-start;
+
+        gap:.5rem;
+
+    }
+
+}
+
+
+
+@media (max-width:480px){
+
+    .hero{
+
+        padding-top:140px;
+
+    }
+
+    .hero-buttons{
+
+        gap:18px;
+
+    }
+
+    .book-category{
+
+        letter-spacing:.15em;
+
+    }
 
 }
