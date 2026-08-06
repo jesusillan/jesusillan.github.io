@@ -1,8 +1,52 @@
 /* ==========================================================
    JESUSILLAN.COM
    LAYOUT.CSS
-   v4.0
+   v5.0
+   Estructura general del sitio
 ========================================================== */
+
+
+/* ==========================================================
+   CONTAINER
+========================================================== */
+
+.container{
+
+    width:min(var(--container),92%);
+
+    margin-inline:auto;
+
+}
+
+
+
+/* ==========================================================
+   MAIN
+========================================================== */
+
+main{
+
+    position:relative;
+
+    overflow:hidden;
+
+}
+
+
+
+/* ==========================================================
+   SECTIONS
+========================================================== */
+
+.section{
+
+    position:relative;
+
+    padding:100px 0;
+
+}
+
+
 
 /* ==========================================================
    HEADER
@@ -12,17 +56,19 @@
 
     position:fixed;
 
-    inset:0 0 auto 0;
+    top:0;
 
-    height:var(--header-height);
+    left:0;
 
-    z-index:var(--z-header);
+    width:100%;
 
-    transition:var(--transition);
+    z-index:1000;
 
-    background:rgba(9,9,9,.82);
+    transition:all .35s ease;
 
-    backdrop-filter:blur(14px);
+    background:rgba(10,10,10,.82);
+
+    backdrop-filter:blur(16px);
 
     border-bottom:1px solid transparent;
 
@@ -30,23 +76,21 @@
 
 .site-header.scrolled{
 
-    background:rgba(9,9,9,.96);
+    background:rgba(8,8,8,.96);
 
-    border-bottom:1px solid var(--color-line);
+    border-bottom:1px solid rgba(255,255,255,.05);
 
 }
+
+
 
 /* ==========================================================
    HEADER CONTAINER
 ========================================================== */
 
-.header-inner{
+.header-container{
 
-    width:min(var(--container),92%);
-
-    height:100%;
-
-    margin:auto;
+    min-height:92px;
 
     display:flex;
 
@@ -55,6 +99,8 @@
     justify-content:space-between;
 
 }
+
+
 
 /* ==========================================================
    LOGO
@@ -66,63 +112,63 @@
 
     align-items:center;
 
-    gap:14px;
-
 }
 
 .site-logo img{
 
-    height:48px;
+    width:210px;
 
-    width:auto;
+    height:auto;
 
-}
-
-.site-logo span{
-
-    font-family:var(--font-title);
-
-    font-size:1.5rem;
-
-    letter-spacing:.08em;
+    display:block;
 
 }
+
+
 
 /* ==========================================================
    MENÚ
 ========================================================== */
 
-.site-nav{
+.main-nav ul{
 
     display:flex;
 
     align-items:center;
 
-    gap:2rem;
+    gap:42px;
+
+    list-style:none;
+
+    margin:0;
+
+    padding:0;
 
 }
 
-.site-nav a{
+.main-nav a{
 
     position:relative;
 
+    color:var(--color-text-soft);
+
+    text-decoration:none;
+
     font-size:.95rem;
 
-    letter-spacing:.12em;
+    letter-spacing:.10em;
 
-    text-transform:uppercase;
-
-    color:var(--color-text-soft);
+    transition:var(--transition);
 
 }
 
-.site-nav a:hover{
+.main-nav a:hover{
 
     color:var(--color-gold);
 
 }
 
-.site-nav a::after{
+.main-nav a::after{
 
     content:"";
 
@@ -130,7 +176,7 @@
 
     left:0;
 
-    bottom:-6px;
+    bottom:-8px;
 
     width:0;
 
@@ -138,31 +184,22 @@
 
     background:var(--color-gold);
 
-    transition:var(--transition);
+    transition:.3s;
 
 }
 
-.site-nav a:hover::after{
+.main-nav a:hover::after{
 
     width:100%;
 
 }
-
-/* ==========================================================
-   MAIN
-========================================================== */
-
-main{
-
-    overflow:hidden;
-
-}
-
 /* ==========================================================
    HERO
 ========================================================== */
 
 .hero{
+
+    position:relative;
 
     min-height:100vh;
 
@@ -170,41 +207,177 @@ main{
 
     align-items:center;
 
-    position:relative;
+    padding-top:110px;
+
+    padding-bottom:80px;
 
 }
 
+
+
 /* ==========================================================
-   GRID DOS COLUMNAS
+   HERO GRID
 ========================================================== */
 
-.grid-2{
+.hero-grid{
 
     display:grid;
 
     grid-template-columns:1fr 1fr;
 
-    gap:5rem;
+    gap:80px;
 
     align-items:center;
 
 }
 
+
+
 /* ==========================================================
-   SEPARADOR
+   CONTENIDO HERO
 ========================================================== */
 
-.section-divider{
+.hero-content{
 
-    width:140px;
+    position:relative;
 
-    height:1px;
-
-    background:var(--color-line);
-
-    margin:2rem auto;
+    z-index:2;
 
 }
+
+
+
+/* ==========================================================
+   IMAGEN HERO
+========================================================== */
+
+.hero-book-image{
+
+    position:relative;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+}
+
+
+
+/* ==========================================================
+   CABECERAS DE SECCIÓN
+========================================================== */
+
+.section-header{
+
+    margin-bottom:3.5rem;
+
+}
+
+.section-header.center{
+
+    text-align:center;
+
+}
+
+.section-kicker{
+
+    display:inline-block;
+
+    margin-bottom:18px;
+
+    color:var(--color-gold);
+
+    font-size:.82rem;
+
+    text-transform:uppercase;
+
+    letter-spacing:.18em;
+
+}
+
+.section-header h2{
+
+    margin:0;
+
+    font-size:clamp(2.2rem,4vw,3.4rem);
+
+    line-height:1.15;
+
+}
+
+.section-header p{
+
+    max-width:760px;
+
+    margin-top:1.3rem;
+
+    color:var(--color-text-soft);
+
+}
+
+
+
+/* ==========================================================
+   GRID GENÉRICO DOS COLUMNAS
+========================================================== */
+
+.grid-two{
+
+    display:grid;
+
+    grid-template-columns:1fr 1fr;
+
+    gap:70px;
+
+    align-items:center;
+
+}
+
+
+
+/* ==========================================================
+   GRID TRES COLUMNAS
+========================================================== */
+
+.grid-three{
+
+    display:grid;
+
+    grid-template-columns:repeat(3,1fr);
+
+    gap:32px;
+
+}
+
+
+
+/* ==========================================================
+   CONTENIDO ESTRECHO
+========================================================== */
+
+.narrow{
+
+    max-width:860px;
+
+    margin:auto;
+
+}
+
+
+
+/* ==========================================================
+   CENTRADO
+========================================================== */
+
+.center{
+
+    text-align:center;
+
+}
+
+
 
 /* ==========================================================
    FOOTER
@@ -212,19 +385,17 @@ main{
 
 .site-footer{
 
-    padding:5rem 0 3rem;
+    margin-top:6rem;
 
-    border-top:1px solid var(--color-line);
+    padding:4rem 0;
 
-    background:#0d0d0d;
+    background:#0b0b0b;
+
+    border-top:1px solid rgba(255,255,255,.06);
 
 }
 
-.footer-inner{
-
-    width:min(var(--container),92%);
-
-    margin:auto;
+.site-footer .container{
 
     display:flex;
 
@@ -232,55 +403,133 @@ main{
 
     align-items:center;
 
-    gap:2rem;
+    justify-content:center;
+
+    gap:1.5rem;
 
     text-align:center;
 
 }
 
-.footer-logo img{
+.footer-logo{
 
-    width:120px;
+    width:180px;
 
-    margin:auto;
+    height:auto;
 
 }
 
-.footer-copy{
-
-    font-size:.85rem;
+.site-footer p{
 
     color:var(--color-text-soft);
 
+    font-size:.92rem;
+
 }
+/* ==========================================================
+   SEPARADOR DECORATIVO
+========================================================== */
+
+.section-divider{
+
+    width:180px;
+
+    height:1px;
+
+    margin:3rem auto;
+
+    background:linear-gradient(
+        90deg,
+        transparent,
+        rgba(199,166,90,.65),
+        transparent
+    );
+
+}
+
+
+
+/* ==========================================================
+   UTILIDADES
+========================================================== */
+
+.text-center{
+
+    text-align:center;
+
+}
+
+.mt-0{
+
+    margin-top:0;
+
+}
+
+.mb-0{
+
+    margin-bottom:0;
+
+}
+
+.mt-l{
+
+    margin-top:4rem;
+
+}
+
+.mb-l{
+
+    margin-bottom:4rem;
+
+}
+
+.hidden{
+
+    display:none !important;
+
+}
+
+
 
 /* ==========================================================
    RESPONSIVE
 ========================================================== */
 
-@media(max-width:900px){
+@media (max-width:1100px){
 
-    .grid-2{
+    .hero-grid{
 
-        grid-template-columns:1fr;
-
-        gap:3rem;
+        gap:60px;
 
     }
 
-    .site-nav{
+    .grid-two{
 
-        display:none;
+        gap:50px;
 
     }
 
 }
 
-@media(max-width:768px){
+
+
+@media (max-width:900px){
+
+    .header-container{
+
+        min-height:82px;
+
+    }
 
     .site-logo img{
 
-        height:40px;
+        width:180px;
+
+    }
+
+    .main-nav{
+
+        display:none;
 
     }
 
@@ -288,7 +537,109 @@ main{
 
         min-height:auto;
 
+        padding-top:130px;
+
+        padding-bottom:70px;
+
+    }
+
+    .hero-grid{
+
+        grid-template-columns:1fr;
+
+        gap:60px;
+
+        text-align:center;
+
+    }
+
+    .hero-content{
+
+        order:2;
+
+    }
+
+    .hero-book-image{
+
+        order:1;
+
+    }
+
+    .grid-two{
+
+        grid-template-columns:1fr;
+
+    }
+
+    .grid-three{
+
+        grid-template-columns:1fr;
+
+    }
+
+}
+
+
+
+@media (max-width:768px){
+
+    .container{
+
+        width:min(94%,var(--container));
+
+    }
+
+    .section{
+
+        padding:80px 0;
+
+    }
+
+    .site-logo img{
+
+        width:155px;
+
+    }
+
+    .hero{
+
         padding-top:120px;
+
+    }
+
+    .section-header{
+
+        margin-bottom:2.5rem;
+
+    }
+
+    .section-header h2{
+
+        font-size:2.2rem;
+
+    }
+
+}
+
+
+
+@media (max-width:480px){
+
+    .section{
+
+        padding:65px 0;
+
+    }
+
+    .hero{
+
+        padding-top:110px;
+
+    }
+
+    .section-header h2{
+
+        font-size:1.9rem;
 
     }
 
