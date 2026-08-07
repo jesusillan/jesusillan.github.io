@@ -1048,6 +1048,61 @@
 
 }
 /* ==========================================================
+BOOK QUOTE
+========================================================== */
+
+.book-quote{
+
+    max-width:900px;
+
+    margin:120px auto;
+
+    text-align:center;
+
+    font-family:var(--font-serif);
+
+    font-style:normal;
+
+    font-weight:500;
+
+    line-height:1.2;
+
+}
+
+.book-quote .line-1{
+
+    display:block;
+
+    font-size:clamp(2.3rem,4vw,3.7rem);
+
+    color:var(--text);
+
+}
+
+.book-quote .divider{
+
+    display:block;
+
+    width:90px;
+
+    height:1px;
+
+    margin:34px auto;
+
+    background:rgba(199,166,90,.45);
+
+}
+
+.book-quote .line-2{
+
+    display:block;
+
+    font-size:clamp(2.6rem,4.5vw,4rem);
+
+    color:var(--contra-primary);
+
+}
+/* ==========================================================
    SINOPSIS
 ========================================================== */
 
