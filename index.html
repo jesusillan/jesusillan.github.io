@@ -332,9 +332,7 @@ footer{border-top:1px solid rgba(255,255,255,.08);padding:25px 0 28px}
  .footer-inner{justify-content:center}.footer-share{display:none}
 }
 @media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important;transition:none!important}}
-</style>
 
-<style>
 /* V3.6 — final polish for social closing + footer */
 .connect{
   padding:68px 0 42px !important;
@@ -449,12 +447,18 @@ footer{
 </head>
 <body>
 
-<header>
+<header role="banner">
   <div class="wrap nav">
-    <a class="logo" href="#inicio" aria-label="Jesús Illán">
-      <img src="images/logo-header-v3.png" alt="Jesús Illán">
+   <a class="logo"
+href="#inicio"
+aria-label="Jesús Illán"
+title="Inicio">
+     <img src="images/logo-header-v3.png"
+alt="Jesús Illán"
+width="58"
+height="58">
     </a>
-    <nav>
+  <nav aria-label="Navegación principal">
       <a href="#inicio">Inicio</a>
       <a href="#libros">Mis libros</a>
       <a href="#sobre-mi">Sobre mí</a>
