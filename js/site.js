@@ -6,14 +6,40 @@
 
 document.addEventListener("DOMContentLoaded", () => {
 
-    initHeader();
+   initHeader();
 
-    initReveal();
+initReveal();
 
-    initSmoothAnchors();
+initSmoothAnchors();
+
+initScrollIndicator();
 
 });
+/* ==========================================================
+SCROLL INDICATOR
+========================================================== */
 
+function initScrollIndicator(){
+
+    const indicator = document.querySelector(".scroll-indicator");
+
+    if(!indicator) return;
+
+    window.addEventListener("scroll",()=>{
+
+        if(window.scrollY>40){
+
+            indicator.classList.add("hidden");
+
+        }else{
+
+            indicator.classList.remove("hidden");
+
+        }
+
+    });
+
+}
 
 /* ==========================================================
    HEADER AL HACER SCROLL
