@@ -289,7 +289,14 @@
         filter .6s ease;
 
 }
+.mockup-link{
+    display:inline-block;
+    text-decoration:none;
+}
 
+.mockup-link:hover{
+    cursor:pointer;
+}
 
 .book-mockup:hover{
 
