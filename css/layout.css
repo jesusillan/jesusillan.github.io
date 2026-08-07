@@ -61,7 +61,7 @@ main{
 
     width:100%;
 
-    height:82px;
+    height:72px;
 
     z-index:1000;
 
@@ -70,7 +70,9 @@ main{
         border-color .35s ease,
         backdrop-filter .35s ease;
 
-    background:transparent;
+    background:rgba(8,8,8,.18);
+
+    backdrop-filter:blur(12px);
 
     border-bottom:1px solid transparent;
 
@@ -78,7 +80,7 @@ main{
 
 .site-header.scrolled{
 
-    background:rgba(8,8,8,.88);
+    background:rgba(8,8,8,.82);
 
     backdrop-filter:blur(18px);
 
@@ -86,15 +88,13 @@ main{
 
 }
 
-
-
 /* ==========================================================
    CONTENEDOR HEADER
 ========================================================== */
 
 .header-container{
 
-    height:82px;
+    height:72px;
 
     display:flex;
 
@@ -122,7 +122,7 @@ main{
 
 .site-logo img{
 
-    width:155px;
+    width:145px;
 
     height:auto;
 
@@ -236,7 +236,6 @@ main{
 /* ==========================================================
    HERO BASE
 ========================================================== */
-
 .hero{
 
     position:relative;
@@ -245,15 +244,15 @@ main{
 
     align-items:center;
 
-    min-height:100vh;
+    min-height:calc(100vh - 72px);
 
-    padding-top:82px;
+    padding-top:72px;
+
+    padding-bottom:50px;
 
     overflow:hidden;
 
 }
-
-
 
 /* ==========================================================
    HERO GRID
