@@ -15,7 +15,7 @@
   --bg:#090a0b; --bg2:#101114; --text:#eee9df; --muted:#aaa59c;
   --gold:#c7a25c; --gold2:#e0c27f; --line:rgba(199,162,92,.28);
   --white:#fff; --serif:"Cormorant Garamond",Georgia,serif;
-  --sans:"DM Sans",Arial,sans-serif; --max:1120px;
+  --sans:"DM Sans",Arial,sans-serif; --max:1380px;
 }
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
@@ -107,11 +107,15 @@ nav a:hover{color:var(--gold2)}
 /* BOOKS */
 .books{padding:0 0 78px}
 .book{
-  display:grid;grid-template-columns:360px 1fr;gap:clamp(55px,8vw,105px);
-  align-items:center;min-height:480px;border-bottom:1px solid rgba(199,162,92,.20);
-  padding:50px 4% 55px
+  display:grid;
+  grid-template-columns:420px 1fr;
+  gap:clamp(70px,8vw,120px);
+  align-items:center;
+  min-height:480px;
+  border-bottom:1px solid rgba(199,162,92,.20);
+  padding:50px 4% 55px;
 }
-.book.reverse{grid-template-columns:1fr 360px}
+.book.reverse{grid-template-columns:1fr 420px}
 .book.reverse .visual{grid-column:2;grid-row:1}
 .book.reverse .copy{grid-column:1;grid-row:1}
 .visual{display:flex;justify-content:center;perspective:1100px}
