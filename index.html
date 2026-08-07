@@ -25,7 +25,7 @@ content="Descubre las novelas de Jesús Illán: thriller, ciencia ficción y mis
 
 <meta name="twitter:image"
 content="https://jesusillan.github.io/images/og-image.jpg">
-<title>Jesús Illán | Autor de novelas de thriller y ciencia ficción</title>
+<title> Jesús Illán | Thriller, ciencia ficción y novelas de misterio </title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
@@ -40,7 +40,10 @@ content="https://jesusillan.github.io/images/og-image.jpg">
   --sans:"DM Sans",Arial,sans-serif; --max:1380px;
 }
 *{box-sizing:border-box}
-html{scroll-behavior:smooth}
+html{
+    scroll-behavior:smooth;
+    scroll-padding-top:95px;
+}
 body{
   margin:0;color:var(--text);font-family:var(--sans);line-height:1.65;
   background:
@@ -155,7 +158,11 @@ nav a:hover{color:var(--gold2)}
   display:block;width:100%;height:auto;border:0;
   box-shadow:22px 28px 45px rgba(0,0,0,.55)
 }
-.copy{max-width:570px;transform:translateY(18px)}
+.copy{
+    max-width:570px;
+    transform:translateY(18px);
+    text-wrap:pretty;
+}
 .number{font-size:10px;letter-spacing:.22em;color:#77736c;margin-bottom:10px}
 .copy h2{font-family:var(--serif);font-size:clamp(38px,4.4vw,55px);font-weight:500;line-height:1.02;margin:0}
 .copy h2 em{font-style:italic}
@@ -164,9 +171,10 @@ nav a:hover{color:var(--gold2)}
 .seo-description{
     margin-top:24px;
     max-width:560px;
-    font-size:0.95rem;
+    font-size:.95rem;
     line-height:1.75;
     color:#a9a39a;
+    text-wrap:pretty;
 }
 /* ACTIONS — softer, editorial and less boxy */
 .buy{
@@ -178,10 +186,18 @@ nav a:hover{color:var(--gold2)}
 .buy:hover{
   transform:translateY(-3px);
   box-shadow:0 12px 30px rgba(0,0,0,.40);
-  filter:brightness(1.035)
+  filter:brightness(1.035);
+}
+
+.buy:hover img{
+    transform:scale(1.015);
 }
 .buy img{
-  display:block;width:245px;height:auto;border-radius:10px
+  display:block;
+  width:245px;
+  height:auto;
+  border-radius:10px;
+  transition:transform .25s ease;
 }
 
 /* "Saber más": no box, just a refined editorial link */
@@ -250,7 +266,14 @@ nav a:hover{color:var(--gold2)}
 }
 .about-copy .eyebrow{font-size:10px;letter-spacing:.26em;color:var(--gold2);text-transform:uppercase}
 .about-copy h2{font-family:var(--serif);font-size:52px;font-weight:500;line-height:1;margin:8px 0 26px}
-.about-copy p{color:#c1bcb2;font-size:14px;line-height:1.75;margin:0 0 17px;max-width:570px}
+.about-copy p{
+    color:#c1bcb2;
+    font-size:14px;
+    line-height:1.75;
+    margin:0 0 17px;
+    max-width:570px;
+    text-wrap:pretty;
+}
 .signature-line{font-family:var(--serif);color:var(--gold2);font-size:21px;margin-top:28px}
 
 /* CONNECT / FOOTER */
@@ -280,8 +303,18 @@ footer{border-top:1px solid rgba(255,255,255,.08);padding:25px 0 28px}
 .reveal{opacity:0;transform:translateY(18px);transition:opacity .75s ease,transform .75s ease}
 .reveal.visible{opacity:1;transform:none}
 .toast{
- position:fixed;left:50%;bottom:22px;transform:translate(-50%,18px);opacity:0;
- background:#eee9df;color:#161616;padding:9px 14px;font-size:11px;z-index:100;transition:.25s
+ position:fixed;
+ left:50%;
+ bottom:22px;
+ transform:translate(-50%,18px);
+ opacity:0;
+ background:#eee9df;
+ color:#161616;
+ padding:9px 14px;
+ font-size:11px;
+ z-index:100;
+ transition:.25s;
+ pointer-events:none;
 }
 .toast.show{opacity:1;transform:translate(-50%,0)}
 @media(max-width:760px){
