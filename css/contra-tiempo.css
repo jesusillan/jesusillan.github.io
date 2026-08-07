@@ -478,18 +478,53 @@
 
 .hero-claim{
 
-    margin:0;
+    padding:120px 0;
 
-    font-family:var(--font-title);
+    text-align:center;
 
-    font-size:2rem;
-
-    line-height:1.45;
-
-    color:#fff;
+    background:
+        linear-gradient(
+            180deg,
+            #090909,
+            #101114,
+            #090909
+        );
 
 }
 
+.hero-claim p{
+
+    margin:0;
+
+    font-family:var(--font-serif);
+
+    font-size:clamp(2.4rem,4vw,3.8rem);
+
+    line-height:1.2;
+
+    font-weight:500;
+
+    color:#EEE9DF;
+
+}
+
+.hero-claim .divider{
+
+    width:80px;
+
+    height:1px;
+
+    margin:32px auto;
+
+    background:rgba(199,166,90,.45);
+
+}
+
+.hero-claim .gold{
+
+    color:var(--contra-primary);
+
+}
 
 /* ==========================================================
    DESCRIPCIÓN
