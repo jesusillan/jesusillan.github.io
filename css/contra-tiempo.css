@@ -172,9 +172,9 @@
 
     top:50%;
 
-    width:760px;
+    width:840px;
 
-    height:760px;
+    height:840px;
 
     transform:translate(-50%,-50%);
 
@@ -186,7 +186,7 @@
         / contain
         no-repeat;
 
-    opacity:.15;
+    opacity:.18;
 
     z-index:0;
 
