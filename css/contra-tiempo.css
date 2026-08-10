@@ -1869,7 +1869,7 @@ BOOK QUOTE
     perspective:1800px;
 }
 
-.book-page{
+.first-page{
     display:block;
     width:50%;
     position:relative;
@@ -1879,13 +1879,13 @@ BOOK QUOTE
     transition:transform .4s ease,box-shadow .4s ease;
 }
 
-.book-page img{
+.first-page img{
     display:block;
     width:100%;
     height:auto;
 }
 
-.book-page-left{
+.first-page-left{
     transform-origin:right center;
     transform:perspective(1200px) rotateY(3deg);
     box-shadow:
@@ -1893,7 +1893,7 @@ BOOK QUOTE
         8px 12px 22px rgba(0,0,0,.18);
 }
 
-.book-page-right{
+.first-page-right{
     transform-origin:left center;
     transform:perspective(1200px) rotateY(-3deg);
     box-shadow:
@@ -1901,11 +1901,11 @@ BOOK QUOTE
         -8px 12px 22px rgba(0,0,0,.18);
 }
 
-.book-page-left:hover{
+.first-page-left:hover{
     transform:perspective(1200px) rotateY(1deg) translateY(-4px);
 }
 
-.book-page-right:hover{
+.first-page-right:hover{
     transform:perspective(1200px) rotateY(-1deg) translateY(-4px);
 }
 /* ==========================================================
@@ -1935,16 +1935,16 @@ BOOK QUOTE
         perspective:none;
     }
 
-    .book-page-left{
+    .first-page-left{
         transform:none;
     }
 
-    .book-page-right{
+    .first-page-right{
         transform:none;
     }
 
-    .book-page-left:hover,
-    .book-page-right:hover{
+    .first-page-left:hover,
+    .first-page-right:hover{
         transform:none;
     }
 
@@ -2025,7 +2025,7 @@ BOOK QUOTE
    ANIMACIONES GENERALES
 ========================================================== */
 
-.book-page img{
+.first-page img{
 
     display:block;
 
@@ -2034,14 +2034,14 @@ BOOK QUOTE
 }
 
 
-.book-page a{
+.first-page a{
 
     transition:.3s ease;
 
 }
 
 
-.book-page a:hover{
+.first-page a:hover{
 
     text-decoration:none;
 
