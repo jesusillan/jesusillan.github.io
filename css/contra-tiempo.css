@@ -1830,59 +1830,125 @@ BOOK QUOTE
 
 }
 /* ==========================================================
-   PRIMERAS PÁGINAS
+   PRIMERAS PÁGINAS — LIBRO ABIERTO
 ========================================================== */
 
-.preview-section{
-
+.first-pages{
+    padding:110px 0 125px;
     position:relative;
+    overflow:hidden;
+}
 
+.first-pages-intro{
     text-align:center;
-
+    margin-bottom:65px;
 }
 
+.first-pages-lead{
+    margin:0 0 10px;
+    color:#a9a39a;
+    font-size:14px;
+    letter-spacing:.08em;
+}
 
-.preview-box{
+.first-pages-intro h2{
+    margin:0;
+    font-family:var(--serif);
+    font-size:clamp(38px,4.5vw,58px);
+    font-weight:500;
+    line-height:1.05;
+    color:#d2bd8e;
+}
 
-    max-width:920px;
-
+.book-open{
+    display:flex;
+    justify-content:center;
+    align-items:stretch;
+    max-width:1050px;
     margin:0 auto;
-
-    padding:4rem;
-
-    border-radius:28px;
-
-    background:rgba(255,255,255,.025);
-
-    border:1px solid rgba(199,166,90,.18);
-
-    backdrop-filter:blur(12px);
-
+    perspective:1800px;
 }
 
-
-.preview-box h3{
-
-    margin-top:0;
-
-    margin-bottom:1rem;
-
+.book-page{
+    display:block;
+    width:50%;
+    position:relative;
+    overflow:hidden;
+    background:#eee9df;
+    box-shadow:0 24px 55px rgba(0,0,0,.42);
+    transition:transform .4s ease,box-shadow .4s ease;
 }
 
-
-.preview-box p{
-
-    max-width:680px;
-
-    margin:auto;
-
-    color:var(--contra-soft);
-
-    line-height:1.9;
-
+.book-page img{
+    display:block;
+    width:100%;
+    height:auto;
 }
 
+.book-page-left{
+    transform-origin:right center;
+    transform:perspective(1200px) rotateY(3deg);
+    box-shadow:
+        -12px 24px 45px rgba(0,0,0,.30),
+        8px 12px 22px rgba(0,0,0,.18);
+}
 
+.book-page-right{
+    transform-origin:left center;
+    transform:perspective(1200px) rotateY(-3deg);
+    box-shadow:
+        12px 24px 45px rgba(0,0,0,.30),
+        -8px 12px 22px rgba(0,0,0,.18);
+}
+
+.book-page-left:hover{
+    transform:perspective(1200px) rotateY(1deg) translateY(-4px);
+}
+
+.book-page-right:hover{
+    transform:perspective(1200px) rotateY(-1deg) translateY(-4px);
+}
+/* ==========================================================
+   PRIMERAS PÁGINAS — MÓVIL
+========================================================== */
+
+@media(max-width:768px){
+
+    .first-pages{
+        padding:80px 0 90px;
+    }
+
+    .first-pages-intro{
+        margin-bottom:42px;
+    }
+
+    .first-pages-lead{
+        font-size:13px;
+    }
+
+    .first-pages-intro h2{
+        font-size:40px;
+    }
+
+    .book-open{
+        max-width:94vw;
+        perspective:none;
+    }
+
+    .book-page-left{
+        transform:none;
+    }
+
+    .book-page-right{
+        transform:none;
+    }
+
+    .book-page-left:hover,
+    .book-page-right:hover{
+        transform:none;
+    }
+
+}
 
 /* ==========================================================
    CTA FINAL
