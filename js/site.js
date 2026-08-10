@@ -4,12 +4,19 @@
    v4.0
 ========================================================== */
 document.addEventListener("DOMContentLoaded", () => {
-initHeader();
-initReveal();
-initSmoothAnchors(); 
-initScrollIndicator(); 
-initReviews();
-initShareButtons();   
+
+    initHeader();
+
+    initReveal();
+
+    initSmoothAnchors();
+
+    initScrollIndicator();
+
+    initReviews();
+
+    initShareButtons();
+
 });
 /* ==========================================================
 SCROLL INDICATOR
@@ -142,7 +149,5 @@ function initShareButtons(){
         });
 
     });
-
-}
 
 }
