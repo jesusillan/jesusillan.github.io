@@ -2150,6 +2150,74 @@ BOOK QUOTE
 }
 }
 /* ==========================================================
+   CTA COMPRA
+========================================================== */
+
+.cta-compra{
+
+    position:relative;
+
+    text-align:center;
+
+    padding:130px 0;
+
+}
+
+
+.cta-compra::before{
+
+    content:"";
+
+    position:absolute;
+
+    left:50%;
+
+    top:50%;
+
+    width:900px;
+
+    height:900px;
+
+    transform:translate(-50%,-50%);
+
+    border-radius:50%;
+
+    background:radial-gradient(
+
+        circle,
+
+        rgba(199,166,90,.08),
+
+        transparent 70%
+
+    );
+
+    pointer-events:none;
+
+}
+
+
+.cta-compra h2{
+
+    margin-bottom:1.5rem;
+
+    font-size:clamp(2.8rem,5vw,4.2rem);
+
+}
+
+
+.cta-compra p{
+
+    max-width:720px;
+
+    margin:0 auto 3rem;
+
+    color:var(--contra-soft);
+
+    line-height:1.9;
+
+}
+/* ==========================================================
    CTA FINAL
 ========================================================== */
 
@@ -2217,7 +2285,6 @@ BOOK QUOTE
     line-height:1.9;
 
 }
-
 
 
 /* ==========================================================
@@ -2300,6 +2367,36 @@ BOOK QUOTE
 
 
 
+/* ==========================================================
+   RESPONSIVE GENERAL compra
+========================================================== */
+
+@media (max-width:768px){
+
+    .preview-box{
+
+        padding:2.2rem;
+
+    }
+
+}
+
+
+@media (max-width:480px){
+
+    .cta-compra{
+
+        padding:90px 0;
+
+    }
+
+    .cta-compra h2{
+
+        font-size:2.2rem;
+
+    }
+
+}
 /* ==========================================================
    RESPONSIVE GENERAL
 ========================================================== */
