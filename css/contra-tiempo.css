@@ -1645,7 +1645,7 @@ BOOK QUOTE
     background-size:cover;
     background-position:center;
 
-    opacity:.035;
+    opacity:.5;
 
     filter:
         grayscale(1)
