@@ -6,14 +6,16 @@
 
 document.addEventListener("DOMContentLoaded", () => {
 
-   initHeader();
-
+initHeader();
+   
 initReveal();
-
+   
 initSmoothAnchors();
-
+   
 initScrollIndicator();
- initReviews();
+   
+initReviews();
+   
 });
 /* ==========================================================
 SCROLL INDICATOR
