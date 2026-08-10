@@ -57,3 +57,22 @@ function showToast(message) {
     }, 2200);
 
 }
+/* ==========================================================
+   BOTONES DE COMPARTIR
+========================================================== */
+
+document.addEventListener("DOMContentLoaded", () => {
+
+    document.querySelectorAll(".btn-share").forEach(button => {
+
+        button.addEventListener("click", () => {
+
+            sharePage(
+                button.dataset.title || document.title
+            );
+
+        });
+
+    });
+
+});
