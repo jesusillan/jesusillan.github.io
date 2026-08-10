@@ -1084,14 +1084,10 @@ TRANSICIÓN HERO → SINOPSIS
 
     }
 
-    .hero-buttons .btn-amazon,
-
+     .hero-buttons .btn-amazon,
     .hero-buttons .btn-share{
-
-        width:100%;
-
-        min-width:0;
-
+        width:245px;
+        box-sizing:border-box;
     }
 
 }
