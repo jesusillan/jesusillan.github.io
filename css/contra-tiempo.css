@@ -1214,7 +1214,7 @@ BOOK QUOTE
 .synopsis-grid{
     gap:clamp(70px,8vw,130px);
     padding-top:40px;
-    padding-bottom:110px;
+    padding-bottom:20px;
 }
 
 .synopsis-content{
@@ -1924,7 +1924,7 @@ BOOK QUOTE
 ========================================================== */
 
 .first-pages{
-    padding:110px 0 125px;
+    padding:20px 0 40px;
     position:relative;
     overflow:hidden;
 }
