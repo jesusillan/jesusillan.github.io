@@ -145,16 +145,21 @@ function initReviews(){
 
 
         /* --------------------------------------------------
-           Comprobar si el texto necesita expansión
+           Detectar si el texto es suficientemente largo
         -------------------------------------------------- */
 
-        const needsExpansion = text.scrollHeight > text.clientHeight + 2;
+        const lineHeight = parseFloat(
+            window.getComputedStyle(text).lineHeight
+        );
+
+        const maxHeight = lineHeight * 5;
 
 
-        /* Si la reseña cabe completa, ocultamos el +
-           y no hacemos nada más */
+        /* --------------------------------------------------
+           Si no necesita expansión, ocultamos el botón
+        -------------------------------------------------- */
 
-        if(!needsExpansion){
+        if(text.scrollHeight <= maxHeight + 5){
 
             button.style.display = "none";
 
@@ -164,21 +169,22 @@ function initReviews(){
 
 
         /* --------------------------------------------------
-           Click en +
+           El botón sí necesita funcionar
         -------------------------------------------------- */
 
-        button.addEventListener("click", () => {
+        button.addEventListener("click", function(){
 
-            const expanded = review.classList.toggle("expanded");
+            const isExpanded =
+                review.classList.toggle("expanded");
 
-            button.setAttribute(
+            this.setAttribute(
                 "aria-expanded",
-                expanded ? "true" : "false"
+                isExpanded ? "true" : "false"
             );
 
-            button.setAttribute(
+            this.setAttribute(
                 "aria-label",
-                expanded
+                isExpanded
                     ? "Contraer reseña"
                     : "Leer reseña completa"
             );
