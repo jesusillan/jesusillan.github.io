@@ -15,8 +15,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
     initReviews();
 
-    initShareButtons();
-
 });
 /* ==========================================================
 SCROLL INDICATOR
