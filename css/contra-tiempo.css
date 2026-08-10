@@ -1003,9 +1003,29 @@ TRANSICIÓN HERO → SINOPSIS
 
 @media (max-width:768px){
 
+   /* HEADER — ajuste móvil */
+.site-header{
+    position:relative;
+    z-index:100;
+}
+
+.header-container{
+    min-height:70px;
+}
+
+.site-logo{
+    width:58px;
+    height:58px;
+}
+
+.site-logo img{
+    width:100%;
+    height:100%;
+    object-fit:contain;
+}
     .hero.hero-book{
 
-        padding:30px 0 60px;
+        padding:90px 0 60px;
 
     }
 
