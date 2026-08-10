@@ -8,7 +8,8 @@ initHeader();
 initReveal();
 initSmoothAnchors(); 
 initScrollIndicator(); 
-initReviews(); 
+initReviews();
+initShareButtons();   
 });
 /* ==========================================================
 SCROLL INDICATOR
@@ -117,5 +118,31 @@ function initReviews(){
             );
         });
     });
+   /* ==========================================================
+   COMPARTIR
+========================================================== */
+
+function initShareButtons(){
+
+    const buttons = document.querySelectorAll(
+        ".btn-share, .footer-share"
+    );
+
+    if(!buttons.length) return;
+
+    buttons.forEach(button => {
+
+        button.addEventListener("click", () => {
+
+            const title =
+                button.dataset.title || document.title;
+
+            sharePage(title);
+
+        });
+
+    });
+
+}
 
 }
