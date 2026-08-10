@@ -1391,97 +1391,377 @@ BOOK QUOTE
     background:var(--contra-primary);
 
 }
-
-
-
 /* ==========================================================
    FICHA DEL LIBRO
-========================================================== */
+   ========================================================== */
 
 .book-data{
+    position:relative;
 
-    border-radius:22px;
+    display:grid;
+    grid-template-columns:minmax(260px, 360px) 1fr;
+
+    gap:70px;
+
+    max-width:1050px;
+
+    margin:55px auto 0;
+
+    padding:55px 65px;
 
     overflow:hidden;
 
-    background:rgba(255,255,255,.025);
+    background:
+        linear-gradient(
+            135deg,
+            rgba(255,255,255,.035),
+            rgba(255,255,255,.012)
+        );
 
-    border:1px solid rgba(255,255,255,.06);
+    border:1px solid rgba(199,166,90,.16);
 
-    backdrop-filter:blur(10px);
-
+    box-shadow:
+        0 25px 70px rgba(0,0,0,.28);
 }
 
 
-.book-data div{
+/* ----------------------------------------------------------
+   PORTADA
+   ---------------------------------------------------------- */
+
+.book-data-cover{
+    position:relative;
 
     display:flex;
-
-    justify-content:space-between;
-
     align-items:center;
+    justify-content:center;
 
-    padding:1.35rem 2rem;
+    z-index:2;
+}
 
-    border-bottom:1px solid rgba(255,255,255,.05);
+.book-data-cover a{
+    position:relative;
 
+    display:block;
+
+    width:min(100%,320px);
+
+    text-decoration:none;
+
+    transition:
+        transform .45s ease,
+        filter .45s ease;
+}
+
+.book-data-cover a::after{
+    content:"";
+
+    position:absolute;
+
+    left:8%;
+    right:8%;
+    bottom:-18px;
+
+    height:25px;
+
+    background:rgba(0,0,0,.55);
+
+    filter:blur(18px);
+
+    opacity:.7;
+
+    z-index:-1;
+}
+
+.book-data-cover img{
+    display:block;
+
+    width:100%;
+    height:auto;
+
+    box-shadow:
+        0 22px 45px rgba(0,0,0,.45);
+
+    transition:
+        transform .45s ease,
+        box-shadow .45s ease,
+        filter .45s ease;
+}
+
+.book-data-cover a:hover{
+    transform:translateY(-6px);
+}
+
+.book-data-cover a:hover img{
+    transform:scale(1.015);
+
+    box-shadow:
+        0 28px 55px rgba(0,0,0,.55),
+        0 0 30px rgba(199,166,90,.10);
 }
 
 
-.book-data div:last-child{
+/* ----------------------------------------------------------
+   INDICADOR AMAZON SOBRE LA PORTADA
+   ---------------------------------------------------------- */
 
-    border-bottom:none;
+.book-data-cover a::before{
+    content:"Comprar en Amazon  →";
 
-}
+    position:absolute;
 
+    left:50%;
+    bottom:18px;
 
-.book-data strong{
+    transform:
+        translate(-50%,8px);
 
-    color:var(--contra-primary);
+    padding:9px 14px;
 
-    font-weight:600;
+    white-space:nowrap;
 
-}
-
-
-.book-data span{
+    font-size:9px;
+    letter-spacing:.14em;
+    text-transform:uppercase;
 
     color:#fff;
 
+    background:rgba(15,15,15,.86);
+
+    border:1px solid rgba(199,166,90,.35);
+
+    opacity:0;
+
+    transition:
+        opacity .35s ease,
+        transform .35s ease;
+
+    z-index:3;
+}
+
+.book-data-cover a:hover::before{
+    opacity:1;
+
+    transform:translate(-50%,0);
 }
 
 
+/* ----------------------------------------------------------
+   INFORMACIÓN
+   ---------------------------------------------------------- */
 
-/* ==========================================================
-   RESPONSIVE
-========================================================== */
+.book-data-info{
+    position:relative;
 
-@media (max-width:992px){
+    z-index:2;
 
-    .synopsis-grid{
+    display:flex;
+    flex-direction:column;
+
+    justify-content:center;
+}
+
+
+/* ----------------------------------------------------------
+   CADA DATO
+   ---------------------------------------------------------- */
+
+.book-data-item{
+    position:relative;
+
+    display:grid;
+
+    grid-template-columns:150px 1fr;
+
+    gap:25px;
+
+    padding:20px 0;
+
+    border-bottom:1px solid rgba(199,166,90,.13);
+}
+
+.book-data-item:first-child{
+    padding-top:0;
+}
+
+.book-data-item:last-child{
+    border-bottom:0;
+    padding-bottom:0;
+}
+
+
+/* ETIQUETA */
+
+.book-data-item strong{
+    display:block;
+
+    font-size:10px;
+
+    font-weight:500;
+
+    letter-spacing:.16em;
+
+    text-transform:uppercase;
+
+    color:rgba(199,166,90,.72);
+}
+
+
+/* VALOR */
+
+.book-data-item span{
+    display:block;
+
+    font-family:var(--font-title);
+
+    font-size:18px;
+
+    line-height:1.45;
+
+    color:var(--contra-text);
+}
+
+
+/* ----------------------------------------------------------
+   ELEMENTO GRÁFICO DE FONDO
+   ---------------------------------------------------------- */
+
+.book-data::before{
+    content:"";
+
+    position:absolute;
+
+    width:520px;
+    height:520px;
+
+    right:-210px;
+    top:50%;
+
+    transform:translateY(-50%);
+
+    background-image:
+        url("../images/contra-tiempo.jpg");
+
+    background-size:cover;
+    background-position:center;
+
+    opacity:.035;
+
+    filter:
+        grayscale(1)
+        contrast(.8);
+
+    pointer-events:none;
+}
+
+
+/* VELO PARA FUNDIR LA PORTADA CON EL FONDO */
+
+.book-data::after{
+    content:"";
+
+    position:absolute;
+
+    inset:0;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent 25%,
+            rgba(10,10,10,.25) 60%,
+            rgba(10,10,10,.65)
+        );
+
+    pointer-events:none;
+}
+
+
+/* ----------------------------------------------------------
+   MÓVIL
+   ---------------------------------------------------------- */
+
+@media(max-width:768px){
+
+    .book-data{
 
         grid-template-columns:1fr;
 
-        gap:55px;
+        gap:45px;
+
+        margin-top:40px;
+
+        padding:42px 25px;
+
+    }
+
+
+    .book-data-cover a{
+
+        width:min(100%,290px);
+
+    }
+
+
+    .book-data-info{
+
+        width:100%;
+
+    }
+
+
+    .book-data-item{
+
+        grid-template-columns:1fr;
+
+        gap:7px;
+
+        padding:18px 0;
+
+    }
+
+
+    .book-data-item strong{
+
+        font-size:9px;
+
+        letter-spacing:.17em;
+
+    }
+
+
+    .book-data-item span{
+
+        font-size:17px;
+
+    }
+
+
+    .book-data::before{
+
+        width:360px;
+        height:360px;
+
+        right:-170px;
+        top:20%;
+
+        opacity:.025;
+
+    }
+
+
+    .book-data::after{
+
+        background:
+            linear-gradient(
+                180deg,
+                rgba(10,10,10,.15),
+                rgba(10,10,10,.55)
+            );
 
     }
 
 }
 
-
-@media (max-width:768px){
-
-    .book-data div{
-
-        flex-direction:column;
-
-        align-items:flex-start;
-
-        gap:.45rem;
-
-    }
-
-}
 /* ==========================================================
    POR QUÉ LEER CONTRA TIEMPO
 ========================================================== */
