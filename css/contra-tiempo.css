@@ -1674,22 +1674,15 @@ BOOK QUOTE
 .reviews{
 
     position:relative;
-
 }
-
 
 .reviews-grid{
-
     display:grid;
-
     grid-template-columns:repeat(3,1fr);
-
-    gap:32px;
-
-    margin-top:2rem;
-
+    gap:28px;
+    margin-top:45px;
+    align-items:stretch;
 }
-
 
 
 /* ==========================================================
@@ -1697,14 +1690,16 @@ BOOK QUOTE
 ========================================================== */
 
 .review-card{
-
     position:relative;
-
     overflow:hidden;
 
-    padding:2.8rem;
+    display:flex;
+    flex-direction:column;
 
-    border-radius:24px;
+    min-height:390px;
+    padding:34px 32px 30px;
+
+    border-radius:3px;
 
     background:rgba(255,255,255,.025);
 
@@ -1713,13 +1708,9 @@ BOOK QUOTE
     backdrop-filter:blur(10px);
 
     transition:
-
         transform .35s ease,
-
         border-color .35s ease,
-
         box-shadow .35s ease;
-
 }
 
 
@@ -1743,8 +1734,6 @@ BOOK QUOTE
     color:rgba(199,166,90,.08);
 
 }
-
-
 
 .review-card:hover{
 
@@ -1775,57 +1764,159 @@ BOOK QUOTE
     letter-spacing:.35rem;
 
 }
+.review-title{
+    position:relative;
+    z-index:2;
 
+    margin:0 0 20px;
 
+    font-family:var(--font-title);
+
+    font-size:23px;
+    font-weight:500;
+    line-height:1.15;
+
+    letter-spacing:.04em;
+
+    color:var(--contra-primary);
+}
 
 /* ==========================================================
    TEXTO
 ========================================================== */
 
 .review-card p{
-
     position:relative;
-
     z-index:2;
 
     margin:0;
 
     color:var(--contra-text);
 
-    line-height:1.95;
-
+    font-size:14px;
+    line-height:1.75;
 }
-
-
 
 /* ==========================================================
    AUTOR
 ========================================================== */
 
 .review-author{
+    margin-top:25px;
 
-    margin-top:2rem;
+    font-family:var(--font-title);
+
+    font-size:18px;
+    font-style:italic;
+
+    color:var(--contra-primary);
+}
+/* ==========================================================
+   TEXTO DE RESEÑA — CONTRAÍDO
+========================================================== */
+
+.review-text-wrap{
+    position:relative;
+    z-index:2;
+
+    flex:1;
+
+    display:flex;
+    flex-direction:column;
+}
+
+.review-card:not(.expanded) .review-text{
+    display:-webkit-box;
+
+    -webkit-box-orient:vertical;
+    -webkit-line-clamp:5;
+
+    overflow:hidden;
+}
+
+.review-card.expanded .review-text{
+    display:block;
+}
+/* ==========================================================
+   BOTÓN EXPANDIR
+========================================================== */
+
+.review-expand{
+    align-self:center;
+
+    width:32px;
+    height:32px;
+
+    margin-top:16px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    border:1px solid rgba(199,166,90,.35);
+    border-radius:50%;
+
+    background:transparent;
 
     color:var(--contra-primary);
 
-    font-weight:600;
+    font-size:20px;
+    line-height:1;
 
-    letter-spacing:.05em;
+    cursor:pointer;
+
+    transition:
+        color .25s ease,
+        background .25s ease,
+        border-color .25s ease,
+        transform .25s ease;
+}
+
+.review-expand:hover{
+    color:#f0dba8;
+
+    background:rgba(199,166,90,.07);
+
+    border-color:rgba(199,166,90,.65);
+
+    transform:scale(1.08);
+}
+
+.review-card.expanded .review-expand{
+    transform:rotate(45deg);
+}
+
+/* ==========================================================
+   RESEÑAS — MÓVIL
+========================================================== */
+
+@media(max-width:900px){
+
+    .reviews-grid{
+        grid-template-columns:1fr;
+        gap:22px;
+        margin-top:35px;
+    }
+
+    .review-card{
+        min-height:0;
+        padding:30px 26px 28px;
+    }
+
+    .review-title{
+        font-size:22px;
+    }
 
 }
 
+@media(max-width:600px){
 
+    .review-card{
+        padding:28px 23px 26px;
+    }
 
-/* ==========================================================
-   RESPONSIVE
-========================================================== */
-
-@media (max-width:992px){
-
-    .reviews-grid{
-
-        grid-template-columns:1fr;
-
+    .review-title{
+        font-size:21px;
     }
 
 }
