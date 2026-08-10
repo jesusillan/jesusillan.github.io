@@ -1031,20 +1031,28 @@ TRANSICIÓN HERO → SINOPSIS
 
     .hero-book-image{
 
-        min-height:360px;
+        min-height:300px;
 
     }
 
     .hero-book-image::before{
 
-        width:430px;
+        width:320px;
 
-        height:430px;
+        height:320px;
 
         opacity:.05;
 
     }
+.book-mockup{
 
+    width:82%;
+
+    max-width:320px;
+
+    height:auto;
+
+}
     .hero-buttons{
 
         flex-direction:column;
