@@ -1859,6 +1859,40 @@ BOOK QUOTE
     line-height:1.05;
     color:#d2bd8e;
 }
+/* =========================================================
+   PRIMERAS PÁGINAS — LIBRO ABIERTO
+   ========================================================= */
+
+.first-pages{
+    padding:110px 0 125px;
+    position:relative;
+    overflow:hidden;
+}
+
+.first-pages-intro{
+    text-align:center;
+    margin-bottom:65px;
+}
+
+.first-pages-lead{
+    margin:0 0 10px;
+    color:#aa9a79;
+    font-size:14px;
+    letter-spacing:.08em;
+}
+
+/* Título de la sección */
+
+.first-pages-intro h2{
+    margin:0;
+    font-family:var(--serif);
+    font-size:clamp(38px,4.5vw,58px);
+    font-weight:500;
+    line-height:1.05;
+    color:#f2ede4;
+}
+
+/* LIBRO */
 
 .book-open{
     display:flex;
@@ -1866,8 +1900,11 @@ BOOK QUOTE
     align-items:stretch;
     max-width:1050px;
     margin:0 auto;
+    position:relative;
     perspective:1800px;
 }
+
+/* Cada página */
 
 .first-page{
     display:block;
@@ -1875,9 +1912,12 @@ BOOK QUOTE
     position:relative;
     overflow:hidden;
     background:#eee9df;
-    box-shadow:0 24px 55px rgba(0,0,0,.42);
-    transition:transform .4s ease,box-shadow .4s ease;
+    transition:
+        transform .5s cubic-bezier(.22,.61,.36,1),
+        box-shadow .5s ease;
 }
+
+/* Imágenes */
 
 .first-page img{
     display:block;
@@ -1885,29 +1925,85 @@ BOOK QUOTE
     height:auto;
 }
 
+/* Página izquierda */
+
 .first-page-left{
     transform-origin:right center;
-    transform:perspective(1200px) rotateY(3deg);
+    transform:
+        perspective(1800px)
+        rotateY(2deg);
+
     box-shadow:
         -12px 24px 45px rgba(0,0,0,.30),
         8px 12px 22px rgba(0,0,0,.18);
 }
 
+/* Página derecha */
+
 .first-page-right{
     transform-origin:left center;
-    transform:perspective(1200px) rotateY(-3deg);
+    transform:
+        perspective(1800px)
+        rotateY(-2deg);
+
     box-shadow:
         12px 24px 45px rgba(0,0,0,.30),
         -8px 12px 22px rgba(0,0,0,.18);
 }
 
+/* Unión central del libro */
+.book-open::before{
+    content:"";
+    position:absolute;
+    top:0;
+    bottom:0;
+    left:50%;
+    width:2px;
+    transform:translateX(-50%);
+    background:rgba(80,65,45,.18);
+    pointer-events:none;
+    z-index:3;
+}
+.book-open::after{
+    content:"";
+    position:absolute;
+    top:0;
+    bottom:0;
+    left:50%;
+    width:28px;
+    transform:translateX(-50%);
+    pointer-events:none;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(0,0,0,.00) 0%,
+            rgba(0,0,0,.08) 25%,
+            rgba(0,0,0,.22) 50%,
+            rgba(0,0,0,.08) 75%,
+            rgba(0,0,0,.00) 100%
+        );
+
+    filter:blur(4px);
+    opacity:.65;
+}
+
+/* Ligera interacción */
+
 .first-page-left:hover{
-    transform:perspective(1200px) rotateY(1deg) translateY(-4px);
+    transform:
+        perspective(1800px)
+        rotateY(1deg)
+        translateY(-3px);
 }
 
 .first-page-right:hover{
-    transform:perspective(1200px) rotateY(-1deg) translateY(-4px);
+    transform:
+        perspective(1800px)
+        rotateY(-1deg)
+        translateY(-3px);
 }
+
 /* ==========================================================
    PRIMERAS PÁGINAS — MÓVIL
 ========================================================== */
@@ -1927,7 +2023,7 @@ BOOK QUOTE
     }
 
     .first-pages-intro h2{
-        font-size:40px;
+        font-size:46px;
     }
 
     .book-open{
@@ -1935,21 +2031,33 @@ BOOK QUOTE
         perspective:none;
     }
 
-    .first-page-left{
-        transform:none;
-    }
-
-    .first-page-right{
-        transform:none;
-    }
-
-    .first-page-left:hover,
-    .first-page-right:hover{
-        transform:none;
-    }
-
+    .first-page{
+    width:50%;
 }
 
+.first-page-left,
+.first-page-right{
+    transform:none;
+    box-shadow:
+        0 14px 28px rgba(0,0,0,.28);
+}
+
+.first-page-left:hover,
+.first-page-right:hover{
+    transform:none;
+}
+
+.book-open::before{
+    width:1px;
+    opacity:.7;
+}
+
+.book-open::after{
+    width:18px;
+    filter:blur(3px);
+    opacity:.5;
+}
+}
 /* ==========================================================
    CTA FINAL
 ========================================================== */
