@@ -13,7 +13,7 @@ initReveal();
 initSmoothAnchors();
 
 initScrollIndicator();
-
+ initReviews();
 });
 /* ==========================================================
 SCROLL INDICATOR
@@ -120,6 +120,68 @@ function initSmoothAnchors(){
                 behavior:"smooth"
 
             });
+
+        });
+
+    });
+
+}
+/* ==========================================================
+   RESEÑAS — EXPANDIR / CONTRAER
+========================================================== */
+
+function initReviews(){
+
+    const reviews = document.querySelectorAll(".review-card");
+
+    if(!reviews.length) return;
+
+    reviews.forEach(review => {
+
+        const text = review.querySelector(".review-text");
+        const button = review.querySelector(".review-expand");
+
+        if(!text || !button) return;
+
+
+        /* --------------------------------------------------
+           Comprobar si el texto necesita expansión
+        -------------------------------------------------- */
+
+        const needsExpansion = text.scrollHeight > text.clientHeight + 2;
+
+
+        /* Si la reseña cabe completa, ocultamos el +
+           y no hacemos nada más */
+
+        if(!needsExpansion){
+
+            button.style.display = "none";
+
+            return;
+
+        }
+
+
+        /* --------------------------------------------------
+           Click en +
+        -------------------------------------------------- */
+
+        button.addEventListener("click", () => {
+
+            const expanded = review.classList.toggle("expanded");
+
+            button.setAttribute(
+                "aria-expanded",
+                expanded ? "true" : "false"
+            );
+
+            button.setAttribute(
+                "aria-label",
+                expanded
+                    ? "Contraer reseña"
+                    : "Leer reseña completa"
+            );
 
         });
 
