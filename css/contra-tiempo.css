@@ -2330,27 +2330,182 @@ BOOK QUOTE
 
 }
 
-
 /* ==========================================================
-   ACCIONES FINALES
-   ========================================================== */
+   FINAL ACTIONS — MISMO ESTILO QUE HERO
+========================================================== */
 
 .final-actions{
-
     display:flex;
-
     justify-content:center;
-
     align-items:center;
-
     gap:18px;
-
-    width:100%;
-
-    margin:55px auto 0;
-
+    margin-top:3.5rem;
 }
 
+/* AMAZON */
+
+.final-actions .btn-amazon{
+    position:relative;
+    overflow:hidden;
+
+    width:494px;
+    height:76px;
+
+    padding:0 28px;
+
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:22px;
+
+    border-radius:38px;
+
+    text-decoration:none;
+
+    color:#fff;
+
+    background:
+        linear-gradient(
+            180deg,
+            rgba(255,255,255,.08),
+            rgba(255,255,255,.025)
+        );
+
+    border:1px solid rgba(199,166,90,.30);
+
+    backdrop-filter:blur(14px);
+
+    box-shadow:
+        0 18px 45px rgba(0,0,0,.35);
+
+    transition:
+        transform .35s ease,
+        box-shadow .35s ease,
+        border-color .35s ease,
+        background .35s ease;
+}
+
+.final-actions .btn-amazon:hover{
+    transform:translateY(-4px);
+
+    border-color:rgba(199,166,90,.75);
+
+    background:
+        linear-gradient(
+            180deg,
+            rgba(255,255,255,.14),
+            rgba(199,166,90,.08)
+        );
+
+    box-shadow:
+        0 20px 48px rgba(0,0,0,.45),
+        0 0 35px rgba(199,166,90,.20);
+}
+
+.final-actions .btn-amazon img{
+    width:200px;
+    height:auto;
+
+    transition:
+        transform .35s ease,
+        filter .35s ease;
+}
+
+.final-actions .btn-amazon span{
+    position:relative;
+
+    display:flex;
+    align-items:center;
+    gap:14px;
+
+    padding-left:22px;
+
+    font-size:.84rem;
+    letter-spacing:.12em;
+    text-transform:uppercase;
+    font-weight:600;
+}
+
+.final-actions .btn-amazon span::before{
+    content:"";
+
+    position:absolute;
+    left:0;
+    top:50%;
+
+    width:1px;
+    height:24px;
+
+    transform:translateY(-50%);
+
+    background:rgba(199,166,90,.35);
+}
+
+.final-actions .btn-amazon span::after{
+    content:"→";
+
+    font-size:1rem;
+
+    transition:transform .35s ease;
+}
+
+.final-actions .btn-amazon:hover img{
+    transform:scale(1.06);
+
+    filter:drop-shadow(
+        0 0 10px rgba(255,200,90,.45)
+    );
+}
+
+.final-actions .btn-amazon:hover span::after{
+    transform:translateX(4px);
+}
+
+
+/* COMPARTIR */
+
+.final-actions .btn-share{
+    height:76px;
+    min-width:280px;
+
+    padding:0 28px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:12px;
+
+    border-radius:38px;
+
+    background:rgba(255,255,255,.025);
+
+    border:1px solid rgba(255,255,255,.10);
+
+    color:rgba(255,255,255,.72);
+
+    font-size:.95rem;
+
+    transition:
+        transform .35s ease,
+        border-color .35s ease,
+        background .35s ease,
+        color .35s ease;
+}
+
+.final-actions .btn-share:hover{
+    transform:translateY(-4px);
+
+    color:var(--contra-primary);
+
+    border-color:rgba(199,166,90,.35);
+
+    background:rgba(255,255,255,.045);
+}
+
+.final-actions .btn-share svg{
+    width:19px;
+    height:19px;
+}
 
 /* ==========================================================
    MÓVIL
@@ -2389,14 +2544,19 @@ BOOK QUOTE
     }
 
 
+    @media (max-width:768px){
+
     .final-actions{
-
         flex-direction:column;
-
         gap:14px;
+        width:100%;
+    }
 
-        margin-top:45px;
-
+    .final-actions .btn-amazon,
+    .final-actions .btn-share{
+        width:100%;
+        min-width:0;
+        max-width:420px;
     }
 
 }
