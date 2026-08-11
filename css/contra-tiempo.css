@@ -3004,7 +3004,7 @@ BOOK QUOTE
 
     .related-book-image img{
 
-        max-height:390px;
+        max-height:280px;
 
     }
 
@@ -3058,4 +3058,23 @@ BOOK QUOTE
 
     }
 
+}
+/* ==========================================================
+   TE PUEDE INTERESAR — TAMAÑO REAL DE LOS MOCKUPS
+========================================================== */
+
+.related-books .related-book-image {
+    display:block;
+    width:240px;
+    max-width:240px;
+    margin:0 auto;
+}
+
+.related-books .related-book-image img {
+    display:block;
+    width:100%;
+    max-width:100%;
+    height:auto;
+    max-height:380px;
+    object-fit:contain;
 }
