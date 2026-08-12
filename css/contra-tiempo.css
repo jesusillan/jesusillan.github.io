@@ -2004,74 +2004,34 @@ BOOK QUOTE
     position: relative;
     text-align: center;
 }
-
-
 /* ==========================================================
-   IMAGEN / MOCKUP
-========================================================== */
+   IMAGEN / MOCKUP — TE PUEDE INTERESAR
+   ========================================================== */
 
-.related-book-image {
+.related-books a.related-book-image {
     position: relative;
-    display: block;
-
-    /* Tamaño controlado del mockup */
+    display: block !important;
     width: 160px !important;
     max-width: 160px !important;
-
-    height: auto;
-    margin: 0 auto;
-
+    margin: 0 auto !important;
     text-decoration: none;
     perspective: 1000px;
 }
 
+/* Imagen del mockup */
 
-/* Sombra proyectada debajo del libro */
-
-.related-book-image::after {
-    content: "";
-
-    position: absolute;
-
-    left: 12%;
-    right: 12%;
-    bottom: -18px;
-
-    height: 35px;
-
-    background: rgba(0, 0, 0, .55);
-
-    filter: blur(18px);
-
-    opacity: .65;
-
-    transition:
-        opacity .4s ease,
-        transform .4s ease;
-}
-
-
-/* Imagen */
-
-.related-book-image img {
+.related-books a.related-book-image img {
     position: relative;
     z-index: 2;
-
-    display: block;
-
-    /* Tamaño controlado */
+    display: block !important;
     width: 160px !important;
     max-width: 160px !important;
-
     height: auto !important;
-    max-height: 360px;
-
+    margin: 0 auto !important;
     object-fit: contain;
 
-    margin: 0 auto;
-
     filter:
-        drop-shadow(0 24px 35px rgba(0, 0, 0, .45));
+        drop-shadow(0 24px 35px rgba(0,0,0,.45));
 
     transform:
         translateY(0)
@@ -2082,28 +2042,42 @@ BOOK QUOTE
         filter .45s ease;
 }
 
+/* Sombra */
+
+.related-books a.related-book-image::after {
+    content: "";
+    position: absolute;
+    left: 12%;
+    right: 12%;
+    bottom: -18px;
+    height: 35px;
+
+    background: rgba(0,0,0,.55);
+    filter: blur(18px);
+    opacity: .65;
+
+    transition:
+        opacity .4s ease,
+        transform .4s ease;
+}
 
 /* ==========================================================
    HOVER
-========================================================== */
+   ========================================================== */
 
-.related-book:hover .related-book-image img {
+.related-book:hover a.related-book-image img {
     transform:
         translateY(-10px)
         rotateY(-2deg);
 
     filter:
-        drop-shadow(0 32px 45px rgba(0, 0, 0, .55));
+        drop-shadow(0 32px 45px rgba(0,0,0,.55));
 }
 
-
-.related-book:hover .related-book-image::after {
+.related-book:hover a.related-book-image::after {
     opacity: .85;
-
     transform: scaleX(.9);
 }
-
-
 /* ==========================================================
    INFORMACIÓN
 ========================================================== */
