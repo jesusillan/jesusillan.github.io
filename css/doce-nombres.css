@@ -182,11 +182,11 @@ TRANSICIÓN HERO → SINOPSIS
     height:840px;
     transform:translate(-50%,-50%);
     background:
-        radial-gradient(circle, rgba(184,149,85,.14), rgba(104,76,39,.07) 34%, transparent 70%);
-    filter:blur(20px);
-    opacity:.75;
-    z-index:0;
-    pointer-events:none;
+         url("../images/clock-bg-contra-tiempo.png")
+        center / contain
+        no-repeat;
+    opacity: 0.18;
+    z-index: 0;
 }
 
 /* ==========================================================
