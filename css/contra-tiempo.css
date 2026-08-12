@@ -1962,7 +1962,7 @@ BOOK QUOTE
 }
 /* ==========================================================
    TE PUEDE INTERESAR
-========================================================== */
+   ========================================================== */
 
 .related-books {
     position: relative;
@@ -1972,7 +1972,7 @@ BOOK QUOTE
 
 /* ==========================================================
    CABECERA
-========================================================== */
+   ========================================================== */
 
 .related-books .section-intro {
     max-width: 620px;
@@ -1984,54 +1984,65 @@ BOOK QUOTE
 
 
 /* ==========================================================
-   GRID
-========================================================== */
+   GRID DE LIBROS
+   ========================================================== */
 
-.related-books-grid {
+.related-books .related-books-grid {
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 80px;
-    max-width: 1000px;
+    width: 100%;
+    max-width: 900px;
     margin: 5rem auto 0;
 }
 
 
 /* ==========================================================
    LIBRO
-========================================================== */
-
-.related-book {
-    position: relative;
-    text-align: center;
-}
-/* ==========================================================
-   IMAGEN / MOCKUP — TE PUEDE INTERESAR
    ========================================================== */
 
-.related-books a.related-book-image {
+.related-books .related-book {
     position: relative;
-    display: block !important;
-    width: 160px !important;
-    max-width: 160px !important;
-    margin: 0 auto !important;
+    min-width: 0;
+    text-align: center;
+}
+
+
+/* ==========================================================
+   CONTENEDOR DEL MOCKUP
+   ========================================================== */
+
+.related-books .related-book-image {
+    position: relative;
+    display: block;
+    width: 160px;
+    max-width: 160px;
+    margin: 0 auto;
     text-decoration: none;
     perspective: 1000px;
 }
 
-/* Imagen del mockup */
 
-.related-books a.related-book-image img {
+/* ==========================================================
+   MOCKUP
+   ========================================================== */
+
+.related-books .related-book-image img {
     position: relative;
     z-index: 2;
-    display: block !important;
-    width: 160px !important;
-    max-width: 160px !important;
-    height: auto !important;
-    margin: 0 auto !important;
+
+    display: block;
+    width: 160px;
+    max-width: 160px;
+    height: auto;
+    max-height: 380px;
+
+    margin: 0 auto;
+
     object-fit: contain;
 
     filter:
-        drop-shadow(0 24px 35px rgba(0,0,0,.45));
+        drop-shadow(0 24px 35px rgba(0, 0, 0, .45));
 
     transform:
         translateY(0)
@@ -2042,18 +2053,26 @@ BOOK QUOTE
         filter .45s ease;
 }
 
-/* Sombra */
 
-.related-books a.related-book-image::after {
+/* ==========================================================
+   SOMBRA BAJO EL MOCKUP
+   ========================================================== */
+
+.related-books .related-book-image::after {
     content: "";
+
     position: absolute;
+
     left: 12%;
     right: 12%;
     bottom: -18px;
+
     height: 35px;
 
-    background: rgba(0,0,0,.55);
+    background: rgba(0, 0, 0, .55);
+
     filter: blur(18px);
+
     opacity: .65;
 
     transition:
@@ -2061,34 +2080,41 @@ BOOK QUOTE
         transform .4s ease;
 }
 
+
 /* ==========================================================
    HOVER
    ========================================================== */
 
-.related-book:hover a.related-book-image img {
+.related-books .related-book:hover .related-book-image img {
     transform:
         translateY(-10px)
         rotateY(-2deg);
 
     filter:
-        drop-shadow(0 32px 45px rgba(0,0,0,.55));
+        drop-shadow(0 32px 45px rgba(0, 0, 0, .55));
 }
 
-.related-book:hover a.related-book-image::after {
+.related-books .related-book:hover .related-book-image::after {
     opacity: .85;
     transform: scaleX(.9);
 }
-/* ==========================================================
-   INFORMACIÓN
-========================================================== */
 
-.related-book-info {
+
+/* ==========================================================
+   INFORMACIÓN DEL LIBRO
+   ========================================================== */
+
+.related-books .related-book-info {
     max-width: 430px;
     margin: 3rem auto 0;
 }
 
 
-.related-book-label {
+/* ==========================================================
+   ETIQUETA
+   ========================================================== */
+
+.related-books .related-book-label {
     display: block;
 
     margin-bottom: .8rem;
@@ -2104,7 +2130,11 @@ BOOK QUOTE
 }
 
 
-.related-book-info h3 {
+/* ==========================================================
+   TÍTULO
+   ========================================================== */
+
+.related-books .related-book-info h3 {
     margin: 0;
 
     color: var(--contra-text);
@@ -2119,10 +2149,14 @@ BOOK QUOTE
 }
 
 
-.related-book-info p {
-    margin: 1.2rem auto 0;
+/* ==========================================================
+   DESCRIPCIÓN
+   ========================================================== */
 
+.related-books .related-book-info p {
     max-width: 390px;
+
+    margin: 1.2rem auto 0;
 
     color: var(--contra-soft);
 
@@ -2134,9 +2168,9 @@ BOOK QUOTE
 
 /* ==========================================================
    ENLACE
-========================================================== */
+   ========================================================== */
 
-.related-book-link {
+.related-books .related-book-link {
     display: inline-flex;
 
     align-items: center;
@@ -2163,7 +2197,7 @@ BOOK QUOTE
 }
 
 
-.related-book-link span {
+.related-books .related-book-link span {
     font-size: 1rem;
 
     transition:
@@ -2171,58 +2205,49 @@ BOOK QUOTE
 }
 
 
-.related-book-link:hover {
+.related-books .related-book-link:hover {
     color: var(--contra-text);
-
     gap: 14px;
 }
 
 
-.related-book-link:hover span {
+.related-books .related-book-link:hover span {
     transform: translateX(3px);
 }
 
 
 /* ==========================================================
    MÓVIL
-========================================================== */
+   ========================================================== */
 
 @media (max-width: 768px) {
 
-    .related-books-grid {
+    .related-books .related-books-grid {
         grid-template-columns: 1fr;
-
         gap: 70px;
-
         margin-top: 3.5rem;
     }
 
-
-    .related-book-image {
-        width: 145px !important;
-        max-width: 145px !important;
+    .related-books .related-book-image {
+        width: 140px;
+        max-width: 140px;
     }
 
-
-    .related-book-image img {
-        width: 145px !important;
-        max-width: 145px !important;
-
+    .related-books .related-book-image img {
+        width: 140px;
+        max-width: 140px;
         max-height: 300px;
     }
 
-
-    .related-book-info {
+    .related-books .related-book-info {
         margin-top: 2.5rem;
     }
 
-
-    .related-book-info h3 {
+    .related-books .related-book-info h3 {
         font-size: 2rem;
     }
 
-
-    .related-book-info p {
+    .related-books .related-book-info p {
         padding: 0 10px;
     }
 }
@@ -2230,30 +2255,26 @@ BOOK QUOTE
 
 /* ==========================================================
    MÓVIL PEQUEÑO
-========================================================== */
+   ========================================================== */
 
 @media (max-width: 480px) {
 
-    .related-books-grid {
+    .related-books .related-books-grid {
         gap: 60px;
     }
 
-
-    .related-book-image {
-        width: 125px !important;
-        max-width: 125px !important;
+    .related-books .related-book-image {
+        width: 120px;
+        max-width: 120px;
     }
 
-
-    .related-book-image img {
-        width: 125px !important;
-        max-width: 125px !important;
-
+    .related-books .related-book-image img {
+        width: 120px;
+        max-width: 120px;
         max-height: 270px;
     }
 
-
-    .related-book-info h3 {
+    .related-books .related-book-info h3 {
         font-size: 1.8rem;
     }
 }
