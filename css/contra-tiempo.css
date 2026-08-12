@@ -1834,7 +1834,7 @@ BOOK QUOTE
    MÓVIL
    ========================================================== */
 
-@media(max-width:768px){
+@media(max-width:768px) {
     .tags-cloud{
         margin-top:35px;
         max-width:100%;
