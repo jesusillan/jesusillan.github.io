@@ -2301,3 +2301,52 @@ section.related-books .related-books-grid article.related-book > a.related-book-
     margin: 0 auto !important;
     object-fit: contain !important;
 }
+/* ==========================================================
+   TE PUEDE INTERESAR — TAMAÑO DEFINITIVO DE MOCKUPS
+========================================================== */
+
+.related-books .related-books-grid .related-book .related-book-image {
+    display: block !important;
+    width: 160px !important;
+    max-width: 160px !important;
+    margin: 0 auto !important;
+}
+
+.related-books .related-books-grid .related-book .related-book-image img {
+    display: block !important;
+    width: 160px !important;
+    max-width: 160px !important;
+    height: auto !important;
+    max-height: 380px !important;
+    margin: 0 auto !important;
+    object-fit: contain !important;
+}
+   @media (max-width: 768px) {
+
+    .related-books .related-books-grid .related-book .related-book-image {
+        width: 150px !important;
+        max-width: 150px !important;
+    }
+
+    .related-books .related-books-grid .related-book .related-book-image img {
+        width: 150px !important;
+        max-width: 150px !important;
+        max-height: 280px !important;
+    }
+
+}
+
+@media (max-width: 480px) {
+
+    .related-books .related-books-grid .related-book .related-book-image {
+        width: 120px !important;
+        max-width: 120px !important;
+    }
+
+    .related-books .related-books-grid .related-book .related-book-image img {
+        width: 120px !important;
+        max-width: 120px !important;
+        max-height: 240px !important;
+    }
+
+}
