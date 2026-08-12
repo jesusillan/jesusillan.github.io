@@ -585,7 +585,6 @@ TRANSICIÓN HERO → SINOPSIS
         font-size:5rem;
     }
 }
-
 @media (max-width:992px){
     .hero.hero-book{
         min-height:auto;
@@ -630,16 +629,13 @@ TRANSICIÓN HERO → SINOPSIS
     position:relative;
     z-index:100;
 }
-
 .header-container{
     min-height:70px;
 }
-
 .site-logo{
     width:58px;
     height:58px;
 }
-
 .site-logo img{
     width:100%;
     height:100%;
@@ -657,162 +653,88 @@ TRANSICIÓN HERO → SINOPSIS
     .hero-description{
         font-size:1rem;
         line-height:1.8;
-
     }
-
     .hero-book-image{
-
         min-height:300px;
-
     }
-
     .hero-book-image::before{
-
         width:320px;
-
         height:320px;
-
         opacity:.05;
-
     }
 .book-mockup{
-
     width:82%;
-
     max-width:320px;
-
     height:auto;
-
 }
     .hero-buttons{
-
         flex-direction:column;
-
         align-items:stretch;
-
     }
-
      .hero-buttons .btn-amazon,
     .hero-buttons .btn-share{
         width:245px;
         box-sizing:border-box;
     }
-
 }
-
-
-
 @media (max-width:480px){
-
     .hero-content h1{
-
         font-size:2.8rem;
-
     }
-
     .hero-claim{
-
         font-size:1.15rem;
-
     }
-
     .hero-description{
-
         font-size:.95rem;
-
     }
-
     .hero-buttons .btn-amazon{
-
         height:62px;
-
     }
-
     .hero-buttons .btn-amazon img{
-
         width:96px;
-
     }
-
 }
 /* ==========================================================
 BOOK QUOTE
-========================================================== */
-
+========================================================= */
 .book-quote{
-
     max-width:900px;
-
     margin:90px auto;
-
     text-align:center;
-
     font-family:var(--font-serif);
-
     font-style:normal;
-
     font-weight:500;
-
     line-height:1.2;
-
 }
-
 .book-quote .line-1{
-
     display:block;
-
     font-size:clamp(2.3rem,4vw,3.7rem);
-
     color:var(--text);
-
 }
-
 .book-quote .divider{
-
     display:block;
-
     width:90px;
-
     height:1px;
-
     margin:34px auto;
-
     background:rgba(199,166,90,.45);
-
 }
-
 .book-quote .line-2{
-
     display:block;
-
     font-size:clamp(2.6rem,4.5vw,4rem);
-
     color:var(--contra-primary);
-
 }
 /* ==========================================================
    SINOPSIS
 ========================================================== */
-
 .synopsis{
-
     position:relative;
-
 }
-
-
 .synopsis-grid{
-
     display:grid;
-
     grid-template-columns:1.45fr .85fr;
-
     gap:90px;
-
     align-items:start;
-
     margin-top:2rem;
-
 }
 
 /* ==========================================================
@@ -824,15 +746,12 @@ BOOK QUOTE
     padding-top:40px;
     padding-bottom:20px;
 }
-
 .synopsis-content{
     max-width:720px;
 }
-
 .synopsis-content .section-header{
     margin-bottom:42px;
 }
-
 .synopsis-content .section-header h2{
     font-family:var(--serif);
     font-size:clamp(46px,5vw,64px);
@@ -848,7 +767,6 @@ BOOK QUOTE
     margin:0 0 28px;
     color:#c8c3ba;
 }
-
 .synopsis-content .highlight-text{
     margin-top:42px;
     margin-bottom:0;
@@ -861,7 +779,6 @@ BOOK QUOTE
     font-weight:500;
     letter-spacing:.01em;
 }
-
 .book-cover-panel{
     display:flex;
     justify-content:center;
@@ -885,236 +802,133 @@ BOOK QUOTE
     height:auto;
     box-shadow:0 25px 50px rgba(0,0,0,.38);
 }
-
 /* ==========================================================
    SINOPSIS — MÓVIL
    ========================================================== */
-
 @media (max-width:768px){
-
     .synopsis-grid{
-
         grid-template-columns:1fr;
-
         gap:40px;
-
         width:100%;
-
     }
-
-
-    .synopsis-content{
-
+   .synopsis-content{
         width:100%;
-
         min-width:0;
-
     }
-
-
     .synopsis-content p{
-
         width:100%;
-
         max-width:none;
-
     }
-
-
     .book-cover-panel{
-
         width:100%;
-
         display:flex;
-
         justify-content:center;
-
         align-items:center;
-
     }
-
-
     .book-cover-panel img{
-
         display:block;
-
         width:min(78vw, 320px);
-
         max-width:100%;
-
         height:auto;
-
     }
-
 }
-
 /* ==========================================================
    TEXTO
 ========================================================== */
-
 .synopsis-content{
-
     max-width:760px;
-
 }
-
-
 .synopsis-content p{
-
     margin:0 0 2rem;
-
     color:var(--contra-text);
-
     font-size:1.08rem;
-
     line-height:2;
-
 }
-
-
 .synopsis-content p:first-of-type{
-
     font-size:1.18rem;
-
     color:#ffffff;
-
 }
-
-
-
 /* ==========================================================
    FRASE DESTACADA
 ========================================================== */
-
 .highlight-text{
-
     position:relative;
-
     margin-top:3rem;
-
     padding-left:28px;
-
     font-family:var(--font-title);
-
     font-size:1.45rem;
-
     line-height:1.6;
-
     color:var(--contra-primary);
-
 }
-
-
 .highlight-text::before{
-
     content:"";
-
     position:absolute;
-
     left:0;
-
     top:6px;
-
     bottom:6px;
-
     width:3px;
-
     border-radius:2px;
-
     background:var(--contra-primary);
-
 }
 /* ==========================================================
    FICHA DEL LIBRO
    ========================================================== */
-
 .book-data{
     position:relative;
-
     display:grid;
     grid-template-columns:minmax(260px, 360px) 1fr;
-
     gap:70px;
-
     max-width:1050px;
-
     margin:55px auto 0;
-
     padding:55px 65px;
-
     overflow:hidden;
-
     background:
         linear-gradient(
             135deg,
             rgba(255,255,255,.035),
             rgba(255,255,255,.012)
         );
-
     border:1px solid rgba(199,166,90,.16);
-
     box-shadow:
         0 25px 70px rgba(0,0,0,.28);
 }
-
-
 /* ----------------------------------------------------------
    PORTADA
    ---------------------------------------------------------- */
-
 .book-data-cover{
     position:relative;
-
     display:flex;
     align-items:center;
     justify-content:center;
-
     z-index:2;
 }
-
 .book-data-cover a{
     position:relative;
-
     display:block;
-
     width:min(100%,320px);
-
     text-decoration:none;
-
     transition:
         transform .45s ease,
         filter .45s ease;
 }
-
 .book-data-cover a::after{
     content:"";
-
     position:absolute;
-
     left:8%;
     right:8%;
     bottom:-18px;
-
     height:25px;
-
     background:rgba(0,0,0,.55);
-
     filter:blur(18px);
-
     opacity:.7;
-
     z-index:-1;
 }
-
 .book-data-cover img{
     display:block;
-
     width:100%;
     height:auto;
-
     box-shadow:
         0 22px 45px rgba(0,0,0,.45);
-
     transition:
         transform .45s ease,
         box-shadow .45s ease,
@@ -1124,179 +938,117 @@ BOOK QUOTE
 .book-data-cover a:hover{
     transform:translateY(-6px);
 }
-
 .book-data-cover a:hover img{
     transform:scale(1.015);
-
     box-shadow:
         0 28px 55px rgba(0,0,0,.55),
         0 0 30px rgba(199,166,90,.10);
 }
 
-
 /* ----------------------------------------------------------
    INDICADOR AMAZON SOBRE LA PORTADA
    ---------------------------------------------------------- */
-
 .book-data-cover a::before{
     content:"Comprar en Amazon  →";
-
     position:absolute;
-
     left:50%;
     bottom:18px;
-
     transform:
         translate(-50%,8px);
-
     padding:9px 14px;
-
     white-space:nowrap;
-
     font-size:9px;
     letter-spacing:.14em;
     text-transform:uppercase;
-
     color:#fff;
-
     background:rgba(15,15,15,.86);
-
     border:1px solid rgba(199,166,90,.35);
-
     opacity:0;
-
     transition:
         opacity .35s ease,
         transform .35s ease;
-
     z-index:3;
 }
-
 .book-data-cover a:hover::before{
     opacity:1;
-
     transform:translate(-50%,0);
 }
-
 
 /* ----------------------------------------------------------
    INFORMACIÓN
    ---------------------------------------------------------- */
-
 .book-data-info{
     position:relative;
-
     z-index:2;
-
     display:flex;
     flex-direction:column;
-
     justify-content:center;
 }
-
-
 /* ----------------------------------------------------------
    CADA DATO
    ---------------------------------------------------------- */
-
 .book-data-item{
     position:relative;
-
     display:grid;
-
     grid-template-columns:150px 1fr;
-
     gap:25px;
-
     padding:20px 0;
-
     border-bottom:1px solid rgba(199,166,90,.13);
 }
-
 .book-data-item:first-child{
     padding-top:0;
 }
-
 .book-data-item:last-child{
     border-bottom:0;
     padding-bottom:0;
 }
-
-
 /* ETIQUETA */
 
 .book-data-item strong{
     display:block;
-
     font-size:10px;
-
     font-weight:500;
-
     letter-spacing:.16em;
-
     text-transform:uppercase;
-
     color:rgba(199,166,90,.72);
 }
 
-
 /* VALOR */
-
 .book-data-item span{
     display:block;
-
     font-family:var(--font-title);
-
     font-size:18px;
-
     line-height:1.45;
-
     color:var(--contra-text);
 }
-
 
 /* ----------------------------------------------------------
    ELEMENTO GRÁFICO DE FONDO
    ---------------------------------------------------------- */
-
 .book-data::before{
     content:"";
-
     position:absolute;
-
     width:520px;
     height:520px;
-
     right:-210px;
     top:50%;
-
     transform:translateY(-50%);
-
     background-image:
         url("../images/contra-tiempo.jpg");
-
     background-size:cover;
     background-position:center;
-
     opacity:.5;
-
     filter:
         grayscale(1)
         contrast(.8);
-
     pointer-events:none;
 }
-
-
 /* VELO PARA FUNDIR LA PORTADA CON EL FONDO */
 
 .book-data::after{
     content:"";
-
     position:absolute;
-
     inset:0;
-
     background:
         linear-gradient(
             90deg,
@@ -1308,286 +1060,152 @@ BOOK QUOTE
     pointer-events:none;
 }
 
-
 /* ----------------------------------------------------------
    MÓVIL
-   ---------------------------------------------------------- */
-
+  ---------------------------------------------------------- */
 @media(max-width:768px){
-
     .book-data{
-
         grid-template-columns:1fr;
-
         gap:45px;
-
         margin-top:40px;
-
         padding:42px 25px;
-
     }
-
 
     .book-data-cover a{
-
         width:min(100%,290px);
-
     }
-
-
     .book-data-info{
-
         width:100%;
-
     }
-
-
     .book-data-item{
-
         grid-template-columns:1fr;
-
         gap:7px;
-
         padding:18px 0;
-
     }
-
-
     .book-data-item strong{
-
         font-size:9px;
-
         letter-spacing:.17em;
-
     }
-
-
     .book-data-item span{
-
         font-size:17px;
-
     }
-
-
     .book-data::before{
-
         width:360px;
         height:360px;
-
         right:-170px;
         top:20%;
-
         opacity:.025;
-
     }
-
-
     .book-data::after{
-
         background:
             linear-gradient(
                 180deg,
                 rgba(10,10,10,.15),
                 rgba(10,10,10,.55)
             );
-
     }
-
 }
 
 /* ==========================================================
    POR QUÉ LEER CONTRA TIEMPO
 ========================================================== */
-
 .features{
-
     position:relative;
-
 }
-
-
 .features-grid{
-
     display:grid;
-
     grid-template-columns:repeat(3,1fr);
-
     gap:32px;
-
     margin-top:2rem;
-
 }
-
-
 
 /* ==========================================================
    TARJETAS
 ========================================================== */
-
 .feature-card{
-
     position:relative;
-
     overflow:hidden;
-
     padding:2.6rem;
-
     border-radius:24px;
-
     background:rgba(255,255,255,.025);
-
     border:1px solid rgba(255,255,255,.06);
-
     backdrop-filter:blur(12px);
-
     transition:
-
         transform .35s ease,
-
         border-color .35s ease,
-
         box-shadow .35s ease;
-
 }
-
-
 
 .feature-card::before{
-
     content:"";
-
     position:absolute;
-
     inset:0;
-
     background:linear-gradient(
-
         180deg,
-
         rgba(255,255,255,.05),
-
         transparent 45%
-
     );
-
     opacity:0;
-
     transition:.35s;
-
 }
-
-
-
 .feature-card:hover{
-
     transform:translateY(-8px);
-
     border-color:rgba(199,166,90,.28);
-
     box-shadow:
-
         0 22px 48px rgba(0,0,0,.35);
-
 }
-
-
-
 .feature-card:hover::before{
-
     opacity:1;
-
 }
-
-
-
 /* ==========================================================
    ICONO
 ========================================================== */
-
 .feature-icon{
-
     display:flex;
-
     align-items:center;
-
     justify-content:center;
-
     width:62px;
-
     height:62px;
-
     margin-bottom:1.6rem;
-
     border-radius:18px;
-
     background:rgba(199,166,90,.10);
-
     border:1px solid rgba(199,166,90,.20);
-
     color:var(--contra-primary);
-
     font-size:1.4rem;
-
 }
-
-
 
 /* ==========================================================
    TÍTULO
 ========================================================== */
-
 .feature-card h3{
-
     margin:0 0 1rem;
-
     color:#fff;
-
     font-size:1.35rem;
-
     line-height:1.3;
-
 }
-
-
 
 /* ==========================================================
    TEXTO
 ========================================================== */
-
 .feature-card p{
-
     margin:0;
-
     color:var(--contra-soft);
-
     line-height:1.9;
-
 }
-
-
-
 /* ==========================================================
    RESPONSIVE
 ========================================================== */
-
 @media (max-width:992px){
-
     .features-grid{
-
         grid-template-columns:1fr;
-
     }
-
 }
 /* ==========================================================
    RESEÑAS
 ========================================================== */
-
 .reviews{
-
     position:relative;
 }
-
 .reviews-grid{
     display:grid;
     grid-template-columns:repeat(3,1fr);
@@ -1596,115 +1214,71 @@ BOOK QUOTE
     align-items:stretch;
 }
 
-
 /* ==========================================================
    TARJETA
 ========================================================== */
-
 .review-card{
     position:relative;
     overflow:hidden;
-
     display:flex;
     flex-direction:column;
-
     min-height:390px;
     padding:34px 32px 30px;
-
     border-radius:3px;
-
     background:rgba(255,255,255,.025);
-
     border:1px solid rgba(255,255,255,.06);
-
     backdrop-filter:blur(10px);
-
     transition:
         transform .35s ease,
         border-color .35s ease,
         box-shadow .35s ease;
 }
-
-
-
 .review-card::before{
-
     content:"“";
-
     position:absolute;
-
     left:24px;
-
     top:8px;
-
     font-family:var(--font-title);
-
     font-size:6rem;
-
     line-height:1;
-
     color:rgba(199,166,90,.08);
-
 }
-
 .review-card:hover{
-
     transform:translateY(-8px);
-
     border-color:rgba(199,166,90,.28);
-
     box-shadow:
-
         0 24px 50px rgba(0,0,0,.35);
-
 }
-
-
 
 /* ==========================================================
    ESTRELLAS
 ========================================================== */
-
 .review-card .stars{
-
     margin-bottom:1.4rem;
-
     color:var(--contra-primary);
-
     font-size:1rem;
-
     letter-spacing:.35rem;
-
 }
 .review-title{
     position:relative;
     z-index:2;
-
     margin:0 0 20px;
-
     font-family:var(--font-title);
-
     font-size:23px;
     font-weight:500;
     line-height:1.15;
-
     letter-spacing:.04em;
-
     color:var(--contra-primary);
 }
 
 /* ==========================================================
    TEXTO
 ========================================================== */
-
 .review-card p{
     position:relative;
     z-index:2;
-
     margin:0;
-
     color:var(--contra-text);
-
     font-size:14px;
     line-height:1.75;
 }
@@ -1712,148 +1286,109 @@ BOOK QUOTE
 /* ==========================================================
    AUTOR
 ========================================================== */
-
 .review-author{
     margin-top:25px;
-
     font-family:var(--font-title);
-
     font-size:18px;
     font-style:italic;
-
     color:var(--contra-primary);
 }
 /* ==========================================================
    TEXTO DE RESEÑA — CONTRAÍDO
 ========================================================== */
-
 .review-text-wrap{
     position:relative;
     z-index:2;
-
     flex:1;
-
     display:flex;
     flex-direction:column;
 }
-
 .review-card:not(.expanded) .review-text{
     display:-webkit-box;
-
     -webkit-box-orient:vertical;
     -webkit-line-clamp:5;
-
     overflow:hidden;
 }
-
 .review-card.expanded .review-text{
     display:block;
 }
 /* ==========================================================
    BOTÓN EXPANDIR
 ========================================================== */
-
 .review-expand{
     align-self:center;
-
     width:32px;
     height:32px;
-
     margin-top:16px;
-
     display:flex;
     align-items:center;
     justify-content:center;
-
     border:1px solid rgba(199,166,90,.35);
     border-radius:50%;
-
     background:transparent;
-
     color:var(--contra-primary);
-
     font-size:20px;
     line-height:1;
-
     cursor:pointer;
-
     transition:
         color .25s ease,
         background .25s ease,
         border-color .25s ease,
         transform .25s ease;
 }
-
 .review-expand:hover{
     color:#f0dba8;
-
     background:rgba(199,166,90,.07);
-
     border-color:rgba(199,166,90,.65);
-
     transform:scale(1.08);
 }
-
 .review-card.expanded .review-expand{
     transform:rotate(45deg);
 }
-
 /* ==========================================================
    RESEÑAS — MÓVIL
 ========================================================== */
 
 @media(max-width:900px){
-
     .reviews-grid{
         grid-template-columns:1fr;
         gap:22px;
         margin-top:35px;
     }
-
     .review-card{
         min-height:0;
         padding:30px 26px 28px;
     }
-
     .review-title{
         font-size:22px;
     }
-
 }
-
 @media(max-width:600px){
-
     .review-card{
         padding:28px 23px 26px;
     }
-
     .review-title{
         font-size:21px;
     }
-
 }
 /* ==========================================================
    PRIMERAS PÁGINAS — LIBRO ABIERTO
 ========================================================== */
-
 .first-pages{
     padding:20px 0 40px;
     position:relative;
     overflow:hidden;
 }
-
 .first-pages-intro{
     text-align:center;
     margin-bottom:65px;
 }
-
 .first-pages-lead{
     margin:0 0 10px;
     color:#a9a39a;
     font-size:14px;
     letter-spacing:.08em;
 }
-
 .first-pages-intro h2{
     margin:0;
     font-family:var(--serif);
@@ -1865,25 +1400,21 @@ BOOK QUOTE
 /* =========================================================
    PRIMERAS PÁGINAS — LIBRO ABIERTO
    ========================================================= */
-
 .first-pages{
     padding:100px 0 65px;
     position:relative;
     overflow:hidden;
 }
-
 .first-pages-intro{
     text-align:center;
     margin-bottom:65px;
 }
-
 .first-pages-lead{
     margin:0 0 10px;
     color:#aa9a79;
     font-size:14px;
     letter-spacing:.08em;
 }
-
 /* Título de la sección */
 
 .first-pages-intro h2{
@@ -1919,7 +1450,6 @@ BOOK QUOTE
         transform .5s cubic-bezier(.22,.61,.36,1),
         box-shadow .5s ease;
 }
-
 /* Imágenes */
 
 .first-page img{
@@ -1986,11 +1516,9 @@ BOOK QUOTE
             rgba(0,0,0,.08) 75%,
             rgba(0,0,0,.00) 100%
         );
-
     filter:blur(4px);
     opacity:.65;
 }
-
 /* Ligera interacción */
 
 .first-page-left:hover{
@@ -1999,7 +1527,6 @@ BOOK QUOTE
         rotateY(1deg)
         translateY(-3px);
 }
-
 .first-page-right:hover{
     transform:
         perspective(1800px)
@@ -2012,28 +1539,22 @@ BOOK QUOTE
 ========================================================== */
 
 @media(max-width:768px){
-
     .first-pages{
         padding:80px 0 90px;
     }
-
     .first-pages-intro{
         margin-bottom:42px;
     }
-
     .first-pages-lead{
         font-size:13px;
     }
-
     .first-pages-intro h2{
         font-size:46px;
     }
-
     .book-open{
         max-width:94vw;
         perspective:none;
     }
-
     .first-page{
     width:50%;
 }
@@ -2044,17 +1565,14 @@ BOOK QUOTE
     box-shadow:
         0 14px 28px rgba(0,0,0,.28);
 }
-
 .first-page-left:hover,
 .first-page-right:hover{
     transform:none;
 }
-
 .book-open::before{
     width:1px;
     opacity:.7;
 }
-
 .book-open::after{
     width:18px;
     filter:blur(3px);
@@ -2066,229 +1584,117 @@ BOOK QUOTE
 ========================================================== */
 
 .cta-compra{
-
     position:relative;
-
     text-align:center;
-
     padding:130px 0;
-
 }
-
-
 .cta-compra::before{
-
     content:"";
-
     position:absolute;
-
     left:50%;
-
     top:50%;
-
     width:900px;
-
     height:900px;
-
     transform:translate(-50%,-50%);
-
     border-radius:50%;
-
     background:radial-gradient(
-
         circle,
-
         rgba(199,166,90,.08),
-
         transparent 70%
-
     );
-
     pointer-events:none;
-
 }
-
-
 .cta-compra h2{
-
     margin-bottom:1.5rem;
-
     font-size:clamp(2.8rem,5vw,4.2rem);
-
 }
-
-
 .cta-compra p{
-
     max-width:720px;
-
     margin:0 auto 3rem;
-
     color:var(--contra-soft);
-
     line-height:1.9;
-
 }
 /* ==========================================================
    CTA FINAL
 ========================================================== */
-
 .cta-final{
-
     position:relative;
-
     text-align:center;
-
     padding:60px 0;
-
 }
-
-
 .cta-final::before{
-
     content:"";
-
     position:absolute;
-
     left:50%;
-
     top:50%;
-
     width:900px;
-
     height:900px;
-
     transform:translate(-50%,-50%);
-
     border-radius:50%;
-
     background:radial-gradient(
-
         circle,
-
         rgba(199,166,90,.08),
-
         transparent 70%
-
     );
-
     pointer-events:none;
-
 }
-
-
 .cta-final h2{
-
     margin-bottom:1.5rem;
-
     font-size:clamp(2.8rem,5vw,4.2rem);
-
 }
-
-
 .cta-final p{
-
     max-width:720px;
-
     margin:0 auto 3rem;
-
     color:var(--contra-soft);
-
     line-height:1.9;
-
 }
-
 /* ==========================================================
    MUCHO MÁS QUE UN THRILLER
    ========================================================== */
-
 .tags-cloud{
-
     display:flex;
-
     flex-wrap:wrap;
-
     justify-content:center;
-
     align-items:center;
-
     max-width:1000px;
-
     margin:45px auto 0;
-
     text-align:center;
-
 }
-
-
 /* ELEMENTOS */
-
 .tags-cloud span{
-
     position:relative;
-
     display:inline-flex;
-
     align-items:center;
-
     color:var(--contra-text);
-
     font-family:var(--font-title);
-
     font-size:1.05rem;
-
     line-height:1.5;
-
     padding:0 18px;
-
 }
-
-
 /* SEPARADOR */
-
 .tags-cloud span:not(:last-child)::after{
-
     content:"|";
-
     position:absolute;
-
     right:-1px;
-
     top:50%;
-
     transform:translateY(-50%);
-
     color:rgba(199,166,90,.45);
-
     font-family:var(--font-body);
-
     font-size:.9rem;
-
 }
-
-
 /* PEQUEÑO EFECTO */
-
 .tags-cloud span{
-
     transition:
         color .3s ease,
         transform .3s ease;
-
 }
-
 .tags-cloud span:hover{
-
     color:var(--contra-primary);
-
     transform:translateY(-2px);
-
 }
-
 /* ==========================================================
    FINAL ACTIONS — MISMO ESTILO QUE HERO
 ========================================================== */
-
 .final-actions{
     display:flex;
     justify-content:center;
@@ -2302,37 +1708,26 @@ BOOK QUOTE
 .final-actions .btn-amazon{
     position:relative;
     overflow:hidden;
-
     width:494px;
     height:76px;
-
     padding:0 28px;
-
     display:flex;
     align-items:center;
     justify-content:space-between;
     gap:22px;
-
     border-radius:38px;
-
     text-decoration:none;
-
     color:#fff;
-
     background:
         linear-gradient(
             180deg,
             rgba(255,255,255,.08),
             rgba(255,255,255,.025)
         );
-
     border:1px solid rgba(199,166,90,.30);
-
     backdrop-filter:blur(14px);
-
     box-shadow:
         0 18px 45px rgba(0,0,0,.35);
-
     transition:
         transform .35s ease,
         box-shadow .35s ease,
@@ -2351,16 +1746,13 @@ BOOK QUOTE
             rgba(255,255,255,.14),
             rgba(199,166,90,.08)
         );
-
     box-shadow:
         0 20px 48px rgba(0,0,0,.45),
         0 0 35px rgba(199,166,90,.20);
 }
-
 .final-actions .btn-amazon img{
     width:200px;
     height:auto;
-
     transition:
         transform .35s ease,
         filter .35s ease;
@@ -2368,13 +1760,10 @@ BOOK QUOTE
 
 .final-actions .btn-amazon span{
     position:relative;
-
     display:flex;
     align-items:center;
     gap:14px;
-
     padding-left:22px;
-
     font-size:.84rem;
     letter-spacing:.12em;
     text-transform:uppercase;
@@ -2383,63 +1772,45 @@ BOOK QUOTE
 
 .final-actions .btn-amazon span::before{
     content:"";
-
     position:absolute;
     left:0;
     top:50%;
-
     width:1px;
     height:24px;
-
     transform:translateY(-50%);
-
     background:rgba(199,166,90,.35);
 }
 
 .final-actions .btn-amazon span::after{
     content:"→";
-
     font-size:1rem;
-
     transition:transform .35s ease;
 }
-
 .final-actions .btn-amazon:hover img{
     transform:scale(1.06);
-
     filter:drop-shadow(
         0 0 10px rgba(255,200,90,.45)
     );
 }
-
 .final-actions .btn-amazon:hover span::after{
     transform:translateX(4px);
 }
-
 
 /* COMPARTIR */
 
 .final-actions .btn-share{
     height:76px;
     min-width:280px;
-
     padding:0 28px;
-
     display:flex;
     align-items:center;
     justify-content:center;
     gap:12px;
-
     border-radius:38px;
-
     background:rgba(255,255,255,.025);
-
     border:1px solid rgba(255,255,255,.10);
-
     color:rgba(255,255,255,.72);
-
     font-size:.95rem;
-
     transition:
         transform .35s ease,
         border-color .35s ease,
@@ -2449,11 +1820,8 @@ BOOK QUOTE
 
 .final-actions .btn-share:hover{
     transform:translateY(-4px);
-
     color:var(--contra-primary);
-
     border-color:rgba(199,166,90,.35);
-
     background:rgba(255,255,255,.045);
 }
 
@@ -2467,236 +1835,138 @@ BOOK QUOTE
    ========================================================== */
 
 @media(max-width:768px){
-
     .tags-cloud{
-
         margin-top:35px;
-
         max-width:100%;
-
     }
-
-
     .tags-cloud span{
-
         font-size:.95rem;
-
         padding:7px 12px;
-
     }
-
 
     /*
        En móvil quitamos los separadores verticales
        cuando pueden hacer que las líneas queden
        visualmente demasiado cargadas.
     */
-
     .tags-cloud span:not(:last-child)::after{
-
         color:rgba(199,166,90,.35);
-
     }
-
-
    @media (max-width:768px){
-
     .final-actions{
         flex-direction:column;
         gap:14px;
         width:100%;
     }
-
     .final-actions .btn-amazon{
         width:100%;
         max-width:420px;
         min-width:0;
-
         height:68px;
-
         padding:0 20px;
-
         gap:12px;
     }
-
     .final-actions .btn-amazon img{
         width:150px;
         flex-shrink:1;
     }
-
     .final-actions .btn-amazon span{
         padding-left:16px;
         gap:8px;
-
         font-size:.72rem;
         letter-spacing:.09em;
-
         white-space:nowrap;
         flex-shrink:0;
     }
-
     .final-actions .btn-amazon span::before{
         height:22px;
     }
-
     .final-actions .btn-share{
         width:100%;
         max-width:420px;
         min-width:0;
-
         height:68px;
     }
-
 }
 /* ==========================================================
    ANIMACIONES GENERALES
 ========================================================== */
-
 .first-page img{
-
     display:block;
-
     max-width:100%;
-
 }
-
-
 .first-page a{
-
     transition:.3s ease;
-
 }
-
-
 .first-page a:hover{
-
     text-decoration:none;
-
 }
-
-
-
 /* ==========================================================
    FONDO GLOBAL
 ========================================================== */
-
 .book-page::before{
-
     content:"";
-
     position:fixed;
-
     inset:0;
-
     pointer-events:none;
-
     z-index:-1;
-
     background:
-
         radial-gradient(
-
             circle at 15% 20%,
-
             rgba(199,166,90,.03),
-
             transparent 28%
-
         ),
-
         radial-gradient(
-
             circle at 82% 18%,
-
             rgba(199,166,90,.025),
-
             transparent 24%
-
         ),
-
         radial-gradient(
-
             circle at 70% 78%,
-
             rgba(199,166,90,.03),
-
             transparent 26%
-
         );
-
 }
-
-
-
 /* ==========================================================
    RESPONSIVE GENERAL compra
 ========================================================== */
-
 @media (max-width:768px){
-
     .preview-box{
-
         padding:2.2rem;
-
     }
-
 }
 
-
 @media (max-width:480px){
-
     .cta-compra{
-
         padding:90px 0;
-
     }
-
     .cta-compra h2{
-
         font-size:2.2rem;
-
     }
-
 }
 /* ==========================================================
    RESPONSIVE GENERAL
 ========================================================== */
-
 @media (max-width:768px){
-
     .preview-box{
-
         padding:2.2rem;
-
     }
-
 }
-
-
 @media (max-width:480px){
-
     .cta-final{
-
         padding:90px 0;
-
     }
-
     .cta-final h2{
-
         font-size:2.2rem;
-
     }
-
 }
 /* ==========================================================
    TE PUEDE INTERESAR
 ========================================================== */
-
 .related-books{
     position:relative;
     overflow:hidden;
 }
-
 
 /* ==========================================================
    CABECERA
@@ -2705,36 +1975,23 @@ BOOK QUOTE
 .related-books .section-intro{
 
     max-width:620px;
-
     margin:1.2rem auto 0;
-
     color:var(--contra-soft);
-
     line-height:1.8;
-
     text-align:center;
-
 }
-
 
 /* ==========================================================
    GRID
 ========================================================== */
 
 .related-books-grid{
-
     display:grid;
-
     grid-template-columns:repeat(2, minmax(0, 1fr));
-
     gap:80px;
-
     max-width:1000px;
-
     margin:5rem auto 0;
-
 }
-
 
 /* ==========================================================
    LIBRO
@@ -2743,9 +2000,7 @@ BOOK QUOTE
 .related-book{
 
     position:relative;
-
     text-align:center;
-
 }
 
 
@@ -2754,230 +2009,125 @@ BOOK QUOTE
 ========================================================== */
 
 .related-book-image{
-
     position:relative;
-
     display:block;
-
     width:100%;
-
-    max-width:250px;
-
+    max-width:160px;
     margin:0 auto;
-
     text-decoration:none;
-
     perspective:1000px;
-
 }
-
-
 .related-book-image::after{
-
     content:"";
-
     position:absolute;
-
     left:12%;
-
     right:12%;
-
     bottom:-18px;
-
     height:35px;
-
     background:rgba(0,0,0,.55);
-
     filter:blur(18px);
-
     opacity:.65;
-
     transition:
         opacity .4s ease,
         transform .4s ease;
-
 }
 
-
 .related-book-image img{
-
     position:relative;
-
     z-index:2;
-
     display:block;
-
     width:100%;
-
     height:auto;
-
     max-height:360px;
-
     object-fit:contain;
-
     margin:0 auto;
-
     filter:
         drop-shadow(0 24px 35px rgba(0,0,0,.45));
-
     transform:
         translateY(0)
         rotateY(0deg);
-
     transition:
         transform .45s ease,
         filter .45s ease;
-
 }
-
-
 /* ==========================================================
    HOVER
 ========================================================== */
 
 .related-book:hover .related-book-image img{
-
     transform:
         translateY(-10px)
         rotateY(-2deg);
-
     filter:
         drop-shadow(0 32px 45px rgba(0,0,0,.55));
-
 }
-
-
 .related-book:hover .related-book-image::after{
-
     opacity:.85;
-
     transform:scaleX(.9);
-
 }
-
 
 /* ==========================================================
    INFORMACIÓN
 ========================================================== */
 
 .related-book-info{
-
     max-width:430px;
 
     margin:3rem auto 0;
-
 }
-
-
 .related-book-label{
-
     display:block;
-
     margin-bottom:.8rem;
-
     color:var(--contra-primary);
-
     font-size:.72rem;
-
     font-weight:600;
-
     letter-spacing:.18em;
-
     text-transform:uppercase;
-
 }
-
-
 .related-book-info h3{
-
     margin:0;
-
     color:var(--contra-text);
-
     font-family:var(--font-title);
-
     font-size:clamp(1.8rem, 2.5vw, 2.5rem);
-
     font-weight:500;
-
     line-height:1.15;
-
 }
-
-
 .related-book-info p{
-
     margin:1.2rem auto 0;
-
     max-width:390px;
-
     color:var(--contra-soft);
-
     font-size:.95rem;
-
     line-height:1.8;
-
 }
-
-
 /* ==========================================================
    ENLACE
 ========================================================== */
-
 .related-book-link{
-
     display:inline-flex;
-
     align-items:center;
-
     gap:10px;
-
     margin-top:1.5rem;
-
     color:var(--contra-primary);
-
     font-size:.78rem;
-
     font-weight:600;
-
     letter-spacing:.12em;
-
     text-transform:uppercase;
-
     text-decoration:none;
-
     transition:
         color .3s ease,
         gap .3s ease;
-
 }
-
-
 .related-book-link span{
-
     font-size:1rem;
-
     transition:transform .3s ease;
-
 }
-
-
 .related-book-link:hover{
-
     color:var(--contra-text);
-
     gap:14px;
-
 }
-
-
 .related-book-link:hover span{
-
     transform:translateX(3px);
-
 }
-
-
 /* ==========================================================
    MÓVIL
 ========================================================== */
@@ -2985,79 +2135,39 @@ BOOK QUOTE
 @media (max-width:768px){
 
     .related-books-grid{
-
         grid-template-columns:1fr;
-
         gap:70px;
-
         margin-top:3.5rem;
-
     }
-
-
-    .related-book-image{
-
-        max-width:300px;
-
+   .related-book-image{
+        max-width:150px;
     }
-
-
     .related-book-image img{
-
         max-height:280px;
-
     }
-
-
     .related-book-info{
-
         margin-top:2.5rem;
-
     }
-
-
     .related-book-info h3{
-
         font-size:2rem;
-
     }
-
-
     .related-book-info p{
-
         padding:0 10px;
-
     }
-
 }
-
-
 /* ==========================================================
    MÓVIL PEQUEÑO
 ========================================================== */
-
 @media (max-width:480px){
-
     .related-books-grid{
-
         gap:60px;
-
     }
-
-
     .related-book-image{
-
-        max-width:270px;
-
+        max-width:120px;
     }
-
-
     .related-book-info h3{
-
         font-size:1.8rem;
-
     }
-
 }
 /* ==========================================================
    TE PUEDE INTERESAR — TAMAÑO REAL DE LOS MOCKUPS
@@ -3065,8 +2175,8 @@ BOOK QUOTE
 
 .related-books .related-book-image {
     display:block;
-    width:240px;
-    max-width:240px;
+    width:160px;
+    max-width:160px;
     margin:0 auto;
 }
 
