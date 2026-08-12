@@ -1963,44 +1963,46 @@ BOOK QUOTE
 /* ==========================================================
    TE PUEDE INTERESAR
 ========================================================== */
-.related-books{
-    position:relative;
-    overflow:hidden;
+
+.related-books {
+    position: relative;
+    overflow: hidden;
 }
+
 
 /* ==========================================================
    CABECERA
 ========================================================== */
 
-.related-books .section-intro{
-
-    max-width:620px;
-    margin:1.2rem auto 0;
-    color:var(--contra-soft);
-    line-height:1.8;
-    text-align:center;
+.related-books .section-intro {
+    max-width: 620px;
+    margin: 1.2rem auto 0;
+    color: var(--contra-soft);
+    line-height: 1.8;
+    text-align: center;
 }
+
 
 /* ==========================================================
    GRID
 ========================================================== */
 
-.related-books-grid{
-    display:grid;
-    grid-template-columns:repeat(2, minmax(0, 1fr));
-    gap:80px;
-    max-width:1000px;
-    margin:5rem auto 0;
+.related-books-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 80px;
+    max-width: 1000px;
+    margin: 5rem auto 0;
 }
+
 
 /* ==========================================================
    LIBRO
 ========================================================== */
 
-.related-book{
-
-    position:relative;
-    text-align:center;
+.related-book {
+    position: relative;
+    text-align: center;
 }
 
 
@@ -2008,43 +2010,68 @@ BOOK QUOTE
    IMAGEN / MOCKUP
 ========================================================== */
 
-.related-book-image{
-    position:relative;
-    display:block;
-    width:160px;
-    max-width:160px;
-    margin:0 auto;
-    text-decoration:none;
-    perspective:1000px;
+.related-book-image {
+    position: relative;
+    display: block;
+
+    /* Tamaño controlado del mockup */
+    width: 160px !important;
+    max-width: 160px !important;
+
+    height: auto;
+    margin: 0 auto;
+
+    text-decoration: none;
+    perspective: 1000px;
 }
-.related-book-image::after{
-    content:"";
-    position:absolute;
-    left:12%;
-    right:12%;
-    bottom:-18px;
-    height:35px;
-    background:rgba(0,0,0,.55);
-    filter:blur(18px);
-    opacity:.65;
+
+
+/* Sombra proyectada debajo del libro */
+
+.related-book-image::after {
+    content: "";
+
+    position: absolute;
+
+    left: 12%;
+    right: 12%;
+    bottom: -18px;
+
+    height: 35px;
+
+    background: rgba(0, 0, 0, .55);
+
+    filter: blur(18px);
+
+    opacity: .65;
+
     transition:
         opacity .4s ease,
         transform .4s ease;
 }
 
-.related-book-image img{
-    position:relative;
-    z-index:2;
-    display:block;
-    width:100%;
-    max-width:100%;
-    height:auto;
-    max-height:380px;
-    object-fit:contain;
-    margin:0 auto;
+
+/* Imagen */
+
+.related-book-image img {
+    position: relative;
+    z-index: 2;
+
+    display: block;
+
+    /* Tamaño controlado */
+    width: 160px !important;
+    max-width: 160px !important;
+
+    height: auto !important;
+    max-height: 360px;
+
+    object-fit: contain;
+
+    margin: 0 auto;
 
     filter:
-        drop-shadow(0 24px 35px rgba(0,0,0,.45));
+        drop-shadow(0 24px 35px rgba(0, 0, 0, .45));
 
     transform:
         translateY(0)
@@ -2054,119 +2081,205 @@ BOOK QUOTE
         transform .45s ease,
         filter .45s ease;
 }
+
+
 /* ==========================================================
    HOVER
 ========================================================== */
 
-.related-book:hover .related-book-image img{
+.related-book:hover .related-book-image img {
     transform:
         translateY(-10px)
         rotateY(-2deg);
+
     filter:
-        drop-shadow(0 32px 45px rgba(0,0,0,.55));
+        drop-shadow(0 32px 45px rgba(0, 0, 0, .55));
 }
-.related-book:hover .related-book-image::after{
-    opacity:.85;
-    transform:scaleX(.9);
+
+
+.related-book:hover .related-book-image::after {
+    opacity: .85;
+
+    transform: scaleX(.9);
 }
+
 
 /* ==========================================================
    INFORMACIÓN
 ========================================================== */
 
-.related-book-info{
-    max-width:430px;
-    margin:3rem auto 0;
+.related-book-info {
+    max-width: 430px;
+    margin: 3rem auto 0;
 }
-.related-book-label{
-    display:block;
-    margin-bottom:.8rem;
-    color:var(--contra-primary);
-    font-size:.72rem;
-    font-weight:600;
-    letter-spacing:.18em;
-    text-transform:uppercase;
+
+
+.related-book-label {
+    display: block;
+
+    margin-bottom: .8rem;
+
+    color: var(--contra-primary);
+
+    font-size: .72rem;
+    font-weight: 600;
+
+    letter-spacing: .18em;
+
+    text-transform: uppercase;
 }
-.related-book-info h3{
-    margin:0;
-    color:var(--contra-text);
-    font-family:var(--font-title);
-    font-size:clamp(1.8rem, 2.5vw, 2.5rem);
-    font-weight:500;
-    line-height:1.15;
+
+
+.related-book-info h3 {
+    margin: 0;
+
+    color: var(--contra-text);
+
+    font-family: var(--font-title);
+
+    font-size: clamp(1.8rem, 2.5vw, 2.5rem);
+
+    font-weight: 500;
+
+    line-height: 1.15;
 }
-.related-book-info p{
-    margin:1.2rem auto 0;
-    max-width:390px;
-    color:var(--contra-soft);
-    font-size:.95rem;
-    line-height:1.8;
+
+
+.related-book-info p {
+    margin: 1.2rem auto 0;
+
+    max-width: 390px;
+
+    color: var(--contra-soft);
+
+    font-size: .95rem;
+
+    line-height: 1.8;
 }
+
+
 /* ==========================================================
    ENLACE
 ========================================================== */
-.related-book-link{
-    display:inline-flex;
-    align-items:center;
-    gap:10px;
-    margin-top:1.5rem;
-    color:var(--contra-primary);
-    font-size:.78rem;
-    font-weight:600;
-    letter-spacing:.12em;
-    text-transform:uppercase;
-    text-decoration:none;
+
+.related-book-link {
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    margin-top: 1.5rem;
+
+    color: var(--contra-primary);
+
+    font-size: .78rem;
+
+    font-weight: 600;
+
+    letter-spacing: .12em;
+
+    text-transform: uppercase;
+
+    text-decoration: none;
+
     transition:
         color .3s ease,
         gap .3s ease;
 }
-.related-book-link span{
-    font-size:1rem;
-    transition:transform .3s ease;
+
+
+.related-book-link span {
+    font-size: 1rem;
+
+    transition:
+        transform .3s ease;
 }
-.related-book-link:hover{
-    color:var(--contra-text);
-    gap:14px;
+
+
+.related-book-link:hover {
+    color: var(--contra-text);
+
+    gap: 14px;
 }
-.related-book-link:hover span{
-    transform:translateX(3px);
+
+
+.related-book-link:hover span {
+    transform: translateX(3px);
 }
+
+
 /* ==========================================================
    MÓVIL
 ========================================================== */
-@media (max-width:768px){
-    .related-books-grid{
-        grid-template-columns:1fr;
-        gap:70px;
-        margin-top:3.5rem;
+
+@media (max-width: 768px) {
+
+    .related-books-grid {
+        grid-template-columns: 1fr;
+
+        gap: 70px;
+
+        margin-top: 3.5rem;
     }
-   .related-book-image{
-        max-width:150px;
+
+
+    .related-book-image {
+        width: 145px !important;
+        max-width: 145px !important;
     }
-    .related-book-image img{
-        max-height:280px;
+
+
+    .related-book-image img {
+        width: 145px !important;
+        max-width: 145px !important;
+
+        max-height: 300px;
     }
-    .related-book-info{
-        margin-top:2.5rem;
+
+
+    .related-book-info {
+        margin-top: 2.5rem;
     }
-    .related-book-info h3{
-        font-size:2rem;
+
+
+    .related-book-info h3 {
+        font-size: 2rem;
     }
-    .related-book-info p{
-        padding:0 10px;
+
+
+    .related-book-info p {
+        padding: 0 10px;
     }
 }
+
+
 /* ==========================================================
    MÓVIL PEQUEÑO
 ========================================================== */
-@media (max-width:480px){
-    .related-books-grid{
-        gap:60px;
+
+@media (max-width: 480px) {
+
+    .related-books-grid {
+        gap: 60px;
     }
-    .related-book-image{
-        max-width:120px;
+
+
+    .related-book-image {
+        width: 125px !important;
+        max-width: 125px !important;
     }
-    .related-book-info h3{
-        font-size:1.8rem;
+
+
+    .related-book-image img {
+        width: 125px !important;
+        max-width: 125px !important;
+
+        max-height: 270px;
+    }
+
+
+    .related-book-info h3 {
+        font-size: 1.8rem;
     }
 }
