@@ -2030,7 +2030,6 @@ BOOK QUOTE
 .related-books .related-book-image img {
     position: relative;
     z-index: 2;
-
     display: block;
     width: 160px;
     max-width: 160px;
