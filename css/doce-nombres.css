@@ -1370,212 +1370,133 @@ BOOK QUOTE
     }
 }
 /* ==========================================================
-   PRIMERAS PÁGINAS — LIBRO ABIERTO
-========================================================== */
-.first-pages{
-    padding:20px 0 40px;
-    position:relative;
-    overflow:hidden;
-}
-.first-pages-intro{
-    text-align:center;
-    margin-bottom:65px;
-}
-.first-pages-lead{
-    margin:0 0 10px;
-    color:#a9a39a;
-    font-size:14px;
-    letter-spacing:.08em;
-}
-.first-pages-intro h2{
-    margin:0;
-    font-family:var(--serif);
-    font-size:clamp(38px,4.5vw,58px);
-    font-weight:500;
-    line-height:1.05;
-    color:#d2bd8e;
-}
-/* =========================================================
-   PRIMERAS PÁGINAS — LIBRO ABIERTO
-   ========================================================= */
-.first-pages{
-    padding:100px 0 65px;
-    position:relative;
-    overflow:hidden;
-}
-.first-pages-intro{
-    text-align:center;
-    margin-bottom:65px;
-}
-.first-pages-lead{
-    margin:0 0 10px;
-    color:#aa9a79;
-    font-size:14px;
-    letter-spacing:.08em;
-}
-/* Título de la sección */
+   DOCE NOMBRES — PRIMER CAPÍTULO
+   ========================================================== */
 
-.first-pages-intro h2{
-    margin:0;
-    font-family:var(--serif);
-    font-size:clamp(38px,4.5vw,58px);
-    font-weight:500;
-    line-height:1.05;
-    color:#f2ede4;
+.doce-chapter {
+    padding: 5rem 0;
+    position: relative;
 }
 
-/* LIBRO */
-
-.book-open{
-    display:flex;
-    justify-content:center;
-    align-items:stretch;
-    max-width:1000px;
-    margin:0 auto;
-    position:relative;
-    perspective:1800px;
+.doce-chapter-content {
+    max-width: 760px;
+    margin: 0 auto;
+    text-align: center;
 }
 
-/* Cada página */
+.doce-chapter-content .section-kicker {
+    display: block;
+    margin-bottom: 0.8rem;
+}
 
-.first-page{
-    display:block;
-    width:50%;
-    position:relative;
-    overflow:hidden;
-    background:#eee9df;
+.doce-chapter-content h2 {
+    margin-bottom: 1.5rem;
+}
+
+.doce-chapter-content p {
+    max-width: 680px;
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 1.8;
+}
+
+.doce-chapter-highlight {
+    margin-top: 1.5rem;
+    font-size: 1.1rem;
+}
+
+/* BOTÓN */
+
+.doce-chapter-action {
+    display: flex;
+    justify-content: center;
+    margin-top: 2.5rem;
+}
+
+.btn-chapter {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.8rem;
+
+    min-width: 310px;
+    padding: 1rem 2rem;
+
+    background: var(--accent-color);
+    color: #fff;
+
+    border: 1px solid var(--accent-color);
+    border-radius: 4px;
+
+    font-size: 0.85rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-decoration: none;
+
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.18);
+
     transition:
-        transform .5s cubic-bezier(.22,.61,.36,1),
-        box-shadow .5s ease;
-}
-/* Imágenes */
-
-.first-page img{
-    display:block;
-    width:100%;
-    height:auto;
+        transform 0.25s ease,
+        box-shadow 0.25s ease,
+        background 0.25s ease;
 }
 
-/* Página izquierda */
-
-.first-page-left{
-    transform-origin:right center;
-    transform:
-        perspective(1800px)
-        rotateY(2deg);
-
-    box-shadow:
-        -12px 24px 45px rgba(0,0,0,.30),
-        8px 12px 22px rgba(0,0,0,.18);
+.btn-chapter:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.25);
 }
 
-/* Página derecha */
+.btn-chapter-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
 
-.first-page-right{
-    transform-origin:left center;
-    transform:
-        perspective(1800px)
-        rotateY(-2deg);
-
-    box-shadow:
-        12px 24px 45px rgba(0,0,0,.30),
-        -8px 12px 22px rgba(0,0,0,.18);
+    font-size: 1.15rem;
+    line-height: 1;
 }
 
-/* Unión central del libro */
-.book-open::before{
-    content:"";
-    position:absolute;
-    top:0;
-    bottom:0;
-    left:50%;
-    width:2px;
-    transform:translateX(-50%);
-    background:rgba(80,65,45,.18);
-    pointer-events:none;
-    z-index:3;
+.doce-chapter-note {
+    margin-top: 1rem;
+    font-size: 0.78rem;
+    opacity: 0.65;
 }
-.book-open::after{
-    content:"";
-    position:absolute;
-    top:0;
-    bottom:0;
-    left:50%;
-    width:28px;
-    transform:translateX(-50%);
-    pointer-events:none;
 
-    background:
-        linear-gradient(
-            90deg,
-            rgba(0,0,0,.00) 0%,
-            rgba(0,0,0,.08) 25%,
-            rgba(0,0,0,.22) 50%,
-            rgba(0,0,0,.08) 75%,
-            rgba(0,0,0,.00) 100%
-        );
-    filter:blur(4px);
-    opacity:.65;
-}
-/* Ligera interacción */
+/* SEPARACIÓN VISUAL */
 
-.first-page-left:hover{
-    transform:
-        perspective(1800px)
-        rotateY(1deg)
-        translateY(-3px);
+.doce-chapter::after {
+    content: "";
+    display: block;
+
+    width: 70px;
+    height: 1px;
+
+    margin: 4rem auto 0;
+
+    background: currentColor;
+    opacity: 0.25;
 }
-.first-page-right:hover{
-    transform:
-        perspective(1800px)
-        rotateY(-1deg)
-        translateY(-3px);
-}
+
 
 /* ==========================================================
-   PRIMERAS PÁGINAS — MÓVIL
-========================================================== */
+   MOBILE
+   ========================================================== */
 
-@media(max-width:768px){
-    .first-pages{
-        padding:80px 0 90px;
-    }
-    .first-pages-intro{
-        margin-bottom:42px;
-    }
-    .first-pages-lead{
-        font-size:13px;
-    }
-    .first-pages-intro h2{
-        font-size:46px;
-    }
-    .book-open{
-        max-width:94vw;
-        perspective:none;
-    }
-    .first-page{
-    width:50%;
-}
+@media (max-width: 768px) {
 
-.first-page-left,
-.first-page-right{
-    transform:none;
-    box-shadow:
-        0 14px 28px rgba(0,0,0,.28);
-}
-.first-page-left:hover,
-.first-page-right:hover{
-    transform:none;
-}
-.book-open::before{
-    width:1px;
-    opacity:.7;
-}
-.book-open::after{
-    width:18px;
-    filter:blur(3px);
-    opacity:.5;
-}
+    .doce-chapter {
+        padding: 4rem 0;
+    }
+
+    .doce-chapter-content {
+        padding: 0 1rem;
+    }
+
+    .btn-chapter {
+        width: 100%;
+        max-width: 340px;
+        min-width: 0;
+    }
+
 }
 /* ==========================================================
    CTA COMPRA
