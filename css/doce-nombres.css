@@ -2305,20 +2305,34 @@ section.related-books .related-books-grid article.related-book > a.related-book-
    DOCE NOMBRES — AJUSTES ESPECÍFICOS
    ========================================================== */
 
-.doce-chapter-link{
-    display:flex;
-    justify-content:center;
-    margin-top:2rem;
+.doce-chapter-link {
+    display: flex;
+    justify-content: center;
+    margin-top: 2.5rem;
 }
 
-.doce-chapter-link .btn-amazon{
-    min-width:280px;
-    justify-content:center;
+.doce-chapter-link .btn-amazon {
+    min-width: 300px;
+    justify-content: center;
+    padding: 1rem 2rem;
+    font-size: 0.95rem;
+    letter-spacing: 0.05em;
+    box-shadow: 0 8px 22px rgba(0, 0, 0, 0.18);
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
 }
 
-@media (max-width:768px){
-    .doce-chapter-link .btn-amazon{
-        width:100%;
-        max-width:320px;
+.doce-chapter-link .btn-amazon:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.25);
+}
+
+@media (max-width: 768px) {
+
+    .doce-chapter-link .btn-amazon {
+        width: 100%;
+        max-width: 340px;
     }
+
 }
