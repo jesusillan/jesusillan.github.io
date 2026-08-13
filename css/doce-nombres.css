@@ -198,8 +198,8 @@ TRANSICIÓN HERO → SINOPSIS
     position:absolute;
     left:50%;
     top:50%;
-    width:560px;
-    height:560px;
+    width:420px;
+    height:420px;
     transform:translate(-50%,-50%);
     border-radius:50%;
     background:
@@ -221,8 +221,8 @@ TRANSICIÓN HERO → SINOPSIS
     position:absolute;
     left:50%;
     top:50%;
-    width:430px;
-    height:430px;
+    width:320px;
+    height:320px;
     transform:translate(-50%,-50%);
     border-radius:50%;
     background:radial-gradient(
@@ -237,7 +237,7 @@ TRANSICIÓN HERO → SINOPSIS
 .book-mockup{
     position:relative;
     z-index:3;
-    width:min(560px,96%);
+    width:min(420px,96%);
     height:auto;
     filter:
         drop-shadow(0 45px 65px rgba(0,0,0,.60));
