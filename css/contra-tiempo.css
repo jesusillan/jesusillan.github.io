@@ -662,16 +662,9 @@
 }
 
 .synopsis-content p:first-of-type {
-    margin-top:42px;
-    margin-bottom:0;
-    padding-left:24px;
-    border-left:2px solid var(--gold);
-    color:var(--gold2);
-    font-family:var(--serif);
-    font-size:clamp(27px,3vw,38px);
-    line-height:1.15;
-    font-weight:500;
-    letter-spacing:.01em;
+   font-size: 1.18rem;
+    color: #ffffff; 
+   
 }
 
 /* ==========================================================
