@@ -605,7 +605,7 @@
     border-left: 3px solid #86c6ea;
     color: #c4e7fa;
     font-family: var(--font-title);
-    font-size: clamp(2.4rem, 2.2vw, 3.23rem);
+    font-size: clamp(3rem, 3vw, 5rem);
     line-height: 1.55;
 }
 
