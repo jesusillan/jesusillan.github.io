@@ -668,11 +668,10 @@
 }
 
 /* ==========================================================
-   FRASE DESTACADA
+   CONTRA TIEMPO — FRASE DESTACADA DE SINOPSIS
    ========================================================== */
 
-.highlight-text {
-    position: relative;
+.synopsis-section .synopsis-content p.highlight-text {
     margin-top: 3rem;
     margin-bottom: 0;
     padding-left: 28px;
@@ -686,7 +685,7 @@
     color: var(--contra-primary);
 }
 
-.highlight-text::before {
+.synopsis-section .synopsis-content p.highlight-text::before {
     content: "";
     position: absolute;
     left: 0;
@@ -696,7 +695,6 @@
     border-radius: 2px;
     background: var(--contra-primary);
 }
-
 
 /* ==========================================================
    PORTADA DE SINOPSIS
