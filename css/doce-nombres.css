@@ -577,7 +577,7 @@ TRANSICIÓN HERO → SINOPSIS
         gap:45px;
     }
     .book-mockup{
-        width:min(540px,100%);
+        width:min(420px,100%);
     }
     .hero-content h1{
         font-size:5rem;
