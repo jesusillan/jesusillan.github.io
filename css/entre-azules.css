@@ -168,7 +168,7 @@
 .azules-hero .hero-book-image::before {
     content: "";
     position: absolute;
-    left: 50%;
+    left: calc(50% + 90px);
     top: 50%;
 
     width: 780px;
