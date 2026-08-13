@@ -468,7 +468,12 @@
             #0b1f30
         );
 }
-
+.synopsis-grid {
+    display: grid;
+    grid-template-columns: 1.4fr .8fr;
+    gap: 80px;
+    align-items: start;
+}
 .azules-synopsis .synopsis-grid {
     gap: clamp(70px, 8vw, 125px);
 }
