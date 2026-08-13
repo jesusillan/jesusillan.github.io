@@ -4,6 +4,7 @@
    Identidad visual propia · v1.0
    ========================================================== */
 
+
 /* ==========================================================
    VARIABLES — CIELO / AZUL / GLOBO
    ========================================================== */
@@ -21,6 +22,7 @@
     --azules-panel: rgba(255,255,255,.055);
     --azules-border: rgba(181,220,247,.20);
 }
+
 
 /* ==========================================================
    PÁGINA
@@ -52,6 +54,7 @@
         radial-gradient(circle at 85% 22%, rgba(255,255,255,.07), transparent 24%),
         radial-gradient(circle at 50% 80%, rgba(61,127,181,.10), transparent 30%);
 }
+
 
 /* ==========================================================
    HERO
@@ -87,22 +90,27 @@
     filter: blur(14px);
 }
 
+
+/* ==========================================================
+   HERO — FONDO DEL GLOBO
+   ========================================================== */
+
+/*
+   CAMBIO:
+   El fondo del globo deja de estar colocado a la derecha
+   del HERO completo.
+
+   Ahora queda asociado visualmente a la zona del mockup.
+*/
+
 .azules-balloon-bg {
-    position: absolute;
-    right: -90px;
-    top: 50%;
-    width: 700px;
-    height: 700px;
-    transform: translateY(-50%);
-    z-index: -2;
-    pointer-events: none;
-    background:
-        url("../images/Azules-bg-globo.png")
-        center / contain
-        no-repeat;
-    opacity: .34;
-    filter: saturate(.95);
+    display: none;
 }
+
+
+/* ==========================================================
+   HERO — LUZ INFERIOR
+   ========================================================== */
 
 .azules-hero::after {
     content: "";
@@ -114,13 +122,15 @@
     border-radius: 50%;
     z-index: -1;
     pointer-events: none;
-    background: radial-gradient(
-        ellipse,
-        rgba(126,188,231,.18),
-        transparent 68%
-    );
+    background:
+        radial-gradient(
+            ellipse,
+            rgba(126,188,231,.18),
+            transparent 68%
+        );
     filter: blur(45px);
 }
+
 
 /* ==========================================================
    HERO — MOCKUP
@@ -132,76 +142,146 @@
     display: flex;
     justify-content: center;
     align-items: center;
+
+    /*
+       CAMBIO:
+       Mantiene su propio contexto de apilado para que
+       el fondo quede perfectamente detrás del libro.
+    */
     isolation: isolate;
 }
+
+
+/* ==========================================================
+   HERO — FONDO DEL GLOBO DETRÁS DEL MOCKUP
+   ========================================================== */
+
+/*
+   CAMBIO:
+   El fondo de nubes/globo se coloca directamente dentro
+   de la zona del mockup.
+
+   Queda:
+   fondo → globo → brillos → libro
+*/
 
 .azules-hero .hero-book-image::before {
     content: "";
     position: absolute;
     left: 50%;
     top: 50%;
-    width: 720px;
-    height: 720px;
+
+    width: 780px;
+    height: 780px;
+
     transform: translate(-50%, -50%);
+
     border-radius: 50%;
+
     background:
-        radial-gradient(
-            circle,
-            rgba(213,238,253,.25),
-            rgba(102,170,215,.10) 38%,
-            transparent 70%
-        );
-    filter: blur(28px);
+        linear-gradient(
+            180deg,
+            rgba(23,59,91,.05),
+            rgba(7,19,31,.18)
+        ),
+        url("../images/Azules-bg-globo.png")
+        center / contain
+        no-repeat;
+
+    opacity: .28;
+
+    filter:
+        saturate(.90)
+        blur(.2px);
+
     z-index: 0;
+
     pointer-events: none;
 }
+
+
+/* ==========================================================
+   HERO — HALO EXTERIOR DEL MOCKUP
+   ========================================================== */
 
 .azules-hero .hero-book-image::after {
     content: "";
     position: absolute;
     left: 50%;
     top: 50%;
-    width: 510px;
-    height: 510px;
+
+    width: 650px;
+    height: 650px;
+
     transform: translate(-50%, -50%);
+
     border-radius: 50%;
+
     background:
         radial-gradient(
             circle,
-            rgba(255,255,255,.13),
-            rgba(155,207,237,.08),
+            rgba(213,238,253,.20),
+            rgba(102,170,215,.08) 40%,
             transparent 72%
         );
-    filter: blur(52px);
+
+    filter: blur(35px);
+
     z-index: 1;
+
     pointer-events: none;
 }
 
+
+/* ==========================================================
+   HERO — BRILLO DEL LIBRO
+   ========================================================== */
+
 .azules-hero .book-glow {
     position: absolute;
+
     left: 50%;
     top: 50%;
-    width: 410px;
-    height: 410px;
+
+    width: 470px;
+    height: 470px;
+
     transform: translate(-50%, -50%);
+
     border-radius: 50%;
-    background: radial-gradient(
-        circle,
-        rgba(255,255,255,.10),
-        transparent 72%
-    );
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(255,255,255,.14),
+            rgba(155,207,237,.08) 38%,
+            transparent 72%
+        );
+
     filter: blur(38px);
+
     z-index: 2;
+
+    pointer-events: none;
 }
+
+
+/* ==========================================================
+   HERO — LIBRO
+   ========================================================== */
 
 .azules-hero .book-mockup {
     position: relative;
+
     z-index: 3;
+
     width: min(560px, 96%);
     height: auto;
+
     filter:
         drop-shadow(0 38px 58px rgba(0,0,0,.48))
         drop-shadow(0 0 34px rgba(140,203,241,.13));
+
     transition:
         transform .6s ease,
         filter .6s ease;
@@ -209,10 +289,12 @@
 
 .azules-hero .book-mockup:hover {
     transform: translateY(-9px) scale(1.02);
+
     filter:
         drop-shadow(0 48px 72px rgba(0,0,0,.58))
         drop-shadow(0 0 42px rgba(150,213,248,.20));
 }
+
 
 /* ==========================================================
    HERO — TEXTO
@@ -269,6 +351,7 @@
     color: rgba(240,248,255,.82);
 }
 
+
 /* ==========================================================
    BOTONES
    ========================================================== */
@@ -294,17 +377,22 @@
     border-radius: 18px;
     text-decoration: none;
     color: #fff;
+
     background:
         linear-gradient(
             180deg,
             rgba(255,255,255,.18),
             rgba(92,154,200,.12)
         );
+
     border: 1px solid rgba(183,222,247,.38);
+
     box-shadow:
         0 18px 45px rgba(0,0,0,.25),
         0 0 30px rgba(99,171,218,.10);
+
     backdrop-filter: blur(14px);
+
     transition:
         transform .35s ease,
         box-shadow .35s ease,
@@ -314,13 +402,16 @@
 
 .azules-page .hero-buttons .btn-amazon:hover {
     transform: translateY(-5px);
+
     border-color: rgba(205,235,253,.78);
+
     background:
         linear-gradient(
             180deg,
             rgba(255,255,255,.25),
             rgba(84,155,207,.18)
         );
+
     box-shadow:
         0 22px 50px rgba(0,0,0,.34),
         0 0 35px rgba(100,181,230,.20);
@@ -377,6 +468,7 @@
     background: rgba(255,255,255,.045);
     border: 1px solid rgba(190,224,245,.20);
     color: rgba(237,248,255,.78);
+
     transition:
         transform .35s ease,
         border-color .35s ease,
@@ -391,6 +483,7 @@
     background: rgba(255,255,255,.08);
 }
 
+
 /* ==========================================================
    TRANSICIÓN / CLAIM
    ========================================================== */
@@ -399,6 +492,7 @@
     position: relative;
     padding: 115px 0 105px;
     overflow: hidden;
+
     background:
         linear-gradient(
             180deg,
@@ -440,12 +534,14 @@
 .azules-quote .quote-rule {
     width: 80px;
     height: 1px;
-    background: linear-gradient(
-        90deg,
-        transparent,
-        rgba(176,220,245,.85),
-        transparent
-    );
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            rgba(176,220,245,.85),
+            transparent
+        );
 }
 
 .azules-quote strong {
@@ -455,12 +551,14 @@
     font-weight: 500;
 }
 
+
 /* ==========================================================
    SINOPSIS
    ========================================================== */
 
 .azules-synopsis {
     position: relative;
+
     background:
         linear-gradient(
             180deg,
@@ -468,12 +566,14 @@
             #0b1f30
         );
 }
+
 .synopsis-grid {
     display: grid;
     grid-template-columns: 1.4fr .8fr;
     gap: 80px;
     align-items: start;
 }
+
 .azules-synopsis .synopsis-grid {
     gap: clamp(70px, 8vw, 125px);
 }
@@ -514,11 +614,17 @@
         0 28px 60px rgba(0,0,0,.42),
         0 0 35px rgba(116,184,224,.10);
 }
-/* ENTRE AZULES — bajar únicamente la portada de la sinopsis */
+
+
+/* ==========================================================
+   ENTRE AZULES — BAJAR ÚNICAMENTE LA PORTADA DE LA SINOPSIS
+   ========================================================== */
 
 .synopsis .book-cover-panel {
     padding-top: 35px;
 }
+
+
 /* ==========================================================
    POR QUÉ LEERLO
    ========================================================== */
@@ -526,6 +632,7 @@
 .azules-why {
     position: relative;
     overflow: hidden;
+
     background:
         linear-gradient(
             180deg,
@@ -568,6 +675,7 @@
     line-height: 1.3;
 }
 
+
 /* ==========================================================
    PRIMERAS PÁGINAS — LIBRO ABIERTO
    ========================================================== */
@@ -575,6 +683,7 @@
 .azules-fragments {
     position: relative;
     overflow: hidden;
+
     background:
         linear-gradient(
             180deg,
@@ -610,14 +719,17 @@
     text-decoration: none;
     color: #17364c;
     overflow: hidden;
+
     background:
         linear-gradient(
             135deg,
             #f8fcfe,
             #eaf4f9
         );
+
     box-shadow:
         0 28px 65px rgba(0,0,0,.34);
+
     transition:
         transform .45s ease,
         box-shadow .45s ease;
@@ -639,6 +751,7 @@
     inset: 0;
     opacity: .34;
     pointer-events: none;
+
     background:
         repeating-linear-gradient(
             0deg,
@@ -725,6 +838,7 @@
 .azules-book-spread .book-spine {
     position: relative;
     z-index: 4;
+
     background:
         linear-gradient(
             90deg,
@@ -732,6 +846,7 @@
             rgba(255,255,255,.45) 50%,
             rgba(15,36,51,.55)
         );
+
     box-shadow:
         inset 0 0 8px rgba(0,0,0,.30);
 }
@@ -742,6 +857,7 @@
     color: rgba(207,228,240,.55);
     font-size: .78rem;
 }
+
 
 /* ==========================================================
    RESEÑAS
@@ -804,6 +920,7 @@
     font-size: .76rem;
 }
 
+
 /* ==========================================================
    FICHA
    ========================================================== */
@@ -824,7 +941,9 @@
             rgba(157,205,232,.07),
             rgba(255,255,255,.018)
         );
+
     border-color: rgba(158,209,236,.18);
+
     box-shadow:
         0 28px 70px rgba(0,0,0,.28);
 }
@@ -837,10 +956,12 @@
     right: -190px;
     top: 50%;
     transform: translateY(-50%);
+
     background:
         url("../images/Azules-bg-globo.png")
         center / contain
         no-repeat;
+
     opacity: .10;
     filter: saturate(.7);
     pointer-events: none;
@@ -857,6 +978,7 @@
 .azules-book-data .book-data-item span {
     color: rgba(235,247,253,.84);
 }
+
 
 /* ==========================================================
    RELACIONADOS
@@ -885,6 +1007,7 @@
     color: #e3f5ff;
 }
 
+
 /* ==========================================================
    CTA FINAL
    ========================================================== */
@@ -894,6 +1017,7 @@
     overflow: hidden;
     padding: 140px 0;
     text-align: center;
+
     background:
         linear-gradient(
             180deg,
@@ -911,12 +1035,14 @@
     height: 650px;
     transform: translate(-50%, -50%);
     border-radius: 50%;
+
     background:
         radial-gradient(
             ellipse,
             rgba(94,168,215,.16),
             transparent 70%
         );
+
     filter: blur(25px);
     pointer-events: none;
 }
@@ -952,23 +1078,36 @@
     margin-top: 45px;
 }
 
+
 /* ==========================================================
    RESPONSIVE
    ========================================================== */
 
 @media (max-width: 1200px) {
-    .azules-balloon-bg {
-        right: -180px;
-        width: 620px;
-        height: 620px;
-    }
 
     .azules-hero .book-mockup {
         width: min(530px, 100%);
     }
+
+    /*
+       CAMBIO:
+       El fondo ahora acompaña al mockup.
+    */
+
+    .azules-hero .hero-book-image::before {
+        width: 680px;
+        height: 680px;
+    }
+
+    .azules-hero .hero-book-image::after {
+        width: 580px;
+        height: 580px;
+    }
 }
 
+
 @media (max-width: 992px) {
+
     .azules-hero {
         min-height: auto;
         padding: 70px 0 85px;
@@ -1012,13 +1151,23 @@
         justify-content: center;
     }
 
-    .azules-balloon-bg {
-        right: 50%;
-        top: 240px;
-        transform: translateX(50%);
-        width: 600px;
-        height: 600px;
-        opacity: .18;
+
+    /*
+       CAMBIO:
+       Antes aquí se posicionaba .azules-balloon-bg.
+       Ya no es necesario porque el fondo está dentro
+       de .hero-book-image.
+    */
+
+    .azules-hero .hero-book-image::before {
+        width: 620px;
+        height: 620px;
+        opacity: .22;
+    }
+
+    .azules-hero .hero-book-image::after {
+        width: 520px;
+        height: 520px;
     }
 
     .azules-book-spread {
@@ -1032,7 +1181,9 @@
     }
 }
 
+
 @media (max-width: 768px) {
+
     .azules-hero {
         padding: 80px 0 60px;
     }
@@ -1041,14 +1192,25 @@
         min-height: 370px;
     }
 
+    /*
+       CAMBIO:
+       Fondo más pequeño y sutil en móvil.
+    */
+
     .azules-hero .hero-book-image::before {
-        width: 390px;
-        height: 390px;
+        width: 430px;
+        height: 430px;
+        opacity: .18;
     }
 
     .azules-hero .hero-book-image::after {
-        width: 330px;
-        height: 330px;
+        width: 360px;
+        height: 360px;
+    }
+
+    .azules-hero .book-glow {
+        width: 320px;
+        height: 320px;
     }
 
     .azules-hero .book-mockup {
@@ -1129,7 +1291,9 @@
     }
 }
 
+
 @media (max-width: 480px) {
+
     .azules-hero .hero-content h1 {
         font-size: 3rem;
     }
@@ -1167,19 +1331,47 @@
     .azules-page .btn-amazon span {
         font-size: .72rem;
     }
+
+    /*
+       CAMBIO:
+       En pantallas muy pequeñas hacemos que el globo
+       sea todavía más discreto.
+    */
+
+    .azules-hero .hero-book-image::before {
+        width: 360px;
+        height: 360px;
+        opacity: .14;
+    }
+
+    .azules-hero .hero-book-image::after {
+        width: 300px;
+        height: 300px;
+    }
+
+    .azules-hero .book-glow {
+        width: 270px;
+        height: 270px;
+    }
 }
+
 
 /* ==========================================================
    ACCESIBILIDAD / REDUCIR MOVIMIENTO
    ========================================================== */
 
 @media (prefers-reduced-motion: reduce) {
+
     .azules-page *,
     .azules-page *::before,
     .azules-page *::after {
+
         scroll-behavior: auto !important;
+
         transition-duration: .01ms !important;
+
         animation-duration: .01ms !important;
+
         animation-iteration-count: 1 !important;
     }
 }
