@@ -514,7 +514,11 @@
         0 28px 60px rgba(0,0,0,.42),
         0 0 35px rgba(116,184,224,.10);
 }
+/* ENTRE AZULES — bajar únicamente la portada de la sinopsis */
 
+.synopsis .book-cover-panel {
+    padding-top: 35px;
+}
 /* ==========================================================
    POR QUÉ LEERLO
    ========================================================== */
