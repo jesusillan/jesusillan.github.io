@@ -570,12 +570,12 @@
 .synopsis-grid {
     display: grid;
     grid-template-columns: 1.4fr .8fr;
-    gap: 80px;
     align-items: start;
 }
 
 .azules-synopsis .synopsis-grid {
-    gap: clamp(70px, 8vw, 125px);
+    column-gap: clamp(70px, 8vw, 125px);
+    row-gap: 25px;
 }
 
 .azules-synopsis .section-header h2,
@@ -606,7 +606,7 @@
     border-left: 3px solid #86c6ea;
     color: #c4e7fa;
     font-family: var(--font-title);
-    font-size: clamp(1.3rem, 2.2vw, 1.75rem);
+    font-size: clamp(1rem, 2.2vw, 1.5rem);
     line-height: 1.55;
 }
 
