@@ -1392,6 +1392,9 @@
    ========================================================== */
 
 .azules-related {
+    position: relative;
+    overflow: hidden;
+
     background:
         linear-gradient(
             180deg,
@@ -1400,20 +1403,220 @@
         );
 }
 
+
+/* ==========================================================
+   GRID DE LIBROS
+   ========================================================== */
+
+.azules-related .related-books-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: clamp(50px, 7vw, 100px);
+
+    max-width: 1000px;
+    margin: 70px auto 0;
+
+    align-items: start;
+}
+
+
+/* ==========================================================
+   LIBRO RELACIONADO
+   ========================================================== */
+
+.azules-related .related-book {
+    min-width: 0;
+}
+
+
+/* ==========================================================
+   MOCKUP
+   ========================================================== */
+
+.azules-related .related-book-image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 100%;
+    min-height: 0;
+
+    text-decoration: none;
+}
+
+
+/*
+   AQUÍ CONTROLAMOS REALMENTE EL TAMAÑO
+   DE LOS MOCKUPS
+*/
+
 .azules-related .related-book-image img {
+    display: block;
+
+    width: min(320px, 75%);
+    max-width: 320px;
+    height: auto;
+
     filter:
         drop-shadow(0 24px 35px rgba(0,0,0,.42))
         drop-shadow(0 0 20px rgba(122,192,228,.08));
+
+    transition:
+        transform .45s ease,
+        filter .45s ease;
 }
 
+
+/* ==========================================================
+   HOVER MOCKUP
+   ========================================================== */
+
+.azules-related .related-book-image:hover img {
+    transform: translateY(-8px) scale(1.025);
+
+    filter:
+        drop-shadow(0 32px 45px rgba(0,0,0,.48))
+        drop-shadow(0 0 25px rgba(122,192,228,.13));
+}
+
+
+/* ==========================================================
+   INFORMACIÓN
+   ========================================================== */
+
+.azules-related .related-book-info {
+    max-width: 430px;
+    margin: 38px auto 0;
+
+    text-align: center;
+}
+
+
+/* ==========================================================
+   CATEGORÍA
+   ========================================================== */
+
+.azules-related .related-book-label {
+    display: block;
+
+    margin-bottom: 10px;
+
+    color: #82b9d8;
+
+    font-size: .72rem;
+    font-weight: 700;
+    letter-spacing: .16em;
+    text-transform: uppercase;
+}
+
+
+/* ==========================================================
+   TÍTULO
+   ========================================================== */
+
+.azules-related .related-book-info h3 {
+    margin: 0 0 15px;
+
+    color: #c8e9fa;
+
+    font-family: var(--font-serif);
+    font-size: clamp(1.8rem, 3vw, 2.5rem);
+    line-height: 1.1;
+    font-weight: 500;
+}
+
+
+/* ==========================================================
+   DESCRIPCIÓN
+   ========================================================== */
+
+.azules-related .related-book-info p {
+    margin: 0;
+
+    color: rgba(229,241,249,.72);
+
+    font-size: 1rem;
+    line-height: 1.8;
+}
+
+
+/* ==========================================================
+   ENLACE
+   ========================================================== */
+
 .azules-related .related-book-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 9px;
+
+    margin-top: 24px;
+
     color: #8fc9eb;
+
+    font-size: .78rem;
+    font-weight: 700;
+    letter-spacing: .10em;
+    text-transform: uppercase;
+    text-decoration: none;
+
+    transition:
+        color .3s ease,
+        transform .3s ease;
+}
+
+.azules-related .related-book-link span {
+    transition: transform .3s ease;
 }
 
 .azules-related .related-book-link:hover {
     color: #e3f5ff;
 }
 
+.azules-related .related-book-link:hover span {
+    transform: translateX(5px);
+}
+
+
+/* ==========================================================
+   RESPONSIVE
+   ========================================================== */
+
+@media (max-width: 768px) {
+
+    .azules-related .related-books-grid {
+        grid-template-columns: 1fr;
+        gap: 70px;
+        margin-top: 50px;
+    }
+
+    .azules-related .related-book-image img {
+        width: min(280px, 70vw);
+        max-width: 280px;
+    }
+
+    .azules-related .related-book-info {
+        max-width: 520px;
+        margin-top: 30px;
+    }
+}
+
+
+@media (max-width: 480px) {
+
+    .azules-related .related-book-image img {
+        width: min(250px, 72vw);
+        max-width: 250px;
+    }
+
+    .azules-related .related-book-info h3 {
+        font-size: 2rem;
+    }
+
+    .azules-related .related-book-info p {
+        font-size: .96rem;
+        line-height: 1.75;
+    }
+}
 /* ==========================================================
    CTA FINAL
    ========================================================== */
