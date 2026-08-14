@@ -589,7 +589,7 @@
 
 .azules-synopsis .synopsis-content p {
     color: rgba(226,239,248,.77);
-    font-size: 4rem;
+    font-size: 1.18rem;
     line-height: 2;
 }
 
@@ -605,7 +605,7 @@
     border-left: 3px solid #86c6ea;
     color: #c4e7fa;
     font-family: var(--font-title);
-    font-size: clamp(3rem, 3vw, 5rem);
+    font-size: clamp(2rem, 3vw, 5rem);
     line-height: 1.55;
 }
 
