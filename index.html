@@ -437,15 +437,85 @@ footer{
 </style>
 <script type="application/ld+json">
 {
- "@context":"https://schema.org",
- "@type":"Person",
- "name":"Jesús Illán",
- "url":"https://jesusillan.github.io/",
- "jobTitle":"Escritor",
- "sameAs":[
-   "https://www.instagram.com/doce_nombres"
- ]
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebSite",
+      "@id": "https://jesusillan.github.io/#website",
+      "url": "https://jesusillan.github.io/",
+      "name": "Jesús Illán",
+      "description": "Web oficial del escritor Jesús Illán.",
+      "inLanguage": "es-ES"
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://jesusillan.github.io/#webpage",
+      "url": "https://jesusillan.github.io/",
+      "name": "Jesús Illán | Escritor de thriller, misterio y ciencia ficción",
+      "isPartOf": {
+        "@id": "https://jesusillan.github.io/#website"
+      },
+      "about": {
+        "@id": "https://jesusillan.github.io/#person"
+      },
+      "inLanguage": "es-ES"
+    },
+    {
+      "@type": "Person",
+      "@id": "https://jesusillan.github.io/#person",
+      "name": "Jesús Illán",
+      "url": "https://jesusillan.github.io/",
+      "jobTitle": "Escritor",
+      "sameAs": [
+        "https://www.instagram.com/doce_nombres/"
+      ]
+    },
+    {
+      "@type": "ItemList",
+      "@id": "https://jesusillan.github.io/#libros",
+      "name": "Libros de Jesús Illán",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "item": {
+            "@type": "Book",
+            "name": "Contra Tiempo",
+            "url": "https://jesusillan.github.io/libros/contra-tiempo.html",
+            "author": {
+              "@id": "https://jesusillan.github.io/#person"
+            }
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "item": {
+            "@type": "Book",
+            "name": "Doce Nombres",
+            "url": "https://jesusillan.github.io/libros/doce-nombres.html",
+            "author": {
+              "@id": "https://jesusillan.github.io/#person"
+            }
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "item": {
+            "@type": "Book",
+            "name": "Entre azules e invencibles",
+            "url": "https://jesusillan.github.io/libros/entre-azules.html",
+            "author": {
+              "@id": "https://jesusillan.github.io/#person"
+            }
+          }
+        }
+      ]
+    }
+  ]
 }
+</script>
 </script>
 </head>
 <body>
