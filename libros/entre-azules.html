@@ -618,21 +618,48 @@
 
 <footer class="site-footer">
     <div class="container">
-        <a href="../index.html" aria-label="Volver al inicio">
-            <img
-                src="../images/logo-header-v3.png"
-                alt="Jesús Illán"
-                class="footer-logo">
+
+        <!-- FILA SUPERIOR -->
+        <a class="footer-logo" href="/" aria-label="Volver al inicio" title="Inicio">
+            <img src="/images/logo-header-v3.png"
+                 alt="Jesús Illán"
+                 width="50"
+                 height="50">
         </a>
-<a href="/aviso-legal.html">Aviso legal</a>
-·
-<a href="/privacidad.html">Privacidad</a>
-·
-<a href="/cookies.html">Cookies</a>
-        <p>© 2026 Jesús Illán · Todos los derechos reservados.</p>
+
+        <div class="footer-copy">
+            © Jesús Illán 2026 · Todos los derechos reservados
+        </div>
+
+        <button class="footer-share"
+                onclick="sharePage()"
+                aria-label="Compartir esta página">
+            <svg class="share-icon-small" viewBox="0 0 24 24" aria-hidden="true">
+                <circle cx="18" cy="5" r="2.2" fill="none"
+                        stroke="currentColor" stroke-width="1.7"/>
+                <circle cx="6" cy="12" r="2.2" fill="none"
+                        stroke="currentColor" stroke-width="1.7"/>
+                <circle cx="18" cy="19" r="2.2" fill="none"
+                        stroke="currentColor" stroke-width="1.7"/>
+                <path d="M8 11l8-5M8 13l8 5"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="1.7"
+                      stroke-linecap="round"/>
+            </svg>
+            Compartir
+        </button>
+
+
+        <!-- FILA INFERIOR -->
+        <nav class="footer-legal" aria-label="Información legal">
+            <a href="/privacidad.html">Privacidad</a>
+            <a href="/cookies.html">Cookies</a>
+            <a href="/aviso-legal.html">Aviso legal</a>
+        </nav>
+
     </div>
 </footer>
-
 
 <script src="../js/share.js"></script>
 <script src="../js/site.js"></script>
